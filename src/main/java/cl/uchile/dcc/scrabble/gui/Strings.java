@@ -13,5 +13,9 @@ public class Strings {
     public String toString() {
         return this.getString_value();
     }
+    public Strings transform_to_string(){
+        return this;
+    }
+
 
 }

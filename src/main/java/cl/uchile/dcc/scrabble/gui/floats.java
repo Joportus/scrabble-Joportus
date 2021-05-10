@@ -9,4 +9,5 @@ public class floats extends Numbers{
     public double getFloat_value() {
         return float_value;
     }
+    
 }

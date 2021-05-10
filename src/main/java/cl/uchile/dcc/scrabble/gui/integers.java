@@ -9,5 +9,9 @@ public class integers extends Numbers{
     public int getInt_value() {
         return int_value;
     }
+    Strings transform_to_string(){
+        Strings transformed_integer = new Strings(this.toString());
+        return transformed_integer;
+    }
 
 }
