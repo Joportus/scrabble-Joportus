@@ -1,6 +1,6 @@
 package cl.uchile.dcc.scrabble.gui;
 
-public class Strings {
+public class Strings extends Type{
     private String string_value;
     public Strings(String string_value){
         this.string_value = string_value;
@@ -12,9 +12,6 @@ public class Strings {
     @Override
     public String toString() {
         return this.getString_value();
-    }
-    public Strings transform_to_string(){
-        return this;
     }
 
 

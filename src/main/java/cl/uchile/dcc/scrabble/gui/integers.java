@@ -9,9 +9,26 @@ public class integers extends Numbers{
     public int getInt_value() {
         return int_value;
     }
-    Strings transform_to_string(){
-        Strings transformed_integer = new Strings(this.toString());
-        return transformed_integer;
+
+    @Override
+    public String toString() {
+        return String.valueOf(this.getInt_value());
     }
+
+    @Override
+    public floats transform_to_float() {
+        return new floats(this.getInt_value());
+    }
+
+    @Override
+    public integers transform_to_integers() {
+        return new integers(this.getInt_value());
+    }
+/**
+    @Override
+    public binary transform_to_binary() {
+        return super.transform_to_binary();
+    }
+**/
 
 }
