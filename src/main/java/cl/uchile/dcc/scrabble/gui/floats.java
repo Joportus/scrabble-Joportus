@@ -9,4 +9,16 @@ public class floats extends Numbers{
     public double getFloat_value() {
         return float_value;
     }
+
+    @Override
+    public String toString() {
+        return String.valueOf(this.getFloat_value());
+    }
+
+    @Override
+    public floats transform_to_float() {
+        return new floats(this.getFloat_value());
+    }
+
+
 }
