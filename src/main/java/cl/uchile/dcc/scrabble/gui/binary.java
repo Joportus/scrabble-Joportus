@@ -1,5 +1,7 @@
 package cl.uchile.dcc.scrabble.gui;
 
+import java.util.Objects;
+
 public class binary extends Numbers{
     private String binary_value;
     public binary(String binary_value){
@@ -14,6 +16,7 @@ public class binary extends Numbers{
     public String toString() {
         return this.getBinary_value();
     }
+
 /**
     @Override
     public floats transform_to_float() {
@@ -25,9 +28,22 @@ public class binary extends Numbers{
         return super.transform_to_integers();
     }
 **/
+
     @Override
     public binary transform_to_binary() {
         return new binary(this.getBinary_value());
+    }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof binary) {
+            var other = (binary) obj;
+            return other.getBinary_value().equals(this.getBinary_value());
+        }
+        return false;
+    }
+    @Override
+    public int hashCode(){
+        return Objects.hash(binary.class);
     }
 
 }

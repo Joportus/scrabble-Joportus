@@ -15,18 +15,21 @@ public class Strings extends Type{
     }
 
     @Override
-    public int hashCode(){
-        return Objects.hash(Strings.class);
-    }
-
-    @Override
     public String toString() {
         return this.getString_value();
     }
 
     @Override
+    public int hashCode(){
+        return Objects.hash(Strings.class);
+    }
+    @Override
     public boolean equals(Object obj) {
-        return obj instanceof Strings;
+        if (obj instanceof Strings) {
+            var other = (Strings) obj;
+            return other.getString_value().equals(this.getString_value());
+        }
+        return false;
     }
 
 
