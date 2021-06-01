@@ -35,6 +35,6 @@ public class Strings extends Type{
 
     @Override
     public Itypes sum(Itypes t) {
-        return t.sum_a_string(this);
+        return t.sum_to_string(this);
     }
 }

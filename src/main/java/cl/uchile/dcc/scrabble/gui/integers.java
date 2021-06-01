@@ -29,14 +29,14 @@ public class integers extends Numbers{
     }
 
     @Override
-    public Itypes sum_a_int(integers I) {
+    public Itypes sum_to_int(integers I) {
         int result_value = this.getInt_value() + I.getInt_value();
         integers result = new integers(result_value);
         return result;
     }
 
     @Override
-    public Itypes sum_a_float(floats F) {
+    public Itypes sum_to_float(floats F) {
         double result_value = this.getInt_value() + F.getFloat_value();
         floats result = new floats(result_value);
         return result;
@@ -44,7 +44,7 @@ public class integers extends Numbers{
 
     @Override
     public Itypes sum(Itypes t) {
-        return t.sum_a_int(this);
+        return t.sum_to_int(this);
     }
 
 
@@ -68,4 +68,49 @@ public class integers extends Numbers{
         return false;
     }
 
+    @Override
+    public Inumber substract_to_Float(floats F) {
+        double result_value = F.getFloat_value() - this.getInt_value();
+        return new floats(result_value);
+    }
+
+
+    /**
+    @Override
+    public Inumber substract_to_binary(binary B) {
+        return super.substract_to_binary(B);
+    }
+**/
+    @Override
+    public Inumber substract_to_integer(integers I) {
+        int result_value = I.getInt_value() - this.getInt_value();
+        return new integers(result_value);
+    }
+
+    @Override
+    public Inumber substract(Inumber inumber) {
+        return inumber.substract_to_integer(this);
+    }
+
+    @Override
+    public Inumber multiply_to_Float(floats F) {
+        double result_value = F.getFloat_value() * this.getInt_value();
+        return new floats(result_value);
+    }
+/**
+    @Override
+    public Inumber multiply_to_binary(binary B) {
+        return super.multiply_to_binary(B);
+    }
+**/
+    @Override
+    public Inumber multiply_to_integer(integers I) {
+        int result_value = I.getInt_value() * this.getInt_value();
+        return new integers(result_value);
+    }
+
+    @Override
+    public Inumber multiply(Inumber inumber) {
+        return inumber.multiply_to_integer(this);
+    }
 }

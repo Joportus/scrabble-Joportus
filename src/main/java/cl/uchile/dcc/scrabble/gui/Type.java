@@ -31,17 +31,17 @@ public abstract class Type implements Itypes{
     }
 
     @Override
-    public Itypes sum_a_int(integers I) {
+    public Itypes sum_to_int(integers I) {
         return null;
     }
 
     @Override
-    public Itypes sum_a_float(floats F) {
+    public Itypes sum_to_float(floats F) {
         return null;
     }
 
     @Override
-    public Strings sum_a_string(Strings S) {
+    public Strings sum_to_string(Strings S) {
         String result = S.getString_value() + this;
         return new Strings(result);
     }

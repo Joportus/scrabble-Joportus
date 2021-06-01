@@ -33,6 +33,27 @@ public class binary extends Numbers{
     public binary transform_to_binary() {
         return new binary(this.getBinary_value());
     }
+
+    @Override
+    public Itypes sum_to_int(integers I) {
+        return super.sum_to_int(I);
+    }
+
+    @Override
+    public Itypes sum_to_float(floats F) {
+        return super.sum_to_float(F);
+    }
+
+    @Override
+    public Strings sum_to_string(Strings S) {
+        return super.sum_to_string(S);
+    }
+
+    @Override
+    public Itypes sum(Itypes t) {
+        return super.sum(t);
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (obj instanceof binary) {
@@ -45,5 +66,49 @@ public class binary extends Numbers{
     public int hashCode(){
         return Objects.hash(binary.class);
     }
+/**
+    @Override
+    public Inumber substract_to_Float(floats F) {
+        return super.substract_to_Float(F);
+    }
 
+    @Override
+    public Inumber substract_to_binary(binary B) {
+        return super.substract_to_binary(B);
+    }
+
+    @Override
+    public Inumber substract_to_integer(integers I) {
+        return super.substract_to_integer(I);
+    }
+
+    @Override
+    public Inumber substract(Inumber inumber) {
+        return super.substract(inumber);
+    }
+
+    @Override
+    public Inumber multiply_to_Float(floats F) {
+        return super.multiply_to_Float(F);
+    }
+
+    @Override
+    public Inumber multiply_to_binary(binary B) {
+        return super.multiply_to_binary(B);
+    }
+
+    @Override
+    public Inumber multiply_to_integer(integers I) {
+        return super.multiply_to_integer(I);
+    }
+
+    @Override
+    public Inumber multiply(Inumber inumber) {
+        return super.multiply(inumber);
+    }
+**/
+    @Override
+    public Strings transform_to_string() {
+        return new Strings(this.getBinary_value());
+    }
 }
