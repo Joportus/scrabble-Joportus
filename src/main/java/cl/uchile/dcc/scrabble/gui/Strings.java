@@ -32,15 +32,9 @@ public class Strings extends Type{
         return false;
     }
 
-/**
-    @Override
-    public Strings sum_a_int(integers I) {
-        return super.sum_a_int(I);
-    }
 
     @Override
     public Itypes sum(Itypes t) {
-        return super.sum(t);
+        return t.sum_a_string(this);
     }
-    **/
 }

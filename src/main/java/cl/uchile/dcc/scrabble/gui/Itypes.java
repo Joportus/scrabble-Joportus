@@ -9,5 +9,6 @@ public interface Itypes {
   Booleans transform_to_boolean();
   Itypes sum_a_int(integers I);
   Itypes sum_a_float(floats F);
+  Strings sum_a_string(Strings S);
   Itypes sum(Itypes t);
 }

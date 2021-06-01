@@ -11,6 +11,8 @@ import static org.junit.jupiter.api.Assertions.*;
 class ItypesTest {
     private int i = 1005;
     private int i2 = 500;
+    private String s = "hello";
+    private Strings S;
     private double fl = 1005;
     private integers I;
     private integers I2;
@@ -24,6 +26,7 @@ class ItypesTest {
         I = new integers(i);
         I2 = new integers(i);
         I3 = new integers(i2);
+        S = new Strings("hello");
         F = new floats(fl);
         seed = new Random().nextInt();
         rng = new Random(seed);
@@ -48,10 +51,15 @@ class ItypesTest {
         Itypes actual_result_3 = I.sum(F);
         Itypes actual_result_3b = F.sum(I);
         Itypes different_result = I3.sum(F);
+
         assertEquals(expectedResult_2, actual_result_2);
         assertEquals(expectedResult_3, actual_result_3);
         assertEquals(actual_result_3, actual_result_3b);
         assertNotEquals(different_result, actual_result_3);
+
+        Strings expectedResult4 =  new Strings("hello500");
+        Itypes actualresult4 = S.sum(I3);
+        assertEquals(expectedResult4, actualresult4);
 
     }
 

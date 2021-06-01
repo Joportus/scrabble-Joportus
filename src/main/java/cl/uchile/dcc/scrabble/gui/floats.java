@@ -23,14 +23,14 @@ public class floats extends Numbers{
     }
 
     @Override
-    public floats sum_a_int(integers I) {
+    public Itypes sum_a_int(integers I) {
         double result_value = this.getFloat_value() + I.getInt_value();
         floats result = new floats(result_value);
         return result;
     }
 
     @Override
-    public floats sum_a_float(floats F) {
+    public Itypes sum_a_float(floats F) {
         double result_value = this.getFloat_value() + F.getFloat_value();
         floats result = new floats(result_value);
         return result;

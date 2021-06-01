@@ -29,14 +29,14 @@ public class integers extends Numbers{
     }
 
     @Override
-    public integers sum_a_int(integers I) {
+    public Itypes sum_a_int(integers I) {
         int result_value = this.getInt_value() + I.getInt_value();
         integers result = new integers(result_value);
         return result;
     }
 
     @Override
-    public floats sum_a_float(floats F) {
+    public Itypes sum_a_float(floats F) {
         double result_value = this.getInt_value() + F.getFloat_value();
         floats result = new floats(result_value);
         return result;
