@@ -7,5 +7,7 @@ public interface Itypes {
   integers transform_to_integers();
   binary transform_to_binary();
   Booleans transform_to_boolean();
-
+  Itypes sum_a_int(integers I);
+  Itypes sum_a_float(floats F);
+  Itypes sum(Itypes t);
 }

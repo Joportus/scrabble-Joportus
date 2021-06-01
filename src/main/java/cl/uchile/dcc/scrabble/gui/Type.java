@@ -30,6 +30,20 @@ public abstract class Type implements Itypes{
         return null;
     }
 
+    @Override
+    public Itypes sum_a_int(integers I) {
+        return null;
+    }
+
+    @Override
+    public Itypes sum_a_float(floats F) {
+        return null;
+    }
+
+    @Override
+    public Itypes sum(Itypes t) {
+        return null;
+    }
 
 
 }
