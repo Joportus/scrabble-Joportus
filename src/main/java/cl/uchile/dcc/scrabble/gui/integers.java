@@ -30,14 +30,14 @@ public class integers extends Numbers{
 
     @Override
     public Itypes sum_to_int(integers I) {
-        int result_value = this.getInt_value() + I.getInt_value();
+        int result_value = I.getInt_value() + this.getInt_value();
         integers result = new integers(result_value);
         return result;
     }
 
     @Override
     public Itypes sum_to_float(floats F) {
-        double result_value = this.getInt_value() + F.getFloat_value();
+        double result_value = F.getFloat_value() + this.getInt_value();
         floats result = new floats(result_value);
         return result;
     }
@@ -73,6 +73,7 @@ public class integers extends Numbers{
         double result_value = F.getFloat_value() - this.getInt_value();
         return new floats(result_value);
     }
+
 
 
     /**
@@ -112,5 +113,27 @@ public class integers extends Numbers{
     @Override
     public Inumber multiply(Inumber inumber) {
         return inumber.multiply_to_integer(this);
+    }
+
+    @Override
+    public Inumber divide_a_Float(floats F) {
+        double result_value = F.getFloat_value() / this.getInt_value();
+        return new floats(result_value);
+    }
+    /**
+    @Override
+    public Inumber divide_a_binary(binary B) {
+        return super.divide_a_binary(B);
+    }
+**/
+    @Override
+    public Inumber divide_a_integer(integers I) {
+        int result_value = I.getInt_value() / this.getInt_value();
+        return new integers(result_value);
+    }
+
+    @Override
+    public Inumber divide(Inumber inumber) {
+        return inumber.divide_a_integer(this);
     }
 }

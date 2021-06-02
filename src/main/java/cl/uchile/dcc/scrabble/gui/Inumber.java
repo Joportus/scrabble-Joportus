@@ -9,5 +9,10 @@ public interface Inumber{
     Inumber multiply_to_binary(binary B);
     Inumber multiply_to_integer(integers I);
     Inumber multiply(Inumber inumber);
+    Inumber divide_a_Float(floats F);
+    Inumber divide_a_binary(binary B);
+    Inumber divide_a_integer(integers I);
+    Inumber divide(Inumber inumber);
+
 
 }

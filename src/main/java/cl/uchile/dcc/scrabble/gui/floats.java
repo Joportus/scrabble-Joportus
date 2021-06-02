@@ -88,4 +88,23 @@ public class floats extends Numbers{
     public Inumber multiply(Inumber inumber) {
         return inumber.multiply_to_Float(this);
     }
+
+    @Override
+    public Inumber divide_a_Float(floats F) {
+        double result_value = F.getFloat_value() / this.getFloat_value();
+        return new floats(result_value);
+    }
+
+    @Override
+    public Inumber divide_a_integer(integers I) {
+        double result_value = I.getInt_value() / this.getFloat_value();
+        return new floats(result_value);
+    }
+
+    @Override
+    public Inumber divide(Inumber inumber) {
+        return inumber.divide_a_Float(this);
+    }
+
+
 }

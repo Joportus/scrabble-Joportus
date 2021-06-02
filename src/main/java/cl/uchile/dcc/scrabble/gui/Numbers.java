@@ -44,6 +44,26 @@ public abstract class Numbers extends Type implements Inumber{
     }
 
     @Override
+    public Inumber divide_a_Float(floats F) {
+        return null;
+    }
+
+    @Override
+    public Inumber divide_a_binary(binary B) {
+        return null;
+    }
+
+    @Override
+    public Inumber divide_a_integer(integers I) {
+        return null;
+    }
+
+    @Override
+    public Inumber divide(Inumber inumber) {
+        return null;
+    }
+
+    @Override
     public Strings transform_to_string() {
         return super.transform_to_string();
     }
@@ -51,5 +71,10 @@ public abstract class Numbers extends Type implements Inumber{
     @Override
     public floats transform_to_float() {
         return super.transform_to_float();
+    }
+
+    @Override
+    public integers transform_to_integers() {
+        return super.transform_to_integers();
     }
 }

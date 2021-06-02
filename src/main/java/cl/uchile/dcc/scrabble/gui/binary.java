@@ -66,7 +66,30 @@ public class binary extends Numbers{
     public int hashCode(){
         return Objects.hash(binary.class);
     }
-/**
+
+    /**
+
+    @Override
+    public Inumber divide_a_Float(floats F) {
+        return super.divide_a_Float(F);
+    }
+
+    @Override
+    public Inumber divide_a_binary(binary B) {
+        return super.divide_a_binary(B);
+    }
+
+    @Override
+    public Inumber divide_a_integer(integers I) {
+        return super.divide_a_integer(I);
+    }
+
+    @Override
+    public Inumber divide(Inumber inumber) {
+        return super.divide(inumber);
+    }
+**/
+    /**
     @Override
     public Inumber substract_to_Float(floats F) {
         return super.substract_to_Float(F);
