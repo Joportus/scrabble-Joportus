@@ -27,10 +27,16 @@ class BooleansTest {
         assertEquals(unexpectedBool.hashCode(), b.hashCode());
 
     }
-        @Test
-        void transform_to_boolean() {
-            assertEquals(b, b.transform_to_boolean());
-        }
+    @Test
+    void transform_to_boolean() {
+        assertEquals(b, b.transform_to_boolean());
+    }
+    @Test
+    void negate(){
+        Booleans expectedResult = new Booleans(false);
+        Booleans actualResult = b.negate();
+        assertEquals(expectedResult, actualResult);
+    }
 
 
 /**

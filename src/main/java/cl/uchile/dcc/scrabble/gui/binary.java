@@ -2,7 +2,7 @@ package cl.uchile.dcc.scrabble.gui;
 
 import java.util.Objects;
 
-public class binary extends Numbers{
+public class binary extends Numbers implements SLogical{
     private String binary_value;
     public binary(String binary_value){
         this.binary_value = binary_value;
@@ -89,6 +89,16 @@ public class binary extends Numbers{
         return super.divide(inumber);
     }
 **/
+    @Override
+    public Inumber substract_to_Float(floats F) {
+        return super.substract_to_Float(F);
+    }
+
+    @Override
+    public Inumber substract_to_binary(binary B) {
+        return super.substract_to_binary(B);
+    }
+
     /**
     @Override
     public Inumber substract_to_Float(floats F) {
@@ -133,5 +143,38 @@ public class binary extends Numbers{
     @Override
     public Strings transform_to_string() {
         return new Strings(this.getBinary_value());
+    }
+
+    @Override
+    public SLogical bool_and(Booleans B) {
+        return null;
+    }
+
+    @Override
+    public SLogical binary_and(binary Bin) {
+        return null;
+    }
+
+    @Override
+    public SLogical and(SLogical L) {
+        return null;
+    }
+
+    @Override
+    public SLogical bool_or(Booleans B) {
+        return null;
+    }
+
+    @Override
+    public SLogical binary_or(binary Bin) {
+        return null;
+    }
+
+    @Override
+    public SLogical or(SLogical L) {
+        return null;
+    }
+    public binary negate(binary Bin){
+        return null;
     }
 }
