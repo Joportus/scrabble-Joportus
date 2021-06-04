@@ -11,11 +11,11 @@ import static org.junit.jupiter.api.Assertions.*;
 class ItypesTest {
     private int i = 1005;
     private int i2 = 500;
-    private int i3 = -2;
+    private int i3 = -990;
     private String s = "hello";
     private Strings S;
     private double fl = 1005;
-    private String b1 = "110";
+    private String b1 = "0111100100";
     private binary bin1;
     private integers I;
     private integers I2;
@@ -74,8 +74,6 @@ class ItypesTest {
         binary expectedResult = new binary(b1);
         binary actualResult = I4.transform_to_binary();
         System.out.println(actualResult+"\n");
-        //System.out.println(actualResult.getBinary_value().length()+"\n");
-       //assertEquals(expectedResult, actualResult);
     }
     @Test
     void transform_to_integers(){

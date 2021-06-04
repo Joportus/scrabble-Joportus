@@ -42,8 +42,13 @@ public abstract class Type implements Itypes{
 
     @Override
     public Strings sum_to_string(Strings S) {
-        String result = S.getString_value() + this;
+        String result = S.getString_value() + this.toString();
         return new Strings(result);
+    }
+
+    @Override
+    public binary sum_a_binary(binary B) {
+        return null;
     }
 
     @Override

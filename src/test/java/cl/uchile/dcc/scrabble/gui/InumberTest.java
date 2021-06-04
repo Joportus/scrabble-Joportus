@@ -10,10 +10,15 @@ import static org.junit.jupiter.api.Assertions.*;
 class InumberTest {
     private int i = 1005;
     private int i2 = 500;
+    private int i3 = 106;
+    private String b1 = "1101010";
+    private String b2 = "0101101";
     private double fl = 1000;
     private integers I;
     private integers I2;
     private integers I3;
+    private binary bin1 = new binary(b1);
+    private binary bin2 = new binary(b2);
     private floats F;
     private Random rng;
     private int seed;
@@ -59,6 +64,16 @@ class InumberTest {
         floats actualResult6 = (floats) F.substract(F);
         assertEquals(expectedResult6, actualResult6);
 
+        int result7 = bin1.transform_to_integers().getInt_value() - bin2.transform_to_integers().getInt_value();
+        binary expectedResult7 = new integers(result7).transform_to_binary();
+        Inumber actualResult7 = bin1.substract(bin2);
+        assertEquals(expectedResult7, actualResult7);
+
+        Inumber actualResult8 = bin2.substract(bin1);
+        assertNotEquals(actualResult7, actualResult8);
+
+
+
 
 
 
@@ -81,6 +96,15 @@ class InumberTest {
         floats expectedResult4 = new floats(fl * fl);
         floats actualResult4 = (floats) F.multiply(F);
         assertEquals(expectedResult4, actualResult4);
+
+        int result7 = bin1.transform_to_integers().getInt_value() * bin2.transform_to_integers().getInt_value();
+        binary expectedResult7 = new integers(result7).transform_to_binary();
+        Inumber actualResult7 = bin1.multiply(bin2);
+        assertEquals(expectedResult7, actualResult7);
+
+        Inumber actualResult8 = bin2.multiply(bin1);
+        assertEquals(actualResult7, actualResult8);
+
 
     }
     @Test

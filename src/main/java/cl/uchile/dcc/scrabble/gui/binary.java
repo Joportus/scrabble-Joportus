@@ -3,7 +3,9 @@ package cl.uchile.dcc.scrabble.gui;
 import java.util.Objects;
 
 public class binary extends Numbers implements SLogical{
+
     private String binary_value;
+
     public binary(String binary_value){
         this.binary_value = binary_value;
     }
@@ -74,11 +76,6 @@ public class binary extends Numbers implements SLogical{
         return result.transform_to_integers().transform_to_binary();
     }
 
-    @Override
-    public Strings sum_to_string(Strings S) {
-        String result_value = S.getString_value() + this;
-        return new Strings(result_value);
-    }
 
     @Override
     public binary sum_a_binary(binary B) {
@@ -89,7 +86,7 @@ public class binary extends Numbers implements SLogical{
 
     @Override
     public Itypes sum(Itypes t) {
-        return sum_a_binary(this);
+        return t.sum_a_binary(this);
     }
 
     @Override
@@ -160,7 +157,7 @@ public class binary extends Numbers implements SLogical{
 
     @Override
     public Inumber divide(Inumber inumber) {
-        return divide_a_binary(this);
+        return inumber.divide_a_binary(this);
     }
 
 
@@ -187,7 +184,7 @@ public class binary extends Numbers implements SLogical{
 
     @Override
     public Inumber substract(Inumber inumber) {
-        return substract_to_binary(this);
+        return inumber.substract_to_binary(this);
     }
 
     @Override
@@ -213,7 +210,7 @@ public class binary extends Numbers implements SLogical{
 
     @Override
     public Inumber multiply(Inumber inumber) {
-        return multiply_to_binary(this);
+        return inumber.multiply_to_binary(this);
     }
 
     @Override
@@ -228,12 +225,63 @@ public class binary extends Numbers implements SLogical{
 
     @Override
     public SLogical binary_and(binary Bin) {
-        return null;
+        StringBuilder s1 = new StringBuilder();
+        StringBuilder s2 = new StringBuilder();
+        StringBuilder result = new StringBuilder();
+        int l1 = this.getBinary_value().length();
+        int l2 = Bin.getBinary_value().length();
+        int max_length = java.lang.Math.max(l1, l2);
+        int n1 = this.transform_to_integers().getInt_value();
+        int n2 = Bin.transform_to_integers().getInt_value();
+
+        if(n1 < 0){
+            while(l1 < max_length){
+                s1.append("1");
+                l1 ++;
+            }
+        }
+        if(n1 >= 0){
+            while(l1 < max_length){
+                s1.append("0");
+                l1 ++;
+            }
+        }
+        if(n2 < 0){
+            while(l2 < max_length){
+                s2.append("1");
+                l2 ++;
+            }
+        }
+        if(n2 >= 0){
+            while(l2 < max_length){
+                s2.append("0");
+                l2 ++;
+            }
+        }
+
+        s1.append(this.getBinary_value());
+        s2.append(Bin.getBinary_value());
+        String binary_value1 = s1.toString();
+        String binary_value2 = s2.toString();
+
+        for(int i = 0; i < max_length; i++){
+            if(binary_value1.charAt(i) != binary_value2.charAt(i)){
+                result.append("0");
+            }
+            else if((binary_value1.charAt(i) == binary_value2.charAt(i)) && binary_value1.charAt(i) == '1'){
+                result.append("1");
+            }
+            else {
+                result.append("0");
+            }
+        }
+        String resultStr = result.toString();
+        return new binary(resultStr);
     }
 
     @Override
     public SLogical and(SLogical L) {
-        return null;
+        return L.binary_and(this);
     }
 
     @Override
@@ -243,14 +291,75 @@ public class binary extends Numbers implements SLogical{
 
     @Override
     public SLogical binary_or(binary Bin) {
-        return null;
+        StringBuilder s1 = new StringBuilder();
+        StringBuilder s2 = new StringBuilder();
+        StringBuilder result = new StringBuilder();
+        int l1 = this.getBinary_value().length();
+        int l2 = Bin.getBinary_value().length();
+        int max_length = java.lang.Math.max(l1, l2);
+        int n1 = this.transform_to_integers().getInt_value();
+        int n2 = Bin.transform_to_integers().getInt_value();
+
+        if(n1 < 0){
+            while(l1 < max_length){
+                s1.append("1");
+                l1 ++;
+            }
+        }
+        if(n1 >= 0){
+            while(l1 < max_length){
+                s1.append("0");
+                l1 ++;
+            }
+        }
+        if(n2 < 0){
+            while(l2 < max_length){
+                s2.append("1");
+                l2 ++;
+            }
+        }
+        if(n2 >= 0){
+            while(l2 < max_length){
+                s2.append("0");
+                l2 ++;
+            }
+        }
+
+        s1.append(this.getBinary_value());
+        s2.append(Bin.getBinary_value());
+        String binary_value1 = s1.toString();
+        String binary_value2 = s2.toString();
+
+        for(int i = 0; i < max_length; i++){
+
+            if(binary_value1.charAt(i) == '1' || binary_value2.charAt(i) == '1'){
+                result.append("1");
+            }
+            else {
+                result.append("0");
+            }
+        }
+        String resultStr = result.toString();
+        return new binary(resultStr);
     }
 
     @Override
     public SLogical or(SLogical L) {
-        return null;
+        return L.binary_or(this);
     }
-    public binary negate(binary Bin){
-        return null;
+    public binary negate(){
+        int l = this.getBinary_value().length();
+        String str = this.getBinary_value();
+        StringBuilder result = new StringBuilder();
+        for(int i = 0; i < l; i++){
+            if(str.charAt(i) == '1'){
+                result.append("0");
+            }
+            else{
+                result.append("1");
+            }
+        }
+        String result_value = result.toString();
+        return new binary(result_value);
     }
 }
