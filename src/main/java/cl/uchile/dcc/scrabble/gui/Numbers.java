@@ -63,18 +63,5 @@ public abstract class Numbers extends Type implements Inumber{
         return null;
     }
 
-    @Override
-    public Strings transform_to_string() {
-        return super.transform_to_string();
-    }
 
-    @Override
-    public floats transform_to_float() {
-        return super.transform_to_float();
-    }
-
-    @Override
-    public integers transform_to_integers() {
-        return super.transform_to_integers();
-    }
 }

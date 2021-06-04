@@ -45,7 +45,18 @@ public class Booleans extends Type implements SLogical{
 
     @Override
     public SLogical binary_and(binary Bin) {
-        return null;
+        int l = Bin.getBinary_value().length();
+        String str = Bin.getBinary_value();
+        StringBuilder result = new StringBuilder();
+        if(this.isBool_value()){
+            return new binary(str);
+        }
+        else{
+            result.append("0".repeat(l));
+            String strResult = result.toString();
+            return new binary(strResult);
+        }
+
     }
 
     @Override
@@ -61,7 +72,17 @@ public class Booleans extends Type implements SLogical{
 
     @Override
     public SLogical binary_or(binary Bin) {
-        return null;
+        int l = Bin.getBinary_value().length();
+        String str = Bin.getBinary_value();
+        StringBuilder result = new StringBuilder();
+        if(!this.isBool_value()){
+            return new binary(str);
+        }
+        else{
+            result.append("1".repeat(l));
+            String strResult = result.toString();
+            return new binary(strResult);
+        }
     }
 
     @Override

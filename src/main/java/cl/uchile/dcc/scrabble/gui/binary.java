@@ -137,8 +137,7 @@ public class binary extends Numbers implements SLogical{
     @Override
     public Inumber divide_a_Float(floats F) {
         double result_value = F.getFloat_value() / this.transform_to_integers().getInt_value();
-        floats result = new floats(result_value);
-        return result.transform_to_integers().transform_to_binary();
+        return new floats(result_value);
     }
 
     @Override
@@ -151,8 +150,7 @@ public class binary extends Numbers implements SLogical{
     @Override
     public Inumber divide_a_integer(integers I) {
         int result_value = I.getInt_value() / this.transform_to_integers().getInt_value();
-        integers result = new integers(result_value);
-        return result.transform_to_binary();
+        return new integers(result_value);
     }
 
     @Override
@@ -164,8 +162,7 @@ public class binary extends Numbers implements SLogical{
     @Override
     public Inumber substract_to_Float(floats F) {
         double result_value = F.getFloat_value() - this.transform_to_integers().getInt_value();
-        floats result = new floats(result_value);
-        return result.transform_to_integers().transform_to_binary();
+        return new floats(result_value);
     }
 
     @Override
@@ -178,8 +175,7 @@ public class binary extends Numbers implements SLogical{
     @Override
     public Inumber substract_to_integer(integers I) {
         int result_value = I.getInt_value() - this.transform_to_integers().getInt_value();
-        integers result = new integers(result_value);
-        return result.transform_to_binary();
+        return new integers(result_value);
     }
 
     @Override
@@ -190,8 +186,7 @@ public class binary extends Numbers implements SLogical{
     @Override
     public Inumber multiply_to_Float(floats F) {
         double result_value = F.getFloat_value() * this.transform_to_integers().getInt_value();
-        floats result = new floats(result_value);
-        return result.transform_to_integers().transform_to_binary();
+        return new floats(result_value);
     }
 
     @Override
@@ -204,8 +199,7 @@ public class binary extends Numbers implements SLogical{
     @Override
     public Inumber multiply_to_integer(integers I) {
         int result_value = I.getInt_value() * this.transform_to_integers().getInt_value();
-        integers result = new integers(result_value);
-        return result.transform_to_binary();
+        return new integers(result_value);
     }
 
     @Override

@@ -49,7 +49,6 @@ public class integers extends Numbers{
         return t.sum_to_int(this);
     }
 
-
     @Override
     public binary transform_to_binary() {
         int i = this.getInt_value();
@@ -121,8 +120,6 @@ public class integers extends Numbers{
         double result_value = F.getFloat_value() - this.getInt_value();
         return new floats(result_value);
     }
-
-
 
 
     @Override
