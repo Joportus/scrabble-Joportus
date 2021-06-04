@@ -10,7 +10,7 @@ public interface Itypes {
   Itypes sum_to_int(integers I);
   Itypes sum_to_float(floats F);
   Strings sum_to_string(Strings S);
-  //binary sum_a_binary(binary B);
+  binary sum_a_binary(binary B);
   Itypes sum(Itypes t);
 
 }

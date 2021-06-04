@@ -62,22 +62,34 @@ public class binary extends Numbers implements SLogical{
 
     @Override
     public Itypes sum_to_int(integers I) {
-        return super.sum_to_int(I);
+        int result_value = I.getInt_value() + this.transform_to_integers().getInt_value();
+        integers result = new integers(result_value);
+        return result.transform_to_binary();
     }
 
     @Override
     public Itypes sum_to_float(floats F) {
-        return super.sum_to_float(F);
+        double result_value = F.getFloat_value() + this.transform_to_integers().getInt_value();
+        floats result = new floats(result_value);
+        return result.transform_to_integers().transform_to_binary();
     }
 
     @Override
     public Strings sum_to_string(Strings S) {
-        return super.sum_to_string(S);
+        String result_value = S.getString_value() + this;
+        return new Strings(result_value);
+    }
+
+    @Override
+    public binary sum_a_binary(binary B) {
+        int result_value = B.transform_to_integers().getInt_value() + this.transform_to_integers().getInt_value();
+        integers result = new integers(result_value);
+        return result.transform_to_binary();
     }
 
     @Override
     public Itypes sum(Itypes t) {
-        return super.sum(t);
+        return sum_a_binary(this);
     }
 
     @Override
