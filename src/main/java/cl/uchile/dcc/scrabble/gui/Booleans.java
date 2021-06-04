@@ -68,6 +68,7 @@ public class Booleans extends Type implements SLogical{
     public SLogical or(SLogical L) {
         return L.bool_or(this);
     }
+
     public Booleans negate(){
         boolean result_value = !this.isBool_value();
         return new Booleans(result_value);

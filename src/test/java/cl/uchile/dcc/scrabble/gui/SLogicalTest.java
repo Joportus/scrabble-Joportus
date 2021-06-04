@@ -46,6 +46,5 @@ class SLogicalTest {
 
         Booleans actualResult3 = (Booleans) F.or(T);
         assertEquals(actualResult2, actualResult3);
-
     }
 }

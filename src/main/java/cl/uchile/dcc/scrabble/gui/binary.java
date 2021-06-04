@@ -17,7 +17,7 @@ public class binary extends Numbers implements SLogical{
         return this.getBinary_value();
     }
 
-/**
+
     @Override
     public floats transform_to_float() {
         return super.transform_to_float();
@@ -25,9 +25,35 @@ public class binary extends Numbers implements SLogical{
 
     @Override
     public integers transform_to_integers() {
-        return super.transform_to_integers();
+        String binary = this.getBinary_value();
+        if (bitToInt(binary.charAt(0)) == 0) {
+            return new integers(positiveBinToInt(binary));
+        }
+        else{
+            return new integers(negativeBinaryToInt(binary));
+        }
     }
-**/
+
+    private int negativeBinaryToInt(String binary){
+        int n = binary.length() - 1;
+        int w = -bitToInt(binary.charAt(0)) * (int) Math.pow(2, n);
+        for (int i = n, j = 0; i > 0; i--, j++){
+            w += (int) Math.pow(2, j) * (binary.charAt(i) == '1' ? 1 : 0);
+        }
+        return w;
+    }
+
+    private int positiveBinToInt(String binary){
+        int w = 0;
+        for (int i = binary.length() - 1, j = 0; i > 0; i--, j++){
+            w += (int) Math.pow(2, j) * bitToInt(binary.charAt(i));
+        }
+        return w;
+    }
+
+    private int bitToInt(char bit){
+        return bit == '0' ? 0 : 1;
+    }
 
     @Override
     public binary transform_to_binary() {
@@ -58,7 +84,39 @@ public class binary extends Numbers implements SLogical{
     public boolean equals(Object obj) {
         if (obj instanceof binary) {
             var other = (binary) obj;
-            return other.getBinary_value().equals(this.getBinary_value());
+            StringBuilder s1 = new StringBuilder();
+            StringBuilder s2 = new StringBuilder();
+            int l1 = this.getBinary_value().length();
+            int l2 = other.getBinary_value().length();
+            int max_length = java.lang.Math.max(l1, l2);
+            int n1 = this.transform_to_integers().getInt_value();
+            int n2 = other.transform_to_integers().getInt_value();
+            if ((n1 > 0 && n2 < 0) || (n2 > 0 && n1 < 0)){
+                return false;
+            }
+            else if(n1 < 0 && n2 < 0){
+                while(l1 < max_length){
+                    s1.append("1");
+                    l1 ++;
+                }
+                while(l2 < max_length){
+                    s2.append("1");
+                    l2 ++;
+                }
+            }
+            while(l1 < max_length){
+                s1.append("0");
+                l1 ++;
+            }
+            while(l2 < max_length){
+                s2.append("0");
+                l2 ++;
+            }
+            s1.append(this.getBinary_value());
+            s2.append(other.getBinary_value());
+            String binary_value1 = s1.toString();
+            String binary_value2 = s2.toString();
+            return binary_value1.equals(binary_value2);
         }
         return false;
     }
@@ -67,79 +125,85 @@ public class binary extends Numbers implements SLogical{
         return Objects.hash(binary.class);
     }
 
-    /**
-
     @Override
     public Inumber divide_a_Float(floats F) {
-        return super.divide_a_Float(F);
+        double result_value = F.getFloat_value() / this.transform_to_integers().getInt_value();
+        floats result = new floats(result_value);
+        return result.transform_to_integers().transform_to_binary();
     }
 
     @Override
     public Inumber divide_a_binary(binary B) {
-        return super.divide_a_binary(B);
+        int result_value = B.transform_to_integers().getInt_value() / this.transform_to_integers().getInt_value();
+        integers result = new integers(result_value);
+        return result.transform_to_binary();
     }
 
     @Override
     public Inumber divide_a_integer(integers I) {
-        return super.divide_a_integer(I);
+        int result_value = I.getInt_value() / this.transform_to_integers().getInt_value();
+        integers result = new integers(result_value);
+        return result.transform_to_binary();
     }
 
     @Override
     public Inumber divide(Inumber inumber) {
-        return super.divide(inumber);
+        return divide_a_binary(this);
     }
-**/
+
+
     @Override
     public Inumber substract_to_Float(floats F) {
-        return super.substract_to_Float(F);
+        double result_value = F.getFloat_value() - this.transform_to_integers().getInt_value();
+        floats result = new floats(result_value);
+        return result.transform_to_integers().transform_to_binary();
     }
 
     @Override
     public Inumber substract_to_binary(binary B) {
-        return super.substract_to_binary(B);
-    }
-
-    /**
-    @Override
-    public Inumber substract_to_Float(floats F) {
-        return super.substract_to_Float(F);
-    }
-
-    @Override
-    public Inumber substract_to_binary(binary B) {
-        return super.substract_to_binary(B);
+        int result_value = B.transform_to_integers().getInt_value() - this.transform_to_integers().getInt_value();
+        integers result = new integers(result_value);
+        return result.transform_to_binary();
     }
 
     @Override
     public Inumber substract_to_integer(integers I) {
-        return super.substract_to_integer(I);
+        int result_value = I.getInt_value() - this.transform_to_integers().getInt_value();
+        integers result = new integers(result_value);
+        return result.transform_to_binary();
     }
 
     @Override
     public Inumber substract(Inumber inumber) {
-        return super.substract(inumber);
+        return substract_to_binary(this);
     }
 
     @Override
     public Inumber multiply_to_Float(floats F) {
-        return super.multiply_to_Float(F);
+        double result_value = F.getFloat_value() * this.transform_to_integers().getInt_value();
+        floats result = new floats(result_value);
+        return result.transform_to_integers().transform_to_binary();
     }
 
     @Override
     public Inumber multiply_to_binary(binary B) {
-        return super.multiply_to_binary(B);
+        int result_value = B.transform_to_integers().getInt_value() * this.transform_to_integers().getInt_value();
+        integers result = new integers(result_value);
+        return result.transform_to_binary();
     }
 
     @Override
     public Inumber multiply_to_integer(integers I) {
-        return super.multiply_to_integer(I);
+        int result_value = I.getInt_value() * this.transform_to_integers().getInt_value();
+        integers result = new integers(result_value);
+        return result.transform_to_binary();
     }
 
     @Override
     public Inumber multiply(Inumber inumber) {
-        return super.multiply(inumber);
+        return multiply_to_binary(this);
     }
-**/
+
     @Override
     public Strings transform_to_string() {
         return new Strings(this.getBinary_value());
