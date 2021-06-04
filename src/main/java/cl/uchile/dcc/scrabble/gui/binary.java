@@ -214,7 +214,17 @@ public class binary extends Numbers implements SLogical{
 
     @Override
     public SLogical bool_and(Booleans B) {
-        return null;
+        int l = this.getBinary_value().length();
+        String str = this.getBinary_value();
+        StringBuilder result = new StringBuilder();
+        if(B.isBool_value()){
+            return new binary(str);
+        }
+        else{
+            result.append("0".repeat(l));
+            String strResult = result.toString();
+            return new binary(strResult);
+        }
     }
 
     @Override
@@ -280,7 +290,17 @@ public class binary extends Numbers implements SLogical{
 
     @Override
     public SLogical bool_or(Booleans B) {
-        return null;
+        int l = this.getBinary_value().length();
+        String str = this.getBinary_value();
+        StringBuilder result = new StringBuilder();
+        if(!B.isBool_value()){
+            return new binary(str);
+        }
+        else{
+            result.append("1".repeat(l));
+            String strResult = result.toString();
+            return new binary(strResult);
+        }
     }
 
     @Override
