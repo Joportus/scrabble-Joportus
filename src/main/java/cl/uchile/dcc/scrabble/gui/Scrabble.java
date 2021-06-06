@@ -14,6 +14,7 @@ import javafx.stage.Stage;
  * @author Ignacio Slater Muñoz.
  * @author <Your name>
  */
+
 public class Scrabble extends Application {
 
   public static void main(String[] args) {
@@ -32,5 +33,6 @@ public class Scrabble extends Application {
     primaryStage.setScene(scene);
 
     primaryStage.show();
+
   }
 }
