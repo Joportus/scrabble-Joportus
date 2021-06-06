@@ -21,14 +21,14 @@ public class binary extends Type implements SLogical, Binary_Int, Inumber {
     }
 
     /**
-     * Returns the Binary object's string value.
+     * Returns this Binary object's string value.
      */
     public String getBinary_value() {
         return binary_value;
     }
 
     /**
-     * Returns the  Scrabble binary object's String value.
+     * Returns this  Scrabble binary object's String value.
      */
     @Override
     public String toString() {
@@ -37,7 +37,7 @@ public class binary extends Type implements SLogical, Binary_Int, Inumber {
 
 
     /**
-     * Returns the transformation of a Scrabble's binary number to a
+     * Returns the transformation of this Scrabble's binary number to a
      * Scrabble's float number.
      */
     @Override
@@ -46,7 +46,7 @@ public class binary extends Type implements SLogical, Binary_Int, Inumber {
     }
 
     /**
-     * Returns the transformation of a Scrabble binary number to a
+     * Returns the transformation of this Scrabble binary number to a
      * Scrabble integer number.
      */
     @Override
@@ -91,7 +91,7 @@ public class binary extends Type implements SLogical, Binary_Int, Inumber {
     }
 
     /**
-     * Receives a Scrabble integer and returns the result of the
+     * Receives a Scrabble integer and returns the binary result of the
      * sum of the scrabble binary plus the Scrabble integer.
      */
     @Override
@@ -102,7 +102,7 @@ public class binary extends Type implements SLogical, Binary_Int, Inumber {
     }
 
     /**
-     * Receives a Scrabble float and returns the result of the
+     * Receives a Scrabble float and returns the floats result of the
      * sum of the scrabble binary plus the Scrabble float.
      */
     @Override
@@ -113,7 +113,7 @@ public class binary extends Type implements SLogical, Binary_Int, Inumber {
     }
 
     /**
-     * Receives a Scrabble binary and returns the result of the
+     * Receives a Scrabble binary and returns the binary result of the
      * sum of the scrabble binary plus the other scrabble binary.
      */
     @Override
@@ -188,7 +188,7 @@ public class binary extends Type implements SLogical, Binary_Int, Inumber {
 
     /**
      * Receives a Scrabble's float as input and returns the
-     * result of the Scrabble's float divided by this Scrabble's binary.
+     * floats result of the Scrabble's float divided by this Scrabble's binary.
      */
     @Override
     public Inumber divide_a_Float(floats F) {
@@ -196,7 +196,7 @@ public class binary extends Type implements SLogical, Binary_Int, Inumber {
         return new floats(result_value);
     }
     /**
-     * Receives a Scrabble's binary as input and returns the result
+     * Receives a Scrabble's binary as input and returns the binary result
      * of the Scrabble's binary divided by this Scrabble's binary.
      */
     @Override
@@ -206,7 +206,7 @@ public class binary extends Type implements SLogical, Binary_Int, Inumber {
         return result.transform_to_binary();
     }
     /**
-     * Receives a Scrabble's integer as input and returns the result
+     * Receives a Scrabble's integer as input and returns the integers result
      * of the Scrabble's integer divided by this Scrabble's binary.
      */
     @Override
@@ -227,7 +227,7 @@ public class binary extends Type implements SLogical, Binary_Int, Inumber {
     }
 
     /**
-     * Receives a Scrabble's float as input and returns the result
+     * Receives a Scrabble's float as input and returns the floats result
      * of the Scrabble's float minus this Scrabble's binary.
      */
     @Override
@@ -236,7 +236,7 @@ public class binary extends Type implements SLogical, Binary_Int, Inumber {
         return new floats(result_value);
     }
     /**
-     * Receives a Scrabble's binary as input and returns the result
+     * Receives a Scrabble's binary as input and returns the binary result
      * of the Scrabble's binary minus this Scrabble's binary.
      */
     @Override
@@ -246,7 +246,7 @@ public class binary extends Type implements SLogical, Binary_Int, Inumber {
         return result.transform_to_binary();
     }
     /**
-     * Receives a Scrabble's integer as input and returns the result
+     * Receives a Scrabble's integer as input and returns the integers result
      * of the Scrabble's integer minus this Scrabble's binary.
      */
     @Override
@@ -265,7 +265,7 @@ public class binary extends Type implements SLogical, Binary_Int, Inumber {
         return number.substract_to_binary(this);
     }
     /**
-     * Receives a Scrabble's float as input and returns the result
+     * Receives a Scrabble's float as input and returns the floats result
      * of the Scrabble's float multiplied by this Scrabble's binary.
      */
     @Override
@@ -274,7 +274,7 @@ public class binary extends Type implements SLogical, Binary_Int, Inumber {
         return new floats(result_value);
     }
     /**
-     * Receives a Scrabble's binary as input and returns the result
+     * Receives a Scrabble's binary as input and returns the binary result
      * of the Scrabble's binary multiplied by this Scrabble's binary.
      */
     @Override
@@ -284,7 +284,7 @@ public class binary extends Type implements SLogical, Binary_Int, Inumber {
         return result.transform_to_binary();
     }
     /**
-     * Receives a Scrabble's integer as input and returns the result
+     * Receives a Scrabble's integer as input and returns the integers result
      * of the Scrabble's float multiplied by this Scrabble's binary.
      */
     @Override
@@ -309,11 +309,8 @@ public class binary extends Type implements SLogical, Binary_Int, Inumber {
         return new Strings(this.getBinary_value());
     }
     /**
-     * Receives a Scrabble's binary as input and returns a Scrabble binary representing
-     * the result of a logical and operation between the Scrabble binary input and this Scrabble's binary.
-     *
-     * The binary output is calculated with the bit by bit logical and operation between the binary value
-     * and this binary value.
+     * Receives a Scrabble's Booleans as input and returns a Scrabble Booleans representing
+     * the result of a logical and operation between the Scrabble Booleans input and this Scrabble's Booleans.
      */
     @Override
     public SLogical bool_and(Booleans B) {
