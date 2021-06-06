@@ -2,7 +2,7 @@ package cl.uchile.dcc.scrabble.gui;
 
 import java.util.Objects;
 
-public class binary extends Numbers implements SLogical, Binary_Int{
+public class binary extends Type implements SLogical, Binary_Int, Inumber {
 
     private String binary_value;
 
@@ -70,7 +70,7 @@ public class binary extends Numbers implements SLogical, Binary_Int{
     }
 
     @Override
-    public floats sum_to_float(floats F) {
+    public Inumber sum_to_float(floats F) {
         double result_value = F.getFloat_value() + this.transform_to_integers().getInt_value();
         return new floats(result_value);
 
@@ -78,7 +78,7 @@ public class binary extends Numbers implements SLogical, Binary_Int{
 
 
     @Override
-    public binary sum_a_binary(binary B) {
+    public Binary_Int sum_a_binary(binary B) {
         int result_value = B.transform_to_integers().getInt_value() + this.transform_to_integers().getInt_value();
         integers result = new integers(result_value);
         return result.transform_to_binary();
@@ -154,7 +154,7 @@ public class binary extends Numbers implements SLogical, Binary_Int{
     }
 
 
-    public binary divide(Binary_Int number) {
+    public Binary_Int divide(Binary_Int number) {
         return number.divide_a_binary(this);
     }
 
@@ -179,7 +179,7 @@ public class binary extends Numbers implements SLogical, Binary_Int{
     }
 
 
-    public binary substract(Binary_Int number) {
+    public Binary_Int substract(Binary_Int number) {
         return number.substract_to_binary(this);
     }
 
@@ -203,7 +203,7 @@ public class binary extends Numbers implements SLogical, Binary_Int{
     }
 
 
-    public binary multiply(Binary_Int number) {
+    public Binary_Int multiply(Binary_Int number) {
         return number.multiply_to_binary(this);
     }
 

@@ -1,7 +1,8 @@
 package cl.uchile.dcc.scrabble.gui;
 
 public interface Inumber{
-    floats substract_to_Float(floats F);
+
+    Inumber substract_to_Float(floats F);
     Inumber substract_to_integer(integers I);
     Inumber multiply_to_Float(floats F);
     Inumber multiply_to_integer(integers I);

@@ -4,9 +4,10 @@ import java.util.Objects;
 
 import static java.lang.Math.abs;
 
-public class integers extends Numbers implements Binary_Int, Int_Float{
+public class integers extends Type implements Binary_Int, Int_Float, Inumber {
 
     private int int_value;
+
     public integers(int int_value){
         this.int_value = int_value;
     }
@@ -33,15 +34,13 @@ public class integers extends Numbers implements Binary_Int, Int_Float{
     @Override
     public Inumber sum_to_int(integers I) {
         int result_value = I.getInt_value() + this.getInt_value();
-        integers result = new integers(result_value);
-        return result;
+        return new integers(result_value);
     }
 
     @Override
     public floats sum_to_float(floats F) {
         double result_value = F.getFloat_value() + this.getInt_value();
-        floats result = new floats(result_value);
-        return result;
+        return new floats(result_value);
     }
 
     @Override
@@ -51,7 +50,7 @@ public class integers extends Numbers implements Binary_Int, Int_Float{
         return result.transform_to_binary();
     }
 
-
+    @Override
     public Inumber sum(Inumber t) {
         return t.sum_to_int(this);
     }
@@ -142,7 +141,7 @@ public class integers extends Numbers implements Binary_Int, Int_Float{
         return new integers(result_value);
     }
 
-
+    @Override
     public Inumber substract(Inumber inumber) {
         return inumber.substract_to_integer(this);
     }
@@ -165,7 +164,7 @@ public class integers extends Numbers implements Binary_Int, Int_Float{
         int result_value = I.getInt_value() * this.getInt_value();
         return new integers(result_value);
     }
-
+    @Override
     public Inumber multiply(Inumber inumber) {
         return inumber.multiply_to_integer(this);
     }
@@ -189,7 +188,7 @@ public class integers extends Numbers implements Binary_Int, Int_Float{
         return new integers(result_value);
     }
 
-
+    @Override
     public Inumber divide(Inumber inumber) {
         return inumber.divide_a_integer(this);
     }

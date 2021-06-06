@@ -3,12 +3,6 @@ import java.util.Objects;
 
 public abstract class Type implements Itypes{
 
-    /**
-    @Override
-    public String toString() {
-        return super.toString();
-    }
-     **/
     @Override
     public Strings transform_to_string() {
         return new Strings(this.toString());

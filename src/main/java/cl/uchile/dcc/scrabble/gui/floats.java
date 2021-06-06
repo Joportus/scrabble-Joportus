@@ -2,7 +2,7 @@ package cl.uchile.dcc.scrabble.gui;
 
 import java.util.Objects;
 
-public class floats extends Numbers implements Int_Float{
+public class floats extends Type implements Int_Float, Inumber {
 
     private final double float_value;
     public floats(double float_value){
@@ -31,12 +31,12 @@ public class floats extends Numbers implements Int_Float{
     }
 
     @Override
-    public floats sum_to_float(floats F) {
+    public Inumber sum_to_float(floats F) {
         double result_value = this.getFloat_value() + F.getFloat_value();
         floats result = new floats(result_value);
         return result;
     }
-
+    @Override
     public Inumber sum(Inumber t) {
         return t.sum_to_float(this);
     }
@@ -45,6 +45,7 @@ public class floats extends Numbers implements Int_Float{
     public int hashCode(){
         return Objects.hash(floats.class);
     }
+
     @Override
     public boolean equals(Object obj) {
         if (obj instanceof floats) {
@@ -55,7 +56,7 @@ public class floats extends Numbers implements Int_Float{
     }
 
     @Override
-    public floats substract_to_Float(floats F) {
+    public Inumber substract_to_Float(floats F) {
         double result_value = F.getFloat_value() - this.getFloat_value();
         return new floats(result_value);
     }
@@ -65,13 +66,13 @@ public class floats extends Numbers implements Int_Float{
         double result_value = I.getInt_value() - this.getFloat_value();
         return new floats(result_value);
     }
-
-    public floats substract(Inumber inumber) {
+    @Override
+    public Inumber substract(Inumber inumber) {
         return inumber.substract_to_Float(this);
     }
 
     @Override
-    public floats multiply_to_Float(floats F) {
+    public Inumber multiply_to_Float(floats F) {
         double result_value = F.getFloat_value() * this.getFloat_value();
         return new floats(result_value);
     }
@@ -82,7 +83,7 @@ public class floats extends Numbers implements Int_Float{
         return new floats(result_value);
     }
 
-
+    @Override
     public Inumber multiply(Inumber inumber) {
         return inumber.multiply_to_Float(this);
     }
@@ -99,7 +100,7 @@ public class floats extends Numbers implements Int_Float{
         return new floats(result_value);
     }
 
-
+    @Override
     public Inumber divide(Inumber inumber) {
         return inumber.divide_a_Float(this);
     }

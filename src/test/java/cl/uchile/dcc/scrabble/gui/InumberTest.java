@@ -66,10 +66,11 @@ class InumberTest {
 
         int result7 = bin1.transform_to_integers().getInt_value() - bin2.transform_to_integers().getInt_value();
         binary expectedResult7 = new integers(result7).transform_to_binary();
-        binary actualResult7 = bin1.substract(bin2);
+        Binary_Int actualResult7 = bin1.substract(bin2);
         assertEquals(expectedResult7, actualResult7);
 
-        Inumber actualResult8 = bin2.substract(bin1);
+
+        Binary_Int actualResult8 = bin2.substract(bin1);
         assertNotEquals(actualResult7, actualResult8);
 
 
@@ -99,10 +100,10 @@ class InumberTest {
 
         int result7 = bin1.transform_to_integers().getInt_value() * bin2.transform_to_integers().getInt_value();
         binary expectedResult7 = new integers(result7).transform_to_binary();
-        binary actualResult7 = bin1.multiply(bin2);
+        Binary_Int actualResult7 = bin1.multiply(bin2);
         assertEquals(expectedResult7, actualResult7);
 
-        Inumber actualResult8 = bin2.multiply(bin1);
+        Binary_Int actualResult8 = bin2.multiply(bin1);
         assertEquals(actualResult7, actualResult8);
 
 
