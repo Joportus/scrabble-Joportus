@@ -97,7 +97,7 @@ public class integers extends Type implements Binary_Int, Int_Float, Inumber {
         }
         for (int k = i - 1; k >= 0; k--){
             if (str.charAt(k) == '1'){
-                str.replace(k, k+1, "0");
+                str.replace(k, k + 1, "0");
             }
             else{
                 str.replace(k, k + 1, "1");

@@ -26,15 +26,13 @@ public class floats extends Type implements Int_Float, Inumber {
     @Override
     public Inumber sum_to_int(integers I) {
         double result_value = this.getFloat_value() + I.getInt_value();
-        floats result = new floats(result_value);
-        return result;
+        return new floats(result_value);
     }
 
     @Override
     public Inumber sum_to_float(floats F) {
         double result_value = this.getFloat_value() + F.getFloat_value();
-        floats result = new floats(result_value);
-        return result;
+        return new floats(result_value);
     }
     @Override
     public Inumber sum(Inumber t) {
