@@ -19,7 +19,7 @@ public class Booleans extends Type implements SLogical{
         return super.transform_to_string();
     }
 
-    @Override
+
     public Booleans transform_to_boolean() {
         return new Booleans(this.isBool_value());
     }
@@ -94,4 +94,5 @@ public class Booleans extends Type implements SLogical{
         boolean result_value = !this.isBool_value();
         return new Booleans(result_value);
     }
+
 }

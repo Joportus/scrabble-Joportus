@@ -13,32 +13,7 @@ public abstract class Type implements Itypes{
     public Strings transform_to_string() {
         return new Strings(this.toString());
     }
-    @Override
-    public floats transform_to_float(){
-        return null;
-    }
-    @Override
-    public integers transform_to_integers(){
-        return null;
-    }
-    @Override
-    public binary transform_to_binary(){
-        return null;
-    }
-    @Override
-    public Booleans transform_to_boolean(){
-        return null;
-    }
 
-    @Override
-    public Itypes sum_to_int(integers I) {
-        return null;
-    }
-
-    @Override
-    public Itypes sum_to_float(floats F) {
-        return null;
-    }
 
     @Override
     public Strings sum_to_string(Strings S) {
@@ -46,15 +21,7 @@ public abstract class Type implements Itypes{
         return new Strings(result);
     }
 
-    @Override
-    public binary sum_a_binary(binary B) {
-        return null;
-    }
 
-    @Override
-    public Itypes sum(Itypes t) {
-        return null;
-    }
 
 
 }

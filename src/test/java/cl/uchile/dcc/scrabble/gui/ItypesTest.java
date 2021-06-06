@@ -49,15 +49,15 @@ class ItypesTest {
     @Test
     void sum() {
         integers expectedResult = new integers(i + i);
-        Itypes actual_result = I.sum(I2);
+        Inumber actual_result = I.sum(I2);
         assertEquals(expectedResult, actual_result);
         assertEquals(expectedResult.hashCode(), actual_result.hashCode());
         floats expectedResult_2 = new floats(fl + fl);
         floats expectedResult_3 = new floats(fl + i);
-        Itypes actual_result_2 = F.sum(F);
-        Itypes actual_result_3 = I.sum(F);
-        Itypes actual_result_3b = F.sum(I);
-        Itypes different_result = I3.sum(F);
+        Inumber actual_result_2 = F.sum(F);
+        Inumber actual_result_3 = I.sum(F);
+        Inumber actual_result_3b = F.sum(I);
+        Inumber different_result = I3.sum(F);
 
         assertEquals(expectedResult_2, actual_result_2);
         assertEquals(expectedResult_3, actual_result_3);
@@ -65,7 +65,7 @@ class ItypesTest {
         assertNotEquals(different_result, actual_result_3);
 
         Strings expectedResult4 =  new Strings("hello500");
-        Itypes actualResult4 = S.sum(I3);
+        Strings actualResult4 = S.sum(I3);
         assertEquals(expectedResult4, actualResult4);
 
     }

@@ -4,7 +4,7 @@ import java.util.Objects;
 
 import static java.lang.Math.abs;
 
-public class integers extends Numbers{
+public class integers extends Numbers implements Binary_Int, Int_Float{
 
     private int int_value;
     public integers(int int_value){
@@ -31,21 +31,28 @@ public class integers extends Numbers{
     }
 
     @Override
-    public Itypes sum_to_int(integers I) {
+    public Inumber sum_to_int(integers I) {
         int result_value = I.getInt_value() + this.getInt_value();
         integers result = new integers(result_value);
         return result;
     }
 
     @Override
-    public Itypes sum_to_float(floats F) {
+    public floats sum_to_float(floats F) {
         double result_value = F.getFloat_value() + this.getInt_value();
         floats result = new floats(result_value);
         return result;
     }
 
     @Override
-    public Itypes sum(Itypes t) {
+    public binary sum_a_binary(binary B) {
+        int result_value = B.transform_to_integers().getInt_value() + this.getInt_value();
+        integers result = new integers(result_value);
+        return result.transform_to_binary();
+    }
+
+
+    public Inumber sum(Inumber t) {
         return t.sum_to_int(this);
     }
 
@@ -116,14 +123,14 @@ public class integers extends Numbers{
     }
 
     @Override
-    public Inumber substract_to_Float(floats F) {
+    public floats substract_to_Float(floats F) {
         double result_value = F.getFloat_value() - this.getInt_value();
         return new floats(result_value);
     }
 
 
     @Override
-    public Inumber substract_to_binary(binary B) {
+    public binary substract_to_binary(binary B) {
         int result_value = B.transform_to_integers().getInt_value() - this.getInt_value();
         integers result = new integers(result_value);
         return result.transform_to_binary();
@@ -135,31 +142,30 @@ public class integers extends Numbers{
         return new integers(result_value);
     }
 
-    @Override
+
     public Inumber substract(Inumber inumber) {
         return inumber.substract_to_integer(this);
     }
 
     @Override
-    public Inumber multiply_to_Float(floats F) {
+    public floats multiply_to_Float(floats F) {
         double result_value = F.getFloat_value() * this.getInt_value();
         return new floats(result_value);
     }
 
     @Override
-    public Inumber multiply_to_binary(binary B) {
+    public binary multiply_to_binary(binary B) {
         int result_value = B.transform_to_integers().getInt_value() * this.getInt_value();
         integers result = new integers(result_value);
         return result.transform_to_binary();
     }
 
     @Override
-    public Inumber multiply_to_integer(integers I) {
+    public Int_Float multiply_to_integer(integers I) {
         int result_value = I.getInt_value() * this.getInt_value();
         return new integers(result_value);
     }
 
-    @Override
     public Inumber multiply(Inumber inumber) {
         return inumber.multiply_to_integer(this);
     }
@@ -171,7 +177,7 @@ public class integers extends Numbers{
     }
 
     @Override
-    public Inumber divide_a_binary(binary B) {
+    public binary divide_a_binary(binary B) {
         int result_value = B.transform_to_integers().getInt_value() / this.getInt_value();
         integers result = new integers(result_value);
         return result.transform_to_binary();
@@ -183,7 +189,7 @@ public class integers extends Numbers{
         return new integers(result_value);
     }
 
-    @Override
+
     public Inumber divide(Inumber inumber) {
         return inumber.divide_a_integer(this);
     }

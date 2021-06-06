@@ -2,7 +2,7 @@ package cl.uchile.dcc.scrabble.gui;
 
 import java.util.Objects;
 
-public class binary extends Numbers implements SLogical{
+public class binary extends Numbers implements SLogical, Binary_Int{
 
     private String binary_value;
 
@@ -22,7 +22,7 @@ public class binary extends Numbers implements SLogical{
 
     @Override
     public floats transform_to_float() {
-        return super.transform_to_float();
+        return this.transform_to_integers().transform_to_float();
     }
 
     @Override
@@ -63,17 +63,17 @@ public class binary extends Numbers implements SLogical{
     }
 
     @Override
-    public Itypes sum_to_int(integers I) {
+    public Inumber sum_to_int(integers I) {
         int result_value = I.getInt_value() + this.transform_to_integers().getInt_value();
         integers result = new integers(result_value);
         return result.transform_to_binary();
     }
 
     @Override
-    public Itypes sum_to_float(floats F) {
+    public floats sum_to_float(floats F) {
         double result_value = F.getFloat_value() + this.transform_to_integers().getInt_value();
-        floats result = new floats(result_value);
-        return result.transform_to_integers().transform_to_binary();
+        return new floats(result_value);
+
     }
 
 
@@ -84,8 +84,8 @@ public class binary extends Numbers implements SLogical{
         return result.transform_to_binary();
     }
 
-    @Override
-    public Itypes sum(Itypes t) {
+
+    public Binary_Int sum(Binary_Int t) {
         return t.sum_a_binary(this);
     }
 
@@ -141,7 +141,7 @@ public class binary extends Numbers implements SLogical{
     }
 
     @Override
-    public Inumber divide_a_binary(binary B) {
+    public binary divide_a_binary(binary B) {
         int result_value = B.transform_to_integers().getInt_value() / this.transform_to_integers().getInt_value();
         integers result = new integers(result_value);
         return result.transform_to_binary();
@@ -153,20 +153,20 @@ public class binary extends Numbers implements SLogical{
         return new integers(result_value);
     }
 
-    @Override
-    public Inumber divide(Inumber inumber) {
-        return inumber.divide_a_binary(this);
+
+    public binary divide(Binary_Int number) {
+        return number.divide_a_binary(this);
     }
 
 
     @Override
-    public Inumber substract_to_Float(floats F) {
+    public floats substract_to_Float(floats F) {
         double result_value = F.getFloat_value() - this.transform_to_integers().getInt_value();
         return new floats(result_value);
     }
 
     @Override
-    public Inumber substract_to_binary(binary B) {
+    public binary substract_to_binary(binary B) {
         int result_value = B.transform_to_integers().getInt_value() - this.transform_to_integers().getInt_value();
         integers result = new integers(result_value);
         return result.transform_to_binary();
@@ -178,33 +178,33 @@ public class binary extends Numbers implements SLogical{
         return new integers(result_value);
     }
 
-    @Override
-    public Inumber substract(Inumber inumber) {
-        return inumber.substract_to_binary(this);
+
+    public binary substract(Binary_Int number) {
+        return number.substract_to_binary(this);
     }
 
     @Override
-    public Inumber multiply_to_Float(floats F) {
+    public floats multiply_to_Float(floats F) {
         double result_value = F.getFloat_value() * this.transform_to_integers().getInt_value();
         return new floats(result_value);
     }
 
     @Override
-    public Inumber multiply_to_binary(binary B) {
+    public binary multiply_to_binary(binary B) {
         int result_value = B.transform_to_integers().getInt_value() * this.transform_to_integers().getInt_value();
         integers result = new integers(result_value);
         return result.transform_to_binary();
     }
 
     @Override
-    public Inumber multiply_to_integer(integers I) {
+    public Int_Float multiply_to_integer(integers I) {
         int result_value = I.getInt_value() * this.transform_to_integers().getInt_value();
         return new integers(result_value);
     }
 
-    @Override
-    public Inumber multiply(Inumber inumber) {
-        return inumber.multiply_to_binary(this);
+
+    public binary multiply(Binary_Int number) {
+        return number.multiply_to_binary(this);
     }
 
     @Override
