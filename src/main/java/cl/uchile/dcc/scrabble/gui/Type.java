@@ -22,5 +22,4 @@ public abstract class Type implements Itypes{
 
 
 
-
 }

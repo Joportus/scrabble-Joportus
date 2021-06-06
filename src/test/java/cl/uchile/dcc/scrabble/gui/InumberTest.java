@@ -141,4 +141,20 @@ class InumberTest {
 
 
     }
+
+    @Test
+    void sum(){
+        integers number1 = bin1.transform_to_integers();
+        integers number2 = bin2.transform_to_integers();
+        System.out.println(number1);
+        System.out.println(number2);
+        int result_int = number1.getInt_value() + number2.getInt_value();
+        integers result_integers = new integers(result_int);
+        binary expectedResult = result_integers.transform_to_binary();
+        binary actualResult = (binary) bin1.sum(bin2);
+        assertEquals(expectedResult, actualResult);
+
+
+    }
+
 }
