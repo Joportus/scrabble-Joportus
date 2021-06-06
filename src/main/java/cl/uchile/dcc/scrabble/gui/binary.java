@@ -11,7 +11,7 @@ public class binary extends Type implements SLogical, Binary_Int, Inumber {
     private String binary_value;
 
     /**
-     * Creates a new binary number.
+     * Creates a new binary object.
      *
      * @param binary_value
      *        A binary number in string format.
@@ -21,14 +21,14 @@ public class binary extends Type implements SLogical, Binary_Int, Inumber {
     }
 
     /**
-     * Returns the Binary number string value.
+     * Returns the Binary object's string value.
      */
     public String getBinary_value() {
         return binary_value;
     }
 
     /**
-     * Returns the  Scrabble binary number's String value.
+     * Returns the  Scrabble binary object's String value.
      */
     @Override
     public String toString() {
