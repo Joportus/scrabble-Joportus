@@ -13,11 +13,15 @@ class BooleansTest {
     private boolean F = false;
     private Booleans b;
     private Booleans f;
+    private int i = 10;
+    private integers I;
+
 
     @BeforeEach
     void setUp(){
         b = new Booleans(T);
         f = new Booleans(F);
+        I = new integers(i);
 
 
     }
@@ -29,6 +33,7 @@ class BooleansTest {
         assertNotEquals(unexpectedBool, b);
         assertEquals(expectedBool.hashCode(), b.hashCode());
         assertEquals(unexpectedBool.hashCode(), b.hashCode());
+        assertNotEquals(b, I);
 
     }
     @Test
@@ -45,12 +50,13 @@ class BooleansTest {
 
     @Test
     void to_string(){
-        /**
+
         String expectedResult = "true";
         String actualResult = b.toString();
         String expectedResult2 = "false";
         String actualResult2 = f.toString();
-        **/
+        assertEquals(expectedResult, actualResult);
+        assertEquals(expectedResult2, actualResult2);
     }
 /**
     @Test

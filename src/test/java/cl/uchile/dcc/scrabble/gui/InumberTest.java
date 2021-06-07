@@ -100,6 +100,12 @@ class InumberTest {
         floats actualResult10 = (floats) F.substract(bin1);
         assertEquals(expectedResult10, actualResult10);
 
+        int expectedResult_value11 =  bin1.transform_to_integers().getInt_value() - I.getInt_value();
+        integers expectedResult11_i = new integers(expectedResult_value11);
+        binary expectedResult11 = expectedResult11_i.transform_to_binary();
+        binary actualResult11 = (binary) bin1.substract(I);
+        assertEquals(expectedResult11, actualResult11);
+
 
 
 
@@ -153,6 +159,12 @@ class InumberTest {
         floats expectedResult9 = new floats(expectedResult_value9);
         floats actualResult9 = (floats) F.multiply(bin1);
         assertEquals(expectedResult9, actualResult9);
+
+        int expectedResult_value10 =  bin1.transform_to_integers().getInt_value() * I.getInt_value();
+        integers expectedResult10_i = new integers(expectedResult_value10);
+        binary expectedResult10 = expectedResult10_i.transform_to_binary();
+        binary actualResult10 = (binary) bin1.multiply(I);
+        assertEquals(expectedResult10, actualResult10);
 
 
 
@@ -216,6 +228,13 @@ class InumberTest {
         floats actualResult9 = (floats) F.divide(bin1);
         assertEquals(expectedResult9, actualResult9);
 
+        int expectedResult_value10 =  bin1.transform_to_integers().getInt_value() / I.getInt_value();
+        integers expectedResult10_i = new integers(expectedResult_value10);
+        binary expectedResult10 = expectedResult10_i.transform_to_binary();
+        binary actualResult10 = (binary) bin1.divide(I);
+        assertEquals(expectedResult10, actualResult10);
+
+
 
 
 
@@ -243,10 +262,18 @@ class InumberTest {
         integers actualResult2 = (integers) I.sum(bin1);
         assertEquals(expectedResult2, actualResult2);
 
-        double result_value2 = F.getFloat_value() + bin1.transform_to_float().getFloat_value();
-        floats expectedResult3 = new floats(result_value2);
-        floats actualResult3 = (floats) F.sum(bin1);
+
+        int expectedResult_value3 =  bin1.transform_to_integers().getInt_value() + I.getInt_value();
+        integers expectedResult3_i = new integers(expectedResult_value3);
+        binary expectedResult3 = expectedResult3_i.transform_to_binary();
+        binary actualResult3 = (binary) bin1.sum(I);
         assertEquals(expectedResult3, actualResult3);
+
+        double expectedResult_value4 = F.getFloat_value() + bin1.transform_to_float().getFloat_value();
+        floats expectedResult4 = new floats(expectedResult_value4);
+        floats actualResult4 = (floats) F.sum(bin1);
+        assertEquals(expectedResult4, actualResult4);
+
 
 
     }

@@ -99,6 +99,7 @@ public class integers extends Type implements Binary_Int, Int_Float, Inumber {
      * Returns the transformation of this Scrabble's integers object to a
      * Scrabble's binary object.
      */
+
     @Override
     public binary transform_to_binary() {
         int i = this.getInt_value();

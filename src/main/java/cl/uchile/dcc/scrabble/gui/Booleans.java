@@ -46,7 +46,7 @@ public class Booleans extends Type implements SLogical{
      */
     @Override
     public String toString() {
-        return String.valueOf(this);
+        return String.valueOf(this.isBool_value());
     }
     /**
      * Returns this object's hash code.

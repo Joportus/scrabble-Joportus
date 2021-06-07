@@ -1,5 +1,6 @@
 package cl.uchile.dcc.scrabble.gui;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
@@ -32,6 +33,9 @@ class ItypesTest {
     private floats F;
     private Random rng;
     private int seed;
+    private int strSize;
+    private String first_random_string;
+    private char[] ZeroOne = {'0','1'};
 
     @BeforeEach
     void setUp(){
@@ -48,6 +52,8 @@ class ItypesTest {
         bin_1 = new binary(b_1);
         seed = new Random().nextInt();
         rng = new Random(seed);
+        strSize = rng.nextInt(20);
+        first_random_string = RandomStringUtils.random(strSize, 0, Character.MAX_CODE_POINT, true, false, null, rng);
     }
     @Test
     void transform_to_float() {

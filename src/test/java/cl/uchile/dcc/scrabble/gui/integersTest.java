@@ -10,10 +10,14 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class integersTest {
     private int i = 1005;
+    private String b4 = "01101110101111011";
+    private int i4 = 56699;
     private double fl = 1005;
     private int i2 = 1200;
     private String s = String.valueOf(i);
     private integers I;
+    private integers I4;
+    private binary bin4;
     private integers I2;
     private floats F;
     private Random rng;
@@ -23,9 +27,12 @@ class integersTest {
     void setUp(){
         I = new integers(i);
         I2 = new integers(i2);
+        I4 = new integers(i4);
+        bin4 = new binary(b4);
         F = new floats(fl);
         seed = new Random().nextInt();
         rng = new Random(seed);
+
     }
     @Test
     void constructorTest(){
@@ -33,6 +40,7 @@ class integersTest {
         assertEquals(expectedInt, I);
         assertEquals(expectedInt.hashCode(), I.hashCode());
         assertEquals(I2.hashCode(), expectedInt.hashCode());
+        assertNotEquals(I, F);
     }
 
     @Test
@@ -54,25 +62,12 @@ class integersTest {
 
     }
 
-/**
-    @Test
-    void getInt_value() {
-    }
-
-    @Test
-    void testToString() {
-    }
-
-    @Test
-    void transform_to_float() {
-    }
-
-    @Test
-    void transform_to_integers() {
-    }
 
     @Test
     void transform_to_binary() {
+        binary expectedResult = bin4;
+        binary actualResult = I4.transform_to_binary();
+        assertEquals(expectedResult, actualResult);
     }
-    **/
+
 }

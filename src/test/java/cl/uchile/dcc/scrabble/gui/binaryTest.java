@@ -16,6 +16,7 @@ class binaryTest {
     private int i = 1005;
     private int i2 = 500;
     private int i3 = 484;
+    private int i4 = 56699;
     private String s = "hello";
     private Strings S;
     private double fl = 1005;
@@ -26,6 +27,7 @@ class binaryTest {
     private String nb = "11010110";
     private String nb2 = "11111010110";
     private String b_1 = "1";
+    private String b4 = "01101110101111011";
     private binary bin0;
     private binary bin1;
     private binary bin11;
@@ -34,6 +36,7 @@ class binaryTest {
     private binary bin_nb_2;
     private binary bin_bn;
     private binary bin_bn_2;
+    private binary bin_3;
     private integers I0;
     private integers I1;
     private integers I;
@@ -65,6 +68,7 @@ class binaryTest {
         bin_nb_2 = new binary(nb2);
         bin_bn = new binary(bn);
         bin_bn_2 = new binary(bn2);
+        bin_3 = new binary(b4);
         seed = new Random().nextInt();
         rng = new Random(seed);
         seed = new Random().nextInt();
@@ -74,6 +78,7 @@ class binaryTest {
         second_random_binary_value = RandomStringUtils.random(strSize, ZeroOne);
 
     }
+
     @RepeatedTest(100)
     void constructorTest() {
         var expectedBinary = new binary(first_random_binary_value);
@@ -87,6 +92,7 @@ class binaryTest {
         assertEquals(bin_nb_2, bin_nb);
         assertEquals(bin_bn_2, bin_bn);
         assertNotEquals(bn, nb);
+        assertNotEquals(bin1, I);
 
 
 
@@ -107,6 +113,7 @@ class binaryTest {
     @Test
     void transform_to_integers(){
 
+
         integers expectedResult = new integers(i3);
         integers actualResult = bin11.transform_to_integers();
         assertEquals(expectedResult, actualResult);
@@ -115,9 +122,11 @@ class binaryTest {
         integers actualResult2 = bin0.transform_to_integers();
         assertEquals(expectedResult2, actualResult2);
 
-        integers actualResult3 = bin_1.transform_to_integers();
+        integers expectedResult3 = new integers(i4);
+        integers actualResult3 = bin_3.transform_to_integers();
+        assertEquals(expectedResult3, actualResult3);
         System.out.println(actualResult3);
-
+        System.out.println(expectedResult3);
         binary eq1 = new binary("1");
         binary eq2 = new binary("11");
         assertEquals(eq1, eq2);
