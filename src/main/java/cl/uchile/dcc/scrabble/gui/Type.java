@@ -7,7 +7,9 @@ import java.util.Objects;
  */
 public abstract class Type implements Itypes{
 
-
+    /**
+     * Returns the Scrabble String representation of this object.
+     */
     @Override
     public Strings transform_to_string() {
         return new Strings(this.toString());

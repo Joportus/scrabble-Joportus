@@ -97,8 +97,7 @@ public class binary extends Type implements SLogical, Binary_Int, Inumber {
     @Override
     public Inumber sum_to_int(integers I) {
         int result_value = I.getInt_value() + this.transform_to_integers().getInt_value();
-        integers result = new integers(result_value);
-        return result.transform_to_binary();
+        return new integers(result_value);
     }
 
     /**
@@ -301,13 +300,7 @@ public class binary extends Type implements SLogical, Binary_Int, Inumber {
         return number.multiply_to_binary(this);
     }
 
-    /**
-     * Returns the Scrabble String representation of this Scrabble binary number
-     */
-    @Override
-    public Strings transform_to_string() {
-        return new Strings(this.getBinary_value());
-    }
+
     /**
      * Receives a Scrabble's Booleans as input and returns a Scrabble Booleans representing
      * the result of a logical and operation between the Scrabble Booleans input and this Scrabble's Booleans.

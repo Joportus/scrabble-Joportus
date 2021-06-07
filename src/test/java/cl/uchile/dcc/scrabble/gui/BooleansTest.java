@@ -2,6 +2,7 @@ package cl.uchile.dcc.scrabble.gui;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import java.lang.*;
 
 import java.util.Random;
 
@@ -11,10 +12,13 @@ class BooleansTest {
     private boolean T = true;
     private boolean F = false;
     private Booleans b;
+    private Booleans f;
 
     @BeforeEach
     void setUp(){
         b = new Booleans(T);
+        f = new Booleans(F);
+
 
     }
     @Test
@@ -31,6 +35,7 @@ class BooleansTest {
     void transform_to_boolean() {
         assertEquals(b, b.transform_to_boolean());
     }
+
     @Test
     void negate(){
         Booleans expectedResult = new Booleans(false);
@@ -38,7 +43,15 @@ class BooleansTest {
         assertEquals(expectedResult, actualResult);
     }
 
-
+    @Test
+    void to_string(){
+        /**
+        String expectedResult = "true";
+        String actualResult = b.toString();
+        String expectedResult2 = "false";
+        String actualResult2 = f.toString();
+        **/
+    }
 /**
     @Test
     void isBool_value() {

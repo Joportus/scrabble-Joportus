@@ -50,7 +50,7 @@ class integersTest {
     void getInt_value() {
         int random_integer = rng.nextInt(50000);
         integers random_Integers = new integers(random_integer);
-        assertEquals(random_Integers.getInt_value(), random_integer);
+        assert random_integer == random_Integers.getInt_value();
 
     }
 

@@ -1,6 +1,8 @@
 package cl.uchile.dcc.scrabble.gui;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 
 import java.util.Random;
@@ -18,12 +20,20 @@ class binaryTest {
     private Strings S;
     private double fl = 1005;
     private String b0 = "0";
-    private String b1 = "0111100100";
-    private String b2 = "01100100";
+    private String b11 = "0111100100";
+    private String bn = "011001";
+    private String bn2 = "000011001";
+    private String nb = "11010110";
+    private String nb2 = "11111010110";
     private String b_1 = "1";
     private binary bin0;
     private binary bin1;
+    private binary bin11;
     private binary bin_1;
+    private binary bin_nb;
+    private binary bin_nb_2;
+    private binary bin_bn;
+    private binary bin_bn_2;
     private integers I0;
     private integers I1;
     private integers I;
@@ -33,6 +43,10 @@ class binaryTest {
     private floats F;
     private Random rng;
     private int seed;
+    private int strSize;
+    private String first_random_binary_value;
+    private String second_random_binary_value;
+    private char[] ZeroOne = {'0','1'};
 
     @BeforeEach
     void setUp(){
@@ -45,37 +59,56 @@ class binaryTest {
         S = new Strings("hello");
         F = new floats(fl);
         bin0 = new binary (b0);
-        bin1 = new binary(b1);
         bin_1 = new binary(b_1);
+        bin11 = new binary(b11);
+        bin_nb = new binary(nb);
+        bin_nb_2 = new binary(nb2);
+        bin_bn = new binary(bn);
+        bin_bn_2 = new binary(bn2);
         seed = new Random().nextInt();
         rng = new Random(seed);
+        seed = new Random().nextInt();
+        rng = new Random(seed);
+        strSize = rng.nextInt(20) + 1;
+        first_random_binary_value = RandomStringUtils.random(strSize, ZeroOne);
+        second_random_binary_value = RandomStringUtils.random(strSize, ZeroOne);
 
     }
-    @Test
+    @RepeatedTest(100)
     void constructorTest() {
-        var expectedBinary = new binary(b1);
-        var unexpectedBinary = new binary(b2);
+        var expectedBinary = new binary(first_random_binary_value);
+        var unexpectedBinary = new binary(second_random_binary_value);
+        bin1 = new binary(first_random_binary_value);
         assertEquals(expectedBinary, bin1);
-        assertNotEquals(unexpectedBinary, bin1);
         assertEquals(expectedBinary.hashCode(), bin1.hashCode());
         assertEquals(unexpectedBinary.hashCode(), bin1.hashCode());
+        assertEquals(bin_nb, bin_nb_2);
+        assertEquals(bin_bn, bin_bn_2);
+        assertEquals(bin_nb_2, bin_nb);
+        assertEquals(bin_bn_2, bin_bn);
+        assertNotEquals(bn, nb);
+
+
 
     }
 
     @Test
     void transform_to_binary() {
-    assertEquals(bin1, bin1.transform_to_binary());
+        bin1 = new binary(first_random_binary_value);
+        assertEquals(bin1, bin1.transform_to_binary());
     }
 
     @Test
     void testToString() {
-        assertEquals(b1, bin1.toString());
+        bin1 = new binary(first_random_binary_value);
+        assertEquals(bin1.getBinary_value(), bin1.toString());
 
     }
     @Test
     void transform_to_integers(){
+
         integers expectedResult = new integers(i3);
-        integers actualResult = bin1.transform_to_integers();
+        integers actualResult = bin11.transform_to_integers();
         assertEquals(expectedResult, actualResult);
 
         integers expectedResult2 = new integers(0);
@@ -96,7 +129,7 @@ class binaryTest {
     void transform_to_float(){
         integers expectedResult_int = new integers(i3);
         floats expectedResult = expectedResult_int.transform_to_float();
-        floats actualResult = bin1.transform_to_float();
+        floats actualResult = bin11.transform_to_float();
         assertEquals(expectedResult, actualResult);
 
         integers expectedResult2_int = new integers(0);
@@ -114,11 +147,12 @@ class binaryTest {
 
     }
 
-    /**
     @Test
     void getBinary_value() {
+        bin1 = new binary(first_random_binary_value);
+        assert bin1.getBinary_value().equals(first_random_binary_value);
     }
-
+/**
     @Test
     void testToString() {
     }
