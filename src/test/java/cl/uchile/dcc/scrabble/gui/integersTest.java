@@ -46,6 +46,7 @@ class integersTest {
     @Test
     void transform_to_integers() {
         assertEquals(I, I.transform_to_integers());
+        assertNull(F.transform_to_integers());
     }
 
     @Test

@@ -93,6 +93,7 @@ public class Booleans extends Type{
      * Ultimately, it calculates the result the logical and operation between this Scrabble Booleans object and
      * the SLogical input object.
      */
+    @Override
     public Itypes and(Itypes L) {
         return L.bool_and(this);
     }
@@ -134,6 +135,7 @@ public class Booleans extends Type{
      * the SLogical input object.
      */
 
+    @Override
     public Itypes or(Itypes L) {
         return L.bool_or(this);
     }

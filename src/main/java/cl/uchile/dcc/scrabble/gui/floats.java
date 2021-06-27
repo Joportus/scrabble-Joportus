@@ -65,6 +65,7 @@ public class floats extends Type{
      * Ultimately, it calculates the result of the Inumber input added to this float object.
      */
 
+    @Override
     public Itypes sum(Itypes t) {
         return t.sum_to_float(this);
     }
@@ -113,6 +114,7 @@ public class floats extends Type{
      * Ultimately, it calculates the result of this floats object subtracted to the Inumber input.
      */
 
+    @Override
     public Itypes substract(Itypes inumber) {
         return inumber.substract_to_Float(this);
     }
@@ -142,6 +144,7 @@ public class floats extends Type{
      * Ultimately, it calculates the result of this floats object multiplied to the Inumber input.
      */
 
+    @Override
     public Itypes multiply(Itypes inumber) {
         return inumber.multiply_to_Float(this);
     }
@@ -170,6 +173,7 @@ public class floats extends Type{
      * Ultimately, it calculates the result of this floats object divided by the the Inumber input.
      */
 
+    @Override
     public Itypes divide(Itypes itype) {
         return itype.divide_a_Float(this);
     }

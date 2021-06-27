@@ -31,6 +31,8 @@ class SLogicalTest {
     private binary bin3;
     private binary bin4;
     private binary bin5;
+    private Random rng;
+    private int seed;
 
     @BeforeEach
     void setUp(){
@@ -45,6 +47,8 @@ class SLogicalTest {
         bin3 = new binary(b3);
         bin4 = new binary(b4);
         bin5 = new binary(b5);
+        seed = new Random().nextInt();
+        rng = new Random(seed);
     }
 
     @Test
@@ -92,6 +96,26 @@ class SLogicalTest {
         binary actualResult6_2 = (binary) F.and(bin1);
         assertEquals(actualResult6_2, actualResult6);
 
+        Itypes invalidResult = T.sum(F);
+        assertNull(invalidResult);
+
+        int first_random = rng.nextInt();
+        int second_random = rng.nextInt();
+        double random_between_0_1 = new Random().nextDouble();
+        double first_double_random = first_random * random_between_0_1;
+        double random_between_0_1_2 = new Random().nextDouble();
+        double second_double_random = second_random * random_between_0_1_2;
+        integers I = new integers(first_random);
+        integers I2 = new integers(second_random);
+        floats F = new floats(first_double_random);
+        floats F2 = new floats(second_double_random);
+        Itypes invalidResult2 = I.and(F);
+        assertNull(invalidResult2);
+        Itypes invalidResult3 = T.and(F);
+        assertNull(invalidResult3);
+        Itypes invalidResult4 = bin1.and(F);
+        assertNull(invalidResult4);
+
 
     }
     @Test
@@ -129,13 +153,28 @@ class SLogicalTest {
         binary actualResult5_2 = (binary) T.or(bin1);
         assertEquals(actualResult5, actualResult5_2);
 
-
-
         binary expectedResult6 = bin1;
         binary actualResult6 = (binary) bin1.or(F);
         assertEquals(expectedResult6, actualResult6);
         binary actualResult6_2 = (binary) F.or(bin1);
         assertEquals(actualResult6_2, actualResult6);
+
+        int first_random = rng.nextInt();
+        int second_random = rng.nextInt();
+        double random_between_0_1 = new Random().nextDouble();
+        double first_double_random = first_random * random_between_0_1;
+        double random_between_0_1_2 = new Random().nextDouble();
+        double second_double_random = second_random * random_between_0_1_2;
+        integers I = new integers(first_random);
+        integers I2 = new integers(second_random);
+        floats F = new floats(first_double_random);
+        floats F2 = new floats(second_double_random);
+        Itypes invalidResult2 = I.or(F);
+        assertNull(invalidResult2);
+        Itypes invalidResult3 = T.or(F);
+        assertNull(invalidResult3);
+        Itypes invalidResult4 = bin1.or(F);
+        assertNull(invalidResult4);
 
 
 

@@ -91,6 +91,7 @@ public class integers extends Type{
      * Ultimately, it calculates the result of the Inumber input added to this integers object.
      */
 
+    @Override
     public Itypes sum(Itypes t) {
         return t.sum_to_int(this);
     }
@@ -211,6 +212,7 @@ public class integers extends Type{
      * Ultimately, it calculates the result of this integers object minus the Inumber input.
      */
 
+    @Override
     public Itypes substract(Itypes inumber) {
         return inumber.substract_to_integer(this);
     }
@@ -252,6 +254,7 @@ public class integers extends Type{
      * Ultimately, it calculates the result of this integers object multiplied to the Inumber input.
      */
 
+    @Override
     public Itypes multiply(Itypes inumber) {
         return inumber.multiply_to_integer(this);
     }
@@ -294,6 +297,7 @@ public class integers extends Type{
      * Ultimately, it calculates the result of this integers object divided by the Inumber input.
      */
 
+    @Override
     public Itypes divide(Itypes inumber) {
         return inumber.divide_a_integer(this);
     }

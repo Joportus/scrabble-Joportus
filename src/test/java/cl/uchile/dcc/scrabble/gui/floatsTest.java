@@ -12,12 +12,21 @@ class floatsTest {
     private String s;
     double number = 10.5;
     int number2 = 10;
+    boolean t = true;
+    boolean fa = false;
+    Booleans F;
+    Booleans T;
 
     @BeforeEach
     void setUp(){
         f = new floats(number);
         f2 = new floats(number);
         I = new integers(number2);
+        T = new Booleans(t);
+        F = new Booleans(fa);
+        assertNull(F.transform_to_float());
+        assertNull(T.transform_to_float());
+
 
     }
 

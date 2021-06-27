@@ -128,6 +128,7 @@ public class binary extends Type{
      *
      * Ultimately, it calculates the result of the Binary_Int input added to this Binary object.
      */
+    @Override
     public Itypes sum(Itypes t) {
         return t.sum_a_binary(this);
     }
@@ -221,6 +222,7 @@ public class binary extends Type{
      * Ultimately, it calculates the result of this binary object divided by the Binary_Int.
      */
 
+    @Override
     public Itypes divide(Itypes number) {
         return number.divide_a_binary(this);
     }
@@ -260,6 +262,7 @@ public class binary extends Type{
      *
      * Ultimately, it calculates the result of this binary object subtracted by the Binary_Int.
      */
+    @Override
     public Itypes substract(Itypes number) {
         return number.substract_to_binary(this);
     }
@@ -296,6 +299,7 @@ public class binary extends Type{
      * Receives a Binary_Int object and calls this objects substract_to_binary method. It uses
      * this Binary object as an input for the substract_to_binary method.
      */
+    @Override
     public Itypes multiply(Itypes number) {
         return number.multiply_to_binary(this);
     }
@@ -389,6 +393,7 @@ public class binary extends Type{
      * the SLogical input object.
      */
 
+    @Override
     public Itypes and(Itypes L) {
         return L.binary_and(this);
     }
@@ -481,6 +486,7 @@ public class binary extends Type{
      * the SLogical input object.
      */
 
+    @Override
     public Itypes or(Itypes L) {
         return L.binary_or(this);
     }

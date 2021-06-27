@@ -24,6 +24,17 @@ class InumberTest {
     private String first_random_binary_value;
     private String second_random_binary_value;
     private char[] ZeroOne = {'0','1'};
+    private Strings st;
+    private Strings st2;
+    private boolean T = true;
+    private boolean F = false;
+    private Booleans b;
+    private Booleans f;
+    private int strSize2;
+    private String first_random_string;
+    private String second_random_string;
+
+
 
 
     @BeforeEach
@@ -34,29 +45,20 @@ class InumberTest {
         strSize = rng.nextInt(20) + 1;
         first_random_binary_value = RandomStringUtils.random(strSize, ZeroOne);
         second_random_binary_value = RandomStringUtils.random(strSize, ZeroOne);
+        b = new Booleans(T);
+        f = new Booleans(F);
+        seed = new Random().nextInt();
+        rng = new Random(seed);
+        strSize = rng.nextInt(20) + 1;
+        strSize2 = rng.nextInt(20);
+        first_random_binary_value = RandomStringUtils.random(strSize, ZeroOne); strSize = rng.nextInt(20);
+        first_random_string = RandomStringUtils.random(strSize2, 0, Character.MAX_CODE_POINT, true, false, null, rng);
+        second_random_string = RandomStringUtils.random(strSize2, 0, Character.MAX_CODE_POINT, true, false, null, rng);
 
 
     }
-    @RepeatedTest(100)
-    void s() {
-        int first_random = rng.nextInt();
-        int second_random = rng.nextInt();
-        double random_between_0_1 = new Random().nextDouble();
-        double first_double_random = first_random * random_between_0_1;
-        double random_between_0_1_2 = new Random().nextDouble();
-        double second_double_random = second_random * random_between_0_1_2;
-        integers I = new integers(first_random);
-        integers I2 = new integers(second_random);
-        floats F = new floats(first_double_random);
-        floats F2 = new floats(second_double_random);
-        binary bin1 = new binary(first_random_binary_value);
-        binary bin2 = new binary(second_random_binary_value);
-        Itypes actualResult12 = I.and(bin1);
-        assertNull(actualResult12);
 
 
-    }
-    
     @RepeatedTest(100)
     void substract() {
         int first_random = rng.nextInt();
@@ -126,6 +128,19 @@ class InumberTest {
         binary actualResult11 = (binary) bin1.substract(I);
         assertEquals(expectedResult11, actualResult11);
 
+        Itypes invalidResult = bin1.substract(F);
+        assertNull(invalidResult);
+        Strings s1 = new Strings(first_random_string);
+        Strings s2 = new Strings(second_random_string);
+        Itypes invalidResult2 = s1.substract(s2);
+        assertNull(invalidResult2);
+
+        Itypes invalidResult6 = I.substract(s2);
+        assertNull(invalidResult6);
+        Itypes invalidResult7 = F.substract(s2);
+        assertNull(invalidResult7);
+
+
 
 
 
@@ -185,6 +200,23 @@ class InumberTest {
         binary expectedResult10 = expectedResult10_i.transform_to_binary();
         binary actualResult10 = (binary) bin1.multiply(I);
         assertEquals(expectedResult10, actualResult10);
+
+        Itypes invalidResult = bin1.sum(F);
+        assertNull(invalidResult);
+        Strings s1 = new Strings(first_random_string);
+        Strings s2 = new Strings(second_random_string);
+        Itypes invalidResult2 = s1.multiply(s2);
+        assertNull(invalidResult2);
+        Itypes invalidResult3 = I.multiply(s2);
+        assertNull(invalidResult3);
+        Itypes invalidResult4 = F.multiply(s2);
+        assertNull(invalidResult4);
+        Itypes invalidResult5 = bin1.multiply(s2);
+        assertNull(invalidResult5);
+        Itypes invalidResult6 = I.multiply(s2);
+        assertNull(invalidResult6);
+        Itypes invalidResult7 = F.multiply(s2);
+        assertNull(invalidResult7);
 
 
 
@@ -254,6 +286,21 @@ class InumberTest {
         binary actualResult10 = (binary) bin1.divide(I);
         assertEquals(expectedResult10, actualResult10);
 
+        Strings s1 = new Strings(first_random_string);
+        Strings s2 = new Strings(second_random_string);
+        Itypes invalidResult2 = s1.divide(s2);
+        assertNull(invalidResult2);
+        Itypes invalidResult3 = I.divide(s2);
+        assertNull(invalidResult3);
+        Itypes invalidResult4 = F.divide(s2);
+        assertNull(invalidResult4);
+        Itypes invalidResult5 = bin1.divide(s2);
+        assertNull(invalidResult5);
+        Itypes invalidResult6 = I.divide(s2);
+        assertNull(invalidResult6);
+        Itypes invalidResult7 = F.divide(s2);
+        assertNull(invalidResult7);
+
 
 
 
@@ -293,6 +340,14 @@ class InumberTest {
         floats expectedResult4 = new floats(expectedResult_value4);
         floats actualResult4 = (floats) F.sum(bin1);
         assertEquals(expectedResult4, actualResult4);
+
+
+        Strings s1 = new Strings(first_random_string);
+        Strings s2 = new Strings(second_random_string);
+        Itypes invalidResult6 = I.sum(s2);
+        assertNull(invalidResult6);
+        Itypes invalidResult7 = F.sum(s2);
+        assertNull(invalidResult7);
 
 
 
