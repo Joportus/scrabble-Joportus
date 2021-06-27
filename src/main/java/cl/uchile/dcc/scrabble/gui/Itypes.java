@@ -1,6 +1,6 @@
 package cl.uchile.dcc.scrabble.gui;
 
-import java.text.BreakIterator;
+import cl.uchile.dcc.scrabble.gui.Scrabble_types.*;
 
 public interface Itypes {
 

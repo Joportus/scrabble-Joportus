@@ -1,10 +1,13 @@
-package cl.uchile.dcc.scrabble.gui;
+package cl.uchile.dcc.scrabble.gui.Scrabble_types;
+import cl.uchile.dcc.scrabble.gui.Itypes;
+import cl.uchile.dcc.scrabble.gui.Type;
+
 import java.util.Objects;
 
 /**
  * This class represents a Strings scrabble data type.
  */
-public class Strings extends Type{
+public class Strings extends Type {
 
 
     private String string_value;

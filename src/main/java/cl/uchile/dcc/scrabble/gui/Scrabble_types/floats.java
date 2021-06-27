@@ -1,11 +1,14 @@
-package cl.uchile.dcc.scrabble.gui;
+package cl.uchile.dcc.scrabble.gui.Scrabble_types;
+
+import cl.uchile.dcc.scrabble.gui.Itypes;
+import cl.uchile.dcc.scrabble.gui.Type;
 
 import java.util.Objects;
 
 /**
  * This class represents a floats scrabble data type.
  */
-public class floats extends Type{
+public class floats extends Type {
 
     private final double float_value;
     /**

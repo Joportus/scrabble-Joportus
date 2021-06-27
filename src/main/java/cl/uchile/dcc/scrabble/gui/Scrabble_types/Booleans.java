@@ -1,10 +1,13 @@
-package cl.uchile.dcc.scrabble.gui;
+package cl.uchile.dcc.scrabble.gui.Scrabble_types;
+
+import cl.uchile.dcc.scrabble.gui.Itypes;
+import cl.uchile.dcc.scrabble.gui.Type;
 
 import java.util.Objects;
 /**
  * This class represents a Booleans scrabble data type.
  */
-public class Booleans extends Type{
+public class Booleans extends Type {
 
     private boolean bool_value;
     /**

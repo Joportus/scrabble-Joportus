@@ -1,10 +1,10 @@
 package cl.uchile.dcc.scrabble.gui;
 
+import cl.uchile.dcc.scrabble.gui.Scrabble_types.Booleans;
+import cl.uchile.dcc.scrabble.gui.Scrabble_types.integers;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.lang.*;
-
-import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.*;
 

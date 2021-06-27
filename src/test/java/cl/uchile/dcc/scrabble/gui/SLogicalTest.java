@@ -1,5 +1,9 @@
 package cl.uchile.dcc.scrabble.gui;
 
+import cl.uchile.dcc.scrabble.gui.Scrabble_types.Booleans;
+import cl.uchile.dcc.scrabble.gui.Scrabble_types.binary;
+import cl.uchile.dcc.scrabble.gui.Scrabble_types.floats;
+import cl.uchile.dcc.scrabble.gui.Scrabble_types.integers;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

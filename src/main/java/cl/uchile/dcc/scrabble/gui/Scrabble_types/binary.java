@@ -1,11 +1,13 @@
-package cl.uchile.dcc.scrabble.gui;
+package cl.uchile.dcc.scrabble.gui.Scrabble_types;
+
+import cl.uchile.dcc.scrabble.gui.*;
 
 import java.util.Objects;
 
 /**
  * This class represents a binary scrabble data type.
  */
-public class binary extends Type{
+public class binary extends Type {
 
 
     private String binary_value;

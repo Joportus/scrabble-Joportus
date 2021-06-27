@@ -1,10 +1,5 @@
 package cl.uchile.dcc.scrabble.gui.operations;
 
-import cl.uchile.dcc.scrabble.gui.Inumber;
-import cl.uchile.dcc.scrabble.gui.Itypes;
-import cl.uchile.dcc.scrabble.gui.floats;
-import cl.uchile.dcc.scrabble.gui.integers;
-
 public class Constant implements Operations{
 
     @Override

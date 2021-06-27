@@ -1,4 +1,7 @@
-package cl.uchile.dcc.scrabble.gui;
+package cl.uchile.dcc.scrabble.gui.Scrabble_types;
+
+import cl.uchile.dcc.scrabble.gui.Itypes;
+import cl.uchile.dcc.scrabble.gui.Type;
 
 import java.util.Objects;
 
@@ -7,7 +10,7 @@ import static java.lang.Math.abs;
 /**
  * This class represents an integers scrabble data type.
  */
-public class integers extends Type{
+public class integers extends Type {
 
     private int int_value;
     /**

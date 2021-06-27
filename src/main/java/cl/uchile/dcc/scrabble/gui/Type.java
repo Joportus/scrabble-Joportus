@@ -1,7 +1,5 @@
 package cl.uchile.dcc.scrabble.gui;
-import cl.uchile.dcc.scrabble.gui.operations.Operations;
-
-import java.util.Objects;
+import cl.uchile.dcc.scrabble.gui.Scrabble_types.*;
 
 /**
  * This is an abstract class that holds all the common characteristics of all
