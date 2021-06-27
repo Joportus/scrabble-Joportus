@@ -1,4 +1,6 @@
 package cl.uchile.dcc.scrabble.gui;
+import cl.uchile.dcc.scrabble.gui.operations.Operations;
+
 import java.util.Objects;
 
 /**
