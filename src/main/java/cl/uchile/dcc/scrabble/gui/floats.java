@@ -5,7 +5,7 @@ import java.util.Objects;
 /**
  * This class represents a floats scrabble data type.
  */
-public class floats extends Type implements Int_Float, Inumber {
+public class floats extends Type{
 
     private final double float_value;
     /**
@@ -45,7 +45,7 @@ public class floats extends Type implements Int_Float, Inumber {
      * sum of this scrabble's float plus the Scrabble integer.
      */
     @Override
-    public Inumber sum_to_int(integers I) {
+    public Itypes sum_to_int(integers I) {
         double result_value = this.getFloat_value() + I.getInt_value();
         return new floats(result_value);
     }
@@ -54,7 +54,7 @@ public class floats extends Type implements Int_Float, Inumber {
      * sum of this scrabble's float plus the input Scrabble float.
      */
     @Override
-    public Inumber sum_to_float(floats F) {
+    public Itypes sum_to_float(floats F) {
         double result_value = this.getFloat_value() + F.getFloat_value();
         return new floats(result_value);
     }
@@ -64,8 +64,8 @@ public class floats extends Type implements Int_Float, Inumber {
      *
      * Ultimately, it calculates the result of the Inumber input added to this float object.
      */
-    @Override
-    public Inumber sum(Inumber t) {
+
+    public Itypes sum(Itypes t) {
         return t.sum_to_float(this);
     }
     /**
@@ -93,7 +93,7 @@ public class floats extends Type implements Int_Float, Inumber {
      * subtraction of the input scrabble's float minus this scrabble's float.
      */
     @Override
-    public Inumber substract_to_Float(floats F) {
+    public Itypes substract_to_Float(floats F) {
         double result_value = F.getFloat_value() - this.getFloat_value();
         return new floats(result_value);
     }
@@ -102,7 +102,7 @@ public class floats extends Type implements Int_Float, Inumber {
      * subtraction of the input scrabble's integer minus this scrabble's float.
      */
     @Override
-    public Inumber substract_to_integer(integers I) {
+    public Itypes substract_to_integer(integers I) {
         double result_value = I.getInt_value() - this.getFloat_value();
         return new floats(result_value);
     }
@@ -112,8 +112,8 @@ public class floats extends Type implements Int_Float, Inumber {
      *
      * Ultimately, it calculates the result of this floats object subtracted to the Inumber input.
      */
-    @Override
-    public Inumber substract(Inumber inumber) {
+
+    public Itypes substract(Itypes inumber) {
         return inumber.substract_to_Float(this);
     }
 
@@ -122,7 +122,7 @@ public class floats extends Type implements Int_Float, Inumber {
      * multiplication of this scrabble's float and input Scrabble float.
      */
     @Override
-    public Inumber multiply_to_Float(floats F) {
+    public Itypes multiply_to_Float(floats F) {
         double result_value = F.getFloat_value() * this.getFloat_value();
         return new floats(result_value);
     }
@@ -131,7 +131,7 @@ public class floats extends Type implements Int_Float, Inumber {
      * multiplication of this scrabble's float and input Scrabble integer.
      */
     @Override
-    public Inumber multiply_to_integer(integers I) {
+    public Itypes multiply_to_integer(integers I) {
         double result_value = I.getInt_value() * this.getFloat_value();
         return new floats(result_value);
     }
@@ -141,8 +141,8 @@ public class floats extends Type implements Int_Float, Inumber {
      *
      * Ultimately, it calculates the result of this floats object multiplied to the Inumber input.
      */
-    @Override
-    public Inumber multiply(Inumber inumber) {
+
+    public Itypes multiply(Itypes inumber) {
         return inumber.multiply_to_Float(this);
     }
     /**
@@ -150,7 +150,7 @@ public class floats extends Type implements Int_Float, Inumber {
      * the input scrabble's float divided by this scrabble's float.
      */
     @Override
-    public Inumber divide_a_Float(floats F) {
+    public Itypes divide_a_Float(floats F) {
         double result_value = F.getFloat_value() / this.getFloat_value();
         return new floats(result_value);
     }
@@ -159,7 +159,7 @@ public class floats extends Type implements Int_Float, Inumber {
      * the input scrabble's integer divided by this scrabble's float.
      */
     @Override
-    public Inumber divide_a_integer(integers I) {
+    public Itypes divide_a_integer(integers I) {
         double result_value = I.getInt_value() / this.getFloat_value();
         return new floats(result_value);
     }
@@ -169,9 +169,9 @@ public class floats extends Type implements Int_Float, Inumber {
      *
      * Ultimately, it calculates the result of this floats object divided by the the Inumber input.
      */
-    @Override
-    public Inumber divide(Inumber inumber) {
-        return inumber.divide_a_Float(this);
+
+    public Itypes divide(Itypes itype) {
+        return itype.divide_a_Float(this);
     }
 
 

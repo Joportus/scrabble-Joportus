@@ -9,6 +9,7 @@ import java.util.Objects;
  */
 public abstract class Type implements Itypes{
 
+
     /**
      * Returns the Scrabble String representation of this object.
      */
@@ -24,6 +25,130 @@ public abstract class Type implements Itypes{
         return new Strings(result);
     }
 
+    @Override
+    public Itypes bool_and(Booleans b) {
+        return null;
+    }
+
+    @Override
+    public Itypes binary_and(binary bin) {
+        return null;
+    }
+
+    @Override
+    public Itypes bool_or(Booleans b) {
+        return null;
+    }
+
+    @Override
+    public Itypes binary_or(binary bin) {
+        return null;
+    }
+
+    @Override
+    public integers transform_to_integers() {
+        return null;
+    }
+
+    @Override
+    public binary transform_to_binary() {
+        return null;
+    }
+
+    @Override
+    public Itypes sum_a_binary(binary B) {
+        return null;
+    }
+
+    @Override
+    public Itypes multiply_to_binary(binary B) {
+        return null;
+    }
+
+    @Override
+    public Itypes divide_a_binary(binary B) {
+        return null;
+    }
+
+    @Override
+    public Itypes substract_to_binary(binary B) {
+        return null;
+    }
+
+    @Override
+    public Itypes substract_to_Float(floats F) {
+        return null;
+    }
+
+    @Override
+    public Itypes substract_to_integer(integers I) {
+        return null;
+    }
+
+    @Override
+    public Itypes multiply_to_Float(floats F) {
+        return null;
+    }
+
+    @Override
+    public Itypes multiply_to_integer(integers I) {
+        return null;
+    }
+
+    @Override
+    public Itypes divide_a_Float(floats F) {
+        return null;
+    }
+
+    @Override
+    public Itypes divide_a_integer(integers I) {
+        return null;
+    }
+
+    @Override
+    public Itypes sum_to_int(integers I) {
+        return null;
+    }
+
+    @Override
+    public Itypes sum_to_float(floats F) {
+        return null;
+    }
+
+    @Override
+    public floats transform_to_float() {
+        return null;
+    }
+
+    @Override
+    public Itypes and(Itypes L) {
+        return null;
+    }
+
+    @Override
+    public Itypes or(Itypes L) {
+        return null;
+    }
+
+    @Override
+    public Itypes multiply(Itypes inumber) {
+        return null;
+    }
+
+    @Override
+    public Itypes sum(Itypes inumber) {
+        return null;
+    }
+
+    @Override
+    public Itypes substract(Itypes inumber) {
+        return null;
+    }
+
+    @Override
+    public Itypes divide(Itypes inumber) {
+        return null;
+    }
 
 
 }

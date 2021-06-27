@@ -4,7 +4,7 @@ import java.util.Objects;
 /**
  * This class represents a Booleans scrabble data type.
  */
-public class Booleans extends Type implements SLogical{
+public class Booleans extends Type{
 
     private boolean bool_value;
     /**
@@ -60,7 +60,7 @@ public class Booleans extends Type implements SLogical{
      * the result of a logical and operation between the Scrabble Booleans input and this Scrabble's Booleans.
      */
     @Override
-    public SLogical bool_and(Booleans B) {
+    public Itypes bool_and(Booleans B) {
         boolean result_value = B.isBool_value() && this.isBool_value();
         return new Booleans(result_value);
     }
@@ -72,7 +72,7 @@ public class Booleans extends Type implements SLogical{
      * and this Booleans value.
      */
     @Override
-    public SLogical binary_and(binary Bin) {
+    public binary binary_and(binary Bin) {
         int l = Bin.getBinary_value().length();
         String str = Bin.getBinary_value();
         StringBuilder result = new StringBuilder();
@@ -93,8 +93,7 @@ public class Booleans extends Type implements SLogical{
      * Ultimately, it calculates the result the logical and operation between this Scrabble Booleans object and
      * the SLogical input object.
      */
-    @Override
-    public SLogical and(SLogical L) {
+    public Itypes and(Itypes L) {
         return L.bool_and(this);
     }
     /**
@@ -102,7 +101,7 @@ public class Booleans extends Type implements SLogical{
      * the result of a logical or operation between the Scrabble Booleans input and this Scrabble's Booleans.
      */
     @Override
-    public SLogical bool_or(Booleans B) {
+    public Itypes bool_or(Booleans B) {
         boolean result_value = B.isBool_value() || this.isBool_value();
         return new Booleans(result_value);
     }
@@ -114,7 +113,7 @@ public class Booleans extends Type implements SLogical{
      * and this Booleans value.
      */
     @Override
-    public SLogical binary_or(binary Bin) {
+    public Itypes binary_or(binary Bin) {
         int l = Bin.getBinary_value().length();
         String str = Bin.getBinary_value();
         StringBuilder result = new StringBuilder();
@@ -134,8 +133,8 @@ public class Booleans extends Type implements SLogical{
      * Ultimately, it calculates the result the logical or operation between this Scrabble Booleans object and
      * the SLogical input object.
      */
-    @Override
-    public SLogical or(SLogical L) {
+
+    public Itypes or(Itypes L) {
         return L.bool_or(this);
     }
     /**

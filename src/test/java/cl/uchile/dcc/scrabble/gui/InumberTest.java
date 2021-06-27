@@ -38,6 +38,26 @@ class InumberTest {
 
     }
     @RepeatedTest(100)
+    void s() {
+        int first_random = rng.nextInt();
+        int second_random = rng.nextInt();
+        double random_between_0_1 = new Random().nextDouble();
+        double first_double_random = first_random * random_between_0_1;
+        double random_between_0_1_2 = new Random().nextDouble();
+        double second_double_random = second_random * random_between_0_1_2;
+        integers I = new integers(first_random);
+        integers I2 = new integers(second_random);
+        floats F = new floats(first_double_random);
+        floats F2 = new floats(second_double_random);
+        binary bin1 = new binary(first_random_binary_value);
+        binary bin2 = new binary(second_random_binary_value);
+        Itypes actualResult12 = I.and(bin1);
+        assertNull(actualResult12);
+
+
+    }
+    
+    @RepeatedTest(100)
     void substract() {
         int first_random = rng.nextInt();
         int second_random = rng.nextInt();
@@ -83,11 +103,11 @@ class InumberTest {
 
         int result7 = bin1.transform_to_integers().getInt_value() - bin2.transform_to_integers().getInt_value();
         binary expectedResult7 = new integers(result7).transform_to_binary();
-        Binary_Int actualResult7 = bin1.substract(bin2);
+        Itypes actualResult7 = bin1.substract(bin2);
         assertEquals(expectedResult7, actualResult7);
 
 
-        Binary_Int actualResult8 = bin2.substract(bin1);
+        Itypes actualResult8 = bin2.substract(bin1);
         assertEquals(actualResult7.transform_to_integers().getInt_value(), - actualResult8.transform_to_integers().getInt_value());
 
         int expectedResult_value9 = I.getInt_value() - bin1.transform_to_integers().getInt_value();
@@ -144,10 +164,10 @@ class InumberTest {
 
         int result7 = bin1.transform_to_integers().getInt_value() * bin2.transform_to_integers().getInt_value();
         binary expectedResult7 = new integers(result7).transform_to_binary();
-        Binary_Int actualResult7 = bin1.multiply(bin2);
+        Itypes actualResult7 = bin1.multiply(bin2);
         assertEquals(expectedResult7, actualResult7);
 
-        Binary_Int actualResult7_2 = bin2.multiply(bin1);
+        Itypes actualResult7_2 = bin2.multiply(bin1);
         assertEquals(actualResult7, actualResult7_2);
 
         int expectedResult_value8 = I.getInt_value() * bin1.transform_to_integers().getInt_value();
@@ -215,7 +235,7 @@ class InumberTest {
         int result7 = bin1.transform_to_integers().getInt_value() / bin2.transform_to_integers().getInt_value();
 
         binary expectedResult7 = new integers(result7).transform_to_binary();
-        Binary_Int actualResult7 = bin1.divide(bin2);
+        Itypes actualResult7 = bin1.divide(bin2);
         assertEquals(expectedResult7, actualResult7);
 
         int expectedResult_value8 = I.getInt_value() / bin1.transform_to_integers().getInt_value();

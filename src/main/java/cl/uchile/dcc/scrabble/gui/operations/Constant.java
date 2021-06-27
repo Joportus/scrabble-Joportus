@@ -1,10 +1,12 @@
 package cl.uchile.dcc.scrabble.gui.operations;
 
 import cl.uchile.dcc.scrabble.gui.Inumber;
+import cl.uchile.dcc.scrabble.gui.Itypes;
 import cl.uchile.dcc.scrabble.gui.floats;
 import cl.uchile.dcc.scrabble.gui.integers;
 
-public class Constant implements Operations, Inumber {
+public class Constant implements Operations{
+
     @Override
     public Constant eval() {
         return null;
@@ -14,7 +16,7 @@ public class Constant implements Operations, Inumber {
     public Constant sum(Constant c) {
         return null;
     }
-
+/**
     @Override
     public Inumber substract_to_Float(floats F) {
         return null;
@@ -56,7 +58,8 @@ public class Constant implements Operations, Inumber {
     }
 
     @Override
-    public Inumber transform_to_float() {
+    public floats transform_to_float() {
         return null;
     }
+    **/
 }

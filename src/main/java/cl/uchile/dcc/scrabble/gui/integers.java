@@ -7,7 +7,7 @@ import static java.lang.Math.abs;
 /**
  * This class represents an integers scrabble data type.
  */
-public class integers extends Type implements Binary_Int, Int_Float, Inumber {
+public class integers extends Type{
 
     private int int_value;
     /**
@@ -61,7 +61,7 @@ public class integers extends Type implements Binary_Int, Int_Float, Inumber {
      * sum of this scrabble's integer plus the input Scrabble integer.
      */
     @Override
-    public Inumber sum_to_int(integers I) {
+    public Itypes sum_to_int(integers I) {
         int result_value = I.getInt_value() + this.getInt_value();
         return new integers(result_value);
     }
@@ -70,7 +70,7 @@ public class integers extends Type implements Binary_Int, Int_Float, Inumber {
      * sum of this scrabble's float plus the Scrabble's integer.
      */
     @Override
-    public Inumber sum_to_float(floats F) {
+    public Itypes sum_to_float(floats F) {
         double result_value = F.getFloat_value() + this.getInt_value();
         return new floats(result_value);
     }
@@ -79,7 +79,7 @@ public class integers extends Type implements Binary_Int, Int_Float, Inumber {
      * sum of this scrabble's integer plus the Scrabble's binary.
      */
     @Override
-    public Binary_Int sum_a_binary(binary B) {
+    public Itypes sum_a_binary(binary B) {
         int result_value = B.transform_to_integers().getInt_value() + this.getInt_value();
         integers result = new integers(result_value);
         return result.transform_to_binary();
@@ -90,8 +90,8 @@ public class integers extends Type implements Binary_Int, Int_Float, Inumber {
      *
      * Ultimately, it calculates the result of the Inumber input added to this integers object.
      */
-    @Override
-    public Inumber sum(Inumber t) {
+
+    public Itypes sum(Itypes t) {
         return t.sum_to_int(this);
     }
 
@@ -199,7 +199,7 @@ public class integers extends Type implements Binary_Int, Int_Float, Inumber {
      * subtraction between the scrabble's integer input minus this Scrabble's integer.
      */
     @Override
-    public Inumber substract_to_integer(integers I) {
+    public Itypes substract_to_integer(integers I) {
         int result_value = I.getInt_value() - this.getInt_value();
         return new integers(result_value);
     }
@@ -210,8 +210,8 @@ public class integers extends Type implements Binary_Int, Int_Float, Inumber {
      *
      * Ultimately, it calculates the result of this integers object minus the Inumber input.
      */
-    @Override
-    public Inumber substract(Inumber inumber) {
+
+    public Itypes substract(Itypes inumber) {
         return inumber.substract_to_integer(this);
     }
 
@@ -230,7 +230,7 @@ public class integers extends Type implements Binary_Int, Int_Float, Inumber {
      * multiplication between the scrabble's binary and this Scrabble's integer.
      */
     @Override
-    public binary multiply_to_binary(binary B) {
+    public Itypes multiply_to_binary(binary B) {
         int result_value = B.transform_to_integers().getInt_value() * this.getInt_value();
         integers result = new integers(result_value);
         return result.transform_to_binary();
@@ -241,7 +241,7 @@ public class integers extends Type implements Binary_Int, Int_Float, Inumber {
      * multiplication between the scrabble's integer input and this Scrabble's integer.
      */
     @Override
-    public Int_Float multiply_to_integer(integers I) {
+    public Itypes multiply_to_integer(integers I) {
         int result_value = I.getInt_value() * this.getInt_value();
         return new integers(result_value);
     }
@@ -251,8 +251,8 @@ public class integers extends Type implements Binary_Int, Int_Float, Inumber {
      *
      * Ultimately, it calculates the result of this integers object multiplied to the Inumber input.
      */
-    @Override
-    public Inumber multiply(Inumber inumber) {
+
+    public Itypes multiply(Itypes inumber) {
         return inumber.multiply_to_integer(this);
     }
 
@@ -261,7 +261,7 @@ public class integers extends Type implements Binary_Int, Int_Float, Inumber {
      * of the Scrabble's float divided by this Scrabble's integer.
      */
     @Override
-    public Inumber divide_a_Float(floats F) {
+    public Itypes divide_a_Float(floats F) {
         double result_value = F.getFloat_value() / this.getInt_value();
         return new floats(result_value);
     }
@@ -271,7 +271,7 @@ public class integers extends Type implements Binary_Int, Int_Float, Inumber {
      * of the Scrabble's binary divided by this Scrabble's integer.
      */
     @Override
-    public binary divide_a_binary(binary B) {
+    public Itypes divide_a_binary(binary B) {
         int result_value = B.transform_to_integers().getInt_value() / this.getInt_value();
         integers result = new integers(result_value);
         return result.transform_to_binary();
@@ -282,7 +282,7 @@ public class integers extends Type implements Binary_Int, Int_Float, Inumber {
      * of the Scrabble's integer input divided by this Scrabble's integer.
      */
     @Override
-    public Inumber divide_a_integer(integers I) {
+    public Itypes divide_a_integer(integers I) {
         int result_value = I.getInt_value() / this.getInt_value();
         return new integers(result_value);
     }
@@ -293,8 +293,8 @@ public class integers extends Type implements Binary_Int, Int_Float, Inumber {
      *
      * Ultimately, it calculates the result of this integers object divided by the Inumber input.
      */
-    @Override
-    public Inumber divide(Inumber inumber) {
+
+    public Itypes divide(Itypes inumber) {
         return inumber.divide_a_integer(this);
     }
 }

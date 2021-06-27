@@ -61,21 +61,21 @@ class SLogicalTest {
         assertEquals(actualResult2, actualResult3);
 
         binary expectedResult4 = bin3;
-        SLogical actualResult4 = bin1.and(bin2);
+        Itypes actualResult4 = bin1.and(bin2);
         assertEquals(expectedResult4, actualResult4);
 
 
         binary expectedResult4_2 = bin3;
-        SLogical actualResult4_2 = bin12.and(bin22);
+        Itypes actualResult4_2 = bin12.and(bin22);
         assertEquals(expectedResult4_2, actualResult4_2);
 
         binary expectedResult4_3 = bin3;
-        SLogical actualResult4_3 = bin2.and(bin1);
+        Itypes actualResult4_3 = bin2.and(bin1);
         assertEquals(expectedResult4, actualResult4);
 
 
         binary expectedResult4_4 = bin3;
-        SLogical actualResult4_4 = bin22.and(bin12);
+        Itypes actualResult4_4 = bin22.and(bin12);
         assertEquals(expectedResult4_2, actualResult4_2);
         assertEquals(expectedResult4_3, actualResult4_3);
         assertEquals(expectedResult4_4, actualResult4_4);
@@ -92,6 +92,7 @@ class SLogicalTest {
         binary actualResult6_2 = (binary) F.and(bin1);
         assertEquals(actualResult6_2, actualResult6);
 
+
     }
     @Test
     void or() {
@@ -107,19 +108,19 @@ class SLogicalTest {
         assertEquals(actualResult2, actualResult3);
 
         binary expectedResult4 = bin4;
-        SLogical actualResult4 = bin1.or(bin2);
+        Itypes actualResult4 = bin1.or(bin2);
         assertEquals(expectedResult4, actualResult4);
 
         binary expectedResult4_2 = bin4;
-        SLogical actualResult4_2 = bin12.or(bin22);
+        Itypes actualResult4_2 = bin12.or(bin22);
         assertEquals(expectedResult4_2, actualResult4_2);
 
         binary expectedResult4_3 = bin4;
-        SLogical actualResult4_3 = bin2.or(bin1);
+        Itypes actualResult4_3 = bin2.or(bin1);
         assertEquals(expectedResult4_3, actualResult4_3);
 
         binary expectedResult4_4 = bin4;
-        SLogical actualResult4_4 = bin22.or(bin12);
+        Itypes actualResult4_4 = bin22.or(bin12);
         assertEquals(expectedResult4_4, actualResult4_4);
 
         binary expectedResult5 = bin11;

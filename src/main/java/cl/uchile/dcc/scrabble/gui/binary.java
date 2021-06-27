@@ -5,7 +5,7 @@ import java.util.Objects;
 /**
  * This class represents a binary scrabble data type.
  */
-public class binary extends Type implements SLogical, Binary_Int, Inumber {
+public class binary extends Type{
 
 
     private String binary_value;
@@ -95,7 +95,7 @@ public class binary extends Type implements SLogical, Binary_Int, Inumber {
      * sum of the scrabble binary plus the Scrabble integer.
      */
     @Override
-    public Inumber sum_to_int(integers I) {
+    public Itypes sum_to_int(integers I) {
         int result_value = I.getInt_value() + this.transform_to_integers().getInt_value();
         return new integers(result_value);
     }
@@ -105,7 +105,7 @@ public class binary extends Type implements SLogical, Binary_Int, Inumber {
      * sum of the scrabble binary plus the Scrabble float.
      */
     @Override
-    public Inumber sum_to_float(floats F) {
+    public Itypes sum_to_float(floats F) {
         double result_value = F.getFloat_value() + this.transform_to_integers().getInt_value();
         return new floats(result_value);
 
@@ -116,7 +116,7 @@ public class binary extends Type implements SLogical, Binary_Int, Inumber {
      * sum of the scrabble binary plus the other scrabble binary.
      */
     @Override
-    public Binary_Int sum_a_binary(binary B) {
+    public Itypes sum_a_binary(binary B) {
         int result_value = B.transform_to_integers().getInt_value() + this.transform_to_integers().getInt_value();
         integers result = new integers(result_value);
         return result.transform_to_binary();
@@ -128,7 +128,7 @@ public class binary extends Type implements SLogical, Binary_Int, Inumber {
      *
      * Ultimately, it calculates the result of the Binary_Int input added to this Binary object.
      */
-    public Binary_Int sum(Binary_Int t) {
+    public Itypes sum(Itypes t) {
         return t.sum_a_binary(this);
     }
 
@@ -190,7 +190,7 @@ public class binary extends Type implements SLogical, Binary_Int, Inumber {
      * floats result of the Scrabble's float divided by this Scrabble's binary.
      */
     @Override
-    public Inumber divide_a_Float(floats F) {
+    public Itypes divide_a_Float(floats F) {
         double result_value = F.getFloat_value() / this.transform_to_integers().getInt_value();
         return new floats(result_value);
     }
@@ -209,7 +209,7 @@ public class binary extends Type implements SLogical, Binary_Int, Inumber {
      * of the Scrabble's integer divided by this Scrabble's binary.
      */
     @Override
-    public Inumber divide_a_integer(integers I) {
+    public Itypes divide_a_integer(integers I) {
         int result_value = I.getInt_value() / this.transform_to_integers().getInt_value();
         return new integers(result_value);
     }
@@ -221,7 +221,7 @@ public class binary extends Type implements SLogical, Binary_Int, Inumber {
      * Ultimately, it calculates the result of this binary object divided by the Binary_Int.
      */
 
-    public Binary_Int divide(Binary_Int number) {
+    public Itypes divide(Itypes number) {
         return number.divide_a_binary(this);
     }
 
@@ -249,7 +249,7 @@ public class binary extends Type implements SLogical, Binary_Int, Inumber {
      * of the Scrabble's integer minus this Scrabble's binary.
      */
     @Override
-    public Inumber substract_to_integer(integers I) {
+    public Itypes substract_to_integer(integers I) {
         int result_value = I.getInt_value() - this.transform_to_integers().getInt_value();
         return new integers(result_value);
     }
@@ -260,7 +260,7 @@ public class binary extends Type implements SLogical, Binary_Int, Inumber {
      *
      * Ultimately, it calculates the result of this binary object subtracted by the Binary_Int.
      */
-    public Binary_Int substract(Binary_Int number) {
+    public Itypes substract(Itypes number) {
         return number.substract_to_binary(this);
     }
     /**
@@ -268,7 +268,7 @@ public class binary extends Type implements SLogical, Binary_Int, Inumber {
      * of the Scrabble's float multiplied by this Scrabble's binary.
      */
     @Override
-    public floats multiply_to_Float(floats F) {
+    public Itypes multiply_to_Float(floats F) {
         double result_value = F.getFloat_value() * this.transform_to_integers().getInt_value();
         return new floats(result_value);
     }
@@ -277,7 +277,7 @@ public class binary extends Type implements SLogical, Binary_Int, Inumber {
      * of the Scrabble's binary multiplied by this Scrabble's binary.
      */
     @Override
-    public binary multiply_to_binary(binary B) {
+    public Itypes multiply_to_binary(binary B) {
         int result_value = B.transform_to_integers().getInt_value() * this.transform_to_integers().getInt_value();
         integers result = new integers(result_value);
         return result.transform_to_binary();
@@ -287,7 +287,7 @@ public class binary extends Type implements SLogical, Binary_Int, Inumber {
      * of the Scrabble's float multiplied by this Scrabble's binary.
      */
     @Override
-    public Int_Float multiply_to_integer(integers I) {
+    public Itypes multiply_to_integer(integers I) {
         int result_value = I.getInt_value() * this.transform_to_integers().getInt_value();
         return new integers(result_value);
     }
@@ -296,7 +296,7 @@ public class binary extends Type implements SLogical, Binary_Int, Inumber {
      * Receives a Binary_Int object and calls this objects substract_to_binary method. It uses
      * this Binary object as an input for the substract_to_binary method.
      */
-    public Binary_Int multiply(Binary_Int number) {
+    public Itypes multiply(Itypes number) {
         return number.multiply_to_binary(this);
     }
 
@@ -306,7 +306,7 @@ public class binary extends Type implements SLogical, Binary_Int, Inumber {
      * the result of a logical and operation between the Scrabble Booleans input and this Scrabble's Booleans.
      */
     @Override
-    public SLogical bool_and(Booleans B) {
+    public Itypes bool_and(Booleans B) {
         int l = this.getBinary_value().length();
         String str = this.getBinary_value();
         StringBuilder result = new StringBuilder();
@@ -327,7 +327,7 @@ public class binary extends Type implements SLogical, Binary_Int, Inumber {
      * and this binary value.
      */
     @Override
-    public SLogical binary_and(binary Bin) {
+    public Itypes binary_and(binary Bin) {
         StringBuilder s1 = new StringBuilder();
         StringBuilder s2 = new StringBuilder();
         StringBuilder result = new StringBuilder();
@@ -388,8 +388,8 @@ public class binary extends Type implements SLogical, Binary_Int, Inumber {
      * Ultimately, it calculates the result the logical and operation between this Scrabble binary object and
      * the SLogical input object.
      */
-    @Override
-    public SLogical and(SLogical L) {
+
+    public Itypes and(Itypes L) {
         return L.binary_and(this);
     }
     /**
@@ -400,7 +400,7 @@ public class binary extends Type implements SLogical, Binary_Int, Inumber {
      * and this binary value.
      */
     @Override
-    public SLogical bool_or(Booleans B) {
+    public Itypes bool_or(Booleans B) {
         int l = this.getBinary_value().length();
         String str = this.getBinary_value();
         StringBuilder result = new StringBuilder();
@@ -421,7 +421,7 @@ public class binary extends Type implements SLogical, Binary_Int, Inumber {
      * and this binary value.
      */
     @Override
-    public SLogical binary_or(binary Bin) {
+    public Itypes binary_or(binary Bin) {
         StringBuilder s1 = new StringBuilder();
         StringBuilder s2 = new StringBuilder();
         StringBuilder result = new StringBuilder();
@@ -480,8 +480,8 @@ public class binary extends Type implements SLogical, Binary_Int, Inumber {
      * Ultimately, it calculates the result the logical or operation between this Scrabble binary object and
      * the SLogical input object.
      */
-    @Override
-    public SLogical or(SLogical L) {
+
+    public Itypes or(Itypes L) {
         return L.binary_or(this);
     }
 

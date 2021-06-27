@@ -4,7 +4,7 @@ import cl.uchile.dcc.scrabble.gui.Inumber;
 import cl.uchile.dcc.scrabble.gui.floats;
 import cl.uchile.dcc.scrabble.gui.integers;
 
-public class Add implements Operations, Inumber {
+public class Add implements Operations {
     private final Operations a1;
     private final Operations a2;
 
@@ -13,6 +13,16 @@ public class Add implements Operations, Inumber {
         this.a2 = a2;
     }
 
+    @Override
+    public Constant eval() {
+        return null;
+    }
+
+    @Override
+    public Constant sum(Constant c) {
+        return null;
+    }
+/**
     @Override
     public Constant eval() {
         return a1.eval().sum(a2.eval());
@@ -64,7 +74,8 @@ public class Add implements Operations, Inumber {
     }
 
     @Override
-    public Inumber transform_to_float() {
+    public floats transform_to_float() {
         return null;
     }
+    **/
 }
