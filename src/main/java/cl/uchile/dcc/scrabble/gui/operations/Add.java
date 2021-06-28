@@ -1,6 +1,8 @@
 package cl.uchile.dcc.scrabble.gui.operations;
 
-public class Add implements Operations {
+import cl.uchile.dcc.scrabble.gui.Itypes;
+
+public class Add implements Operations{
     private final Operations a1;
     private final Operations a2;
 
@@ -11,13 +13,9 @@ public class Add implements Operations {
 
     @Override
     public Constant eval() {
-        return null;
+        return a1.eval().add(a2.eval());
     }
 
-    @Override
-    public Constant sum(Constant c) {
-        return null;
-    }
 /**
     @Override
     public Constant eval() {

@@ -1,11 +1,12 @@
-package cl.uchile.dcc.scrabble.gui;
+package cl.uchile.dcc.scrabble.gui.Scrabble_types;
+import cl.uchile.dcc.scrabble.gui.Itypes;
 import cl.uchile.dcc.scrabble.gui.Scrabble_types.*;
 
 /**
  * This is an abstract class that holds all the common characteristics of all
  * Scrabble data types.
  */
-public abstract class Type implements Itypes{
+public abstract class Type implements Itypes {
 
 
     /**

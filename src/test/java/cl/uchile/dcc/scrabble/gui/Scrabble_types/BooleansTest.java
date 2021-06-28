@@ -58,13 +58,5 @@ class BooleansTest {
         assertEquals(expectedResult, actualResult);
         assertEquals(expectedResult2, actualResult2);
     }
-/**
-    @Test
-    void isBool_value() {
-    }
 
-    @Test
-    void transform_to_boolean() {
-    }
-    **/
 }

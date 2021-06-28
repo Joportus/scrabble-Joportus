@@ -1,60 +1,34 @@
 package cl.uchile.dcc.scrabble.gui.operations;
 
-public class Constant implements Operations{
+import cl.uchile.dcc.scrabble.gui.Itypes;
+import cl.uchile.dcc.scrabble.gui.Scrabble_types.integers;
+
+public class Constant implements Operations {
+    Itypes type;
+    public Constant(Itypes type) {
+        this.type = type;
+    }
 
     @Override
     public Constant eval() {
-        return null;
+        return this;
+    }
+    public Constant add(Constant c){
+        Itypes result =  this.getType().sum(c.getType());
+        return new Constant(result);
+    }
+
+    public Itypes getType() {
+        return type;
     }
 
     @Override
-    public Constant sum(Constant c) {
-        return null;
-    }
-/**
-    @Override
-    public Inumber substract_to_Float(floats F) {
-        return null;
-    }
-
-    @Override
-    public Inumber substract_to_integer(integers I) {
-        return null;
+    public boolean equals(Object obj) {
+        if (obj instanceof Constant) {
+            var other = (Constant) obj;
+            return other.getType().equals(this.getType());
+        }
+        return false;
     }
 
-    @Override
-    public Inumber multiply_to_Float(floats F) {
-        return null;
-    }
-
-    @Override
-    public Inumber multiply_to_integer(integers I) {
-        return null;
-    }
-
-    @Override
-    public Inumber divide_a_Float(floats F) {
-        return null;
-    }
-
-    @Override
-    public Inumber divide_a_integer(integers I) {
-        return null;
-    }
-
-    @Override
-    public Inumber sum_to_int(integers I) {
-        return null;
-    }
-
-    @Override
-    public Inumber sum_to_float(floats F) {
-        return null;
-    }
-
-    @Override
-    public floats transform_to_float() {
-        return null;
-    }
-    **/
 }
