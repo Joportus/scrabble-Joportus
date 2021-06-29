@@ -1,4 +1,7 @@
-package cl.uchile.dcc.scrabble.gui.Soperations;
+package cl.uchile.dcc.scrabble.gui.Soperations.math;
+
+import cl.uchile.dcc.scrabble.gui.Soperations.Constant;
+import cl.uchile.dcc.scrabble.gui.Soperations.Operations;
 
 public class SAdd implements Operations {
     private final Operations m1;

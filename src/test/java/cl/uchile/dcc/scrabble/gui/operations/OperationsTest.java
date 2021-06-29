@@ -2,6 +2,10 @@ package cl.uchile.dcc.scrabble.gui.operations;
 import cl.uchile.dcc.scrabble.gui.Soperations.*;
 import cl.uchile.dcc.scrabble.gui.Itypes;
 import cl.uchile.dcc.scrabble.gui.Scrabble_types.*;
+import cl.uchile.dcc.scrabble.gui.Soperations.math.Minus;
+import cl.uchile.dcc.scrabble.gui.Soperations.math.SAdd;
+import cl.uchile.dcc.scrabble.gui.Soperations.transformations.toBinary;
+import cl.uchile.dcc.scrabble.gui.Soperations.transformations.toBooleans;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.RepeatedTest;
@@ -91,6 +95,11 @@ class OperationsTest {
         Constant actualResult3 = actualResultT3.eval();
         assertEquals(expectedResult3, actualResult3);
 
+        assertNull(new toBooleans(c3).eval().getType());
+        Constant c4 = new Constant(f);
+
+        assertEquals(new toBooleans(c4).eval(), c4);
+
 
 
 
@@ -169,6 +178,13 @@ class OperationsTest {
         SAdd a = new SAdd(c1, c2);
         assertEquals(a, expectedSAdd);
         assertNotEquals(a, unexpectedSAdd);
+
+        var expectedMinus = new Minus(c1, c2);
+        var unexpectedMinus = new Minus(c1, c1);
+        Minus a2 = new Minus(c1, c2);
+        assertEquals(a2, expectedMinus);
+        assertNotEquals(a2, unexpectedMinus);
+
     }
 
 }

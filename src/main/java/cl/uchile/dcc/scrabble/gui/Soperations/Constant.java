@@ -18,6 +18,24 @@ public class Constant implements Operations {
         Itypes resultValue = this.getType().transform_to_binary();
         return new Constant(resultValue);
     }
+    public Constant toBooleans(){
+        Itypes resultValue = this.getType().transform_to_boolean();
+        return new Constant(resultValue);
+    }
+    public Constant toFloats(){
+        Itypes resultValue = this.getType().transform_to_float();
+        return new Constant(resultValue);
+    }
+
+    public Constant toIntegers(){
+        Itypes resultValue = this.getType().transform_to_integers();
+        return new Constant(resultValue);
+    }
+
+    public Constant toStrings(){
+        Itypes resultValue = this.getType().transform_to_string();
+        return new Constant(resultValue);
+    }
 
     public Constant add(Constant c){
         Itypes result =  this.getType().sum(c.getType());
