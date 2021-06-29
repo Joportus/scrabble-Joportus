@@ -1,6 +1,6 @@
-package cl.uchile.dcc.scrabble.gui.operations;
+package cl.uchile.dcc.scrabble.gui.Soperations;
 
-public class SAdd implements Operations{
+public class SAdd implements Operations {
     private final Operations m1;
     private final Operations m2;
 
@@ -11,13 +11,9 @@ public class SAdd implements Operations{
 
     @Override
     public Constant eval() {
-        return m1.eval().add(m2.eval());
+        return this.getM1().eval().add(this.getM2().eval());
     }
 
-    @Override
-    public Constant toBinary() {
-        return this.eval().toBinary();
-    }
 
     @Override
     public boolean equals(Object obj) {
@@ -26,5 +22,13 @@ public class SAdd implements Operations{
             return other.eval().equals(this.eval());
         }
         return false;
+    }
+
+    public Operations getM1() {
+        return m1;
+    }
+
+    public Operations getM2() {
+        return m2;
     }
 }

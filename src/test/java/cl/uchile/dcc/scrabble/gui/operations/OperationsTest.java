@@ -1,5 +1,5 @@
 package cl.uchile.dcc.scrabble.gui.operations;
-import cl.uchile.dcc.scrabble.gui.operations.Minus;
+import cl.uchile.dcc.scrabble.gui.Soperations.*;
 import cl.uchile.dcc.scrabble.gui.Itypes;
 import cl.uchile.dcc.scrabble.gui.Scrabble_types.*;
 import org.apache.commons.lang3.RandomStringUtils;
@@ -82,8 +82,14 @@ class OperationsTest {
         integers I3 = new integers(i2);
         Constant c3 = new Constant(I3);
         Constant expectedResult2 = new Constant(new binary("01111101000"));
-        Constant actualResult2 = new SAdd(c3,c3).toBinary();
+        Operations actualResultT2 = new toBinary(new SAdd(c3, c3));
+        Constant actualResult2 = actualResultT2.eval();
         assertEquals(actualResult2, expectedResult2);
+
+        Constant expectedResult3 = new Constant((I.substract(I2)).transform_to_binary());
+        Operations actualResultT3 = new toBinary(new Minus(new Constant(I), new Constant(I2)));
+        Constant actualResult3 = actualResultT3.eval();
+        assertEquals(expectedResult3, actualResult3);
 
 
 

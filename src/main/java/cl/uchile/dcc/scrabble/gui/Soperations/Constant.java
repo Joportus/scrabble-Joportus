@@ -1,7 +1,6 @@
-package cl.uchile.dcc.scrabble.gui.operations;
+package cl.uchile.dcc.scrabble.gui.Soperations;
 
 import cl.uchile.dcc.scrabble.gui.Itypes;
-import cl.uchile.dcc.scrabble.gui.Scrabble_types.integers;
 
 public class Constant implements Operations {
     private final Itypes type;
@@ -14,7 +13,7 @@ public class Constant implements Operations {
         return this;
     }
 
-    @Override
+
     public Constant toBinary() {
         Itypes resultValue = this.getType().transform_to_binary();
         return new Constant(resultValue);
