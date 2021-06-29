@@ -302,7 +302,16 @@ class InumberTest {
         Itypes invalidResult7 = F.divide(s2);
         assertNull(invalidResult7);
 
+        /**
+         * We test here that integers cannot be negated. If this test passes
+         * it would also pass with floats, Strings, etc.
+         */
+        assertNull(I.negate());
 
+        /**
+         * We do something similar with transform to boolean.
+         */
+        assertNull(F.transform_to_boolean());
 
 
 

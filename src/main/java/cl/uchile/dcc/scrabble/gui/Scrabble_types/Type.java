@@ -55,6 +55,10 @@ public abstract class Type implements Itypes {
     }
 
     @Override
+    public Booleans transform_to_boolean() {
+        return null;
+    }
+    @Override
     public Itypes sum_a_binary(binary B) {
         return null;
     }
@@ -146,6 +150,11 @@ public abstract class Type implements Itypes {
 
     @Override
     public Itypes divide(Itypes inumber) {
+        return null;
+    }
+
+    @Override
+    public Itypes negate() {
         return null;
     }
 

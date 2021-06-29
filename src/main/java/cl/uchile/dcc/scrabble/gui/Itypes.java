@@ -5,10 +5,7 @@ import cl.uchile.dcc.scrabble.gui.Scrabble_types.*;
 public interface Itypes {
 
 
-  /**
-   * Returns a Scrabble Strings representation of this object.
-   */
-  Strings transform_to_string();
+
   /**
    * Returns a Scrabble Strings object resulting from the input's String value
    * concatenated to this objects toString() representation.
@@ -38,13 +35,27 @@ public interface Itypes {
   Itypes binary_or(binary bin);
 
   /**
+   * Returns a Scrabble Strings representation of this object.
+   */
+  Strings transform_to_string();
+
+  /**
    * Returns a Scrabble integers representation of this object.
    */
   integers transform_to_integers();
   /**
+   * Returns a Scrabble floats representation of this object.
+   */
+  floats transform_to_float();
+  /**
    * Returns a Scrabble binary representation of this object.
    */
   binary transform_to_binary();
+
+  /**
+   * Returns a Scrabble boolean representation of this object.
+   */
+  Booleans transform_to_boolean();
   /**
    * Receives a Scrabble binary and returns the Binary_Int result of the
    * sum of this scrabble's integer plus this Binary_Int.
@@ -106,10 +117,6 @@ public interface Itypes {
    * sum of this Inumber plus the input Scrabble float.
    */
   Itypes sum_to_float(floats F);
-  /**
-   * Returns a Scrabble floats representation of this object.
-   */
-  floats transform_to_float();
 
   /**
    * Returns the SLogical result of the and operation between the SLogical input and
@@ -142,5 +149,10 @@ public interface Itypes {
    * Returns the Inumber result of this Inumber divide by the Inumber input.
    */
   Itypes divide(Itypes inumber);
+
+  /**
+   * If it exists, returns the negation of this scrabble type.
+   */
+  Itypes negate();
 
 }

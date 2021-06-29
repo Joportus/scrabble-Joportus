@@ -1,6 +1,5 @@
 package cl.uchile.dcc.scrabble.gui.operations;
 
-import cl.uchile.dcc.scrabble.gui.Itypes;
 
 public class Add implements Operations{
     private final Operations a1;
@@ -16,60 +15,18 @@ public class Add implements Operations{
         return a1.eval().add(a2.eval());
     }
 
-/**
     @Override
-    public Constant eval() {
-        return a1.eval().sum(a2.eval());
+    public Constant toBinary() {
+        return this.eval().toBinary();
     }
 
     @Override
-    public Constant sum(Constant c) {
-        return null;
+    public boolean equals(Object obj) {
+        if (obj instanceof Add) {
+            var other = (Add) obj;
+            return other.eval().equals(this.eval());
+        }
+        return false;
     }
 
-    @Override
-    public Inumber substract_to_Float(floats F) {
-        return null;
-    }
-
-    @Override
-    public Inumber substract_to_integer(integers I) {
-        return null;
-    }
-
-    @Override
-    public Inumber multiply_to_Float(floats F) {
-        return null;
-    }
-
-    @Override
-    public Inumber multiply_to_integer(integers I) {
-        return null;
-    }
-
-    @Override
-    public Inumber divide_a_Float(floats F) {
-        return null;
-    }
-
-    @Override
-    public Inumber divide_a_integer(integers I) {
-        return null;
-    }
-
-    @Override
-    public Inumber sum_to_int(integers I) {
-        return null;
-    }
-
-    @Override
-    public Inumber sum_to_float(floats F) {
-        return null;
-    }
-
-    @Override
-    public floats transform_to_float() {
-        return null;
-    }
-    **/
 }

@@ -1,16 +1,18 @@
 package cl.uchile.dcc.scrabble.gui.operations;
 
-import cl.uchile.dcc.scrabble.gui.Itypes;
-import cl.uchile.dcc.scrabble.gui.Scrabble_types.*;
+import cl.uchile.dcc.scrabble.gui.Scrabble_types.Booleans;
+import cl.uchile.dcc.scrabble.gui.Scrabble_types.Strings;
+import cl.uchile.dcc.scrabble.gui.Scrabble_types.binary;
+import cl.uchile.dcc.scrabble.gui.Scrabble_types.integers;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.RepeatedTest;
 
 import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ConstantTest {
+class AddTest {
     private int i = 1005;
     private int i2 = 500;
     private int i3 = 106;
@@ -36,7 +38,7 @@ class ConstantTest {
     private String second_random_string;
 
     @BeforeEach
-    void setUp(){
+    void setUp() {
         seed = new Random().nextInt();
         rng = new Random(seed);
         strSize = rng.nextInt(20) + 1;
@@ -51,39 +53,19 @@ class ConstantTest {
         first_random_binary_value = RandomStringUtils.random(strSize, ZeroOne); strSize = rng.nextInt(20);
         first_random_string = RandomStringUtils.random(strSize2, 0, Character.MAX_CODE_POINT, true, false, null, rng);
         second_random_string = RandomStringUtils.random(strSize2, 0, Character.MAX_CODE_POINT, true, false, null, rng);
+
     }
-
-
-    @Test
-    void eval() {
+    @RepeatedTest(10)
+    void constructorTest(){
         int first_random = rng.nextInt();
         int second_random = rng.nextInt();
-        double random_between_0_1 = new Random().nextDouble();
-        double first_double_random = first_random * random_between_0_1;
-        double random_between_0_1_2 = new Random().nextDouble();
-        double second_double_random = second_random * random_between_0_1_2;
-        integers I = new integers(first_random);
-        integers I2 = new integers(second_random);
-        floats F = new floats(first_double_random);
-        floats F2 = new floats(second_double_random);
-        binary bin1 = new binary(first_random_binary_value);
-        binary bin2 = new binary(second_random_binary_value);
-
-        Constant c1 = new Constant(I);
-        Constant c2 = new Constant(I2);
-        Itypes IexpectedResult = c1.getType().sum(c2.getType());
-        Constant expectedResult = new Constant(IexpectedResult);
-        Constant actualResult = c1.add(c2);
-
-        assertEquals(expectedResult, actualResult);
-
-        assertEquals(c1.eval(),c1);
-
-
+        Constant c1 = new Constant(new integers(first_random));
+        Constant c2 = new Constant(new integers(second_random));
+        var expectedAdd = new Add(c1, c2);
+        var unexpectedAdd = new Add(c1, c1);
+        Add a = new Add(c1, c2);
+        assertEquals(a, expectedAdd);
+        assertNotEquals(a, unexpectedAdd);
     }
 
-    @Test
-    void add() {
-
-    }
 }

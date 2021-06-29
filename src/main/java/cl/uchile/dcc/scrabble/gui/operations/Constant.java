@@ -4,7 +4,7 @@ import cl.uchile.dcc.scrabble.gui.Itypes;
 import cl.uchile.dcc.scrabble.gui.Scrabble_types.integers;
 
 public class Constant implements Operations {
-    Itypes type;
+    private final Itypes type;
     public Constant(Itypes type) {
         this.type = type;
     }
@@ -13,8 +13,20 @@ public class Constant implements Operations {
     public Constant eval() {
         return this;
     }
+
+    @Override
+    public Constant toBinary() {
+        Itypes resultValue = this.getType().transform_to_binary();
+        return new Constant(resultValue);
+    }
+
     public Constant add(Constant c){
         Itypes result =  this.getType().sum(c.getType());
+        return new Constant(result);
+    }
+
+    public Constant minus(Constant c){
+        Itypes result = this.getType().substract(c.getType());
         return new Constant(result);
     }
 
