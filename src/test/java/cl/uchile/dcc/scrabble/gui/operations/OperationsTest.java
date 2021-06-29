@@ -1,5 +1,5 @@
 package cl.uchile.dcc.scrabble.gui.operations;
-
+import cl.uchile.dcc.scrabble.gui.operations.Minus;
 import cl.uchile.dcc.scrabble.gui.Itypes;
 import cl.uchile.dcc.scrabble.gui.Scrabble_types.*;
 import org.apache.commons.lang3.RandomStringUtils;
@@ -82,7 +82,7 @@ class OperationsTest {
         integers I3 = new integers(i2);
         Constant c3 = new Constant(I3);
         Constant expectedResult2 = new Constant(new binary("01111101000"));
-        Constant actualResult2 = new Add(c3,c3).toBinary();
+        Constant actualResult2 = new SAdd(c3,c3).toBinary();
         assertEquals(actualResult2, expectedResult2);
 
 
@@ -109,7 +109,8 @@ class OperationsTest {
         Operations c2 = new Constant(I2);
         Operations c3 = new Constant(F);
         Operations c4 = new Constant(I);
-        Operations a1 = new Add(new Add(c1, c2), new Add(c3, c4));
+
+        Operations a1 = new SAdd(new SAdd(c1, c2), new SAdd(c3, c4));
         Constant actualResult = a1.eval();
         double expectedResultValue = (I.getInt_value() + I2.getInt_value()) + (F.getFloat_value() + I.getInt_value());
         floats expectedResultFloats = new floats(expectedResultValue);
@@ -117,8 +118,7 @@ class OperationsTest {
         assertEquals(actualResult, expectedResult);
         assertEquals(actualResult.getType(), expectedResultFloats);
 
-        Add a2 = new Add(c2, c2);
-        System.out.println(a2.eval().getType());
+        SAdd a2 = new SAdd(c2, c2);
 
 
     }
@@ -151,6 +151,18 @@ class OperationsTest {
 
 
 
+    }
+    @RepeatedTest(10)
+    void constructorTest(){
+        int first_random = rng.nextInt();
+        int second_random = rng.nextInt();
+        Constant c1 = new Constant(new integers(first_random));
+        Constant c2 = new Constant(new integers(second_random));
+        var expectedSAdd = new SAdd(c1, c2);
+        var unexpectedSAdd = new SAdd(c1, c1);
+        SAdd a = new SAdd(c1, c2);
+        assertEquals(a, expectedSAdd);
+        assertNotEquals(a, unexpectedSAdd);
     }
 
 }
