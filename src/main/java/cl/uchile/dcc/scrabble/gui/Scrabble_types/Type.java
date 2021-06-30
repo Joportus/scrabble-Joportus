@@ -1,7 +1,7 @@
 package cl.uchile.dcc.scrabble.gui.Scrabble_types;
 import cl.uchile.dcc.scrabble.gui.Itypes;
 import cl.uchile.dcc.scrabble.gui.Scrabble_types.*;
-import cl.uchile.dcc.scrabble.gui.Soperations.Constant;
+
 
 /**
  * This is an abstract class that holds all the common characteristics of all
@@ -158,7 +158,6 @@ public abstract class Type implements Itypes {
     public Itypes negate() {
         return null;
     }
-
 
     @Override
     public Itypes eval() {

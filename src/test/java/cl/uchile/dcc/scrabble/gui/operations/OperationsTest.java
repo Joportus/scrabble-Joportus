@@ -74,62 +74,54 @@ class OperationsTest {
         binary bin1 = new binary(first_random_binary_value);
         binary bin2 = new binary(second_random_binary_value);
 
-        Constant c1 = new Constant(I);
-        Constant c2 = new Constant(I2);
-        Itypes IexpectedResult = c1.getType().sum(c2.getType());
-        Constant expectedResult = new Constant(IexpectedResult);
-        Constant actualResult = c1.add(c2);
+        Itypes expectedResult = I.sum(I2);
+        Itypes actualResult = new SAdd(I, I2).eval();
 
         assertEquals(expectedResult, actualResult);
-        assertEquals(c1.eval(), c1);
 
         integers I3 = new integers(i2);
-        Constant c3 = new Constant(I3);
-        Constant expectedResult2 = new Constant(new binary("01111101000"));
-        Operations actualResultT2 = new toBinary(new SAdd(c3, c3));
-        Constant actualResult2 = actualResultT2.eval();
+        Itypes expectedResult2 = new binary("01111101000");
+        Operations actualResultT2 = new toBinary(new SAdd(I3, I3));
+        Itypes actualResult2 = actualResultT2.eval();
         assertEquals(actualResult2, expectedResult2);
 
-        Constant expectedResult3 = new Constant((I.substract(I2)).transform_to_binary());
-        Operations actualResultT3 = new toBinary(new Minus(new Constant(I), new Constant(I2)));
-        Constant actualResult3 = actualResultT3.eval();
+        Itypes expectedResult3 = (I.substract(I2)).transform_to_binary();
+        Operations actualResultT3 = new toBinary(new Minus(I, I2));
+        Itypes actualResult3 = actualResultT3.eval();
         assertEquals(expectedResult3, actualResult3);
 
-        assertNull(new toBooleans(c3).eval().getType());
-        Constant c4 = new Constant(f);
+        assertNull(new toBooleans(I3).eval());
 
-        assertEquals(new toBooleans(c4).eval(), c4);
+        assertEquals(f.eval(), f);
 
-        Constant expectedResult4 = new Constant(I.transform_to_float());
-        Constant actualResult4 = new toFloats(c1).eval();
+        Itypes expectedResult4 = I.transform_to_float();
+        Itypes actualResult4 = new toFloats(I).eval();
         assertEquals(expectedResult4, actualResult4);
 
-        Constant cb = new Constant(bin1);
-        Constant expectedResult5 = new Constant(bin1.transform_to_integers());
-        Constant actualResult5 = new toIntegers(cb).eval();
+        Itypes expectedResult5 = bin1.transform_to_integers();
+        Itypes actualResult5 = new toIntegers(bin1).eval();
         assertEquals(expectedResult5, actualResult5);
 
-        Constant cs = new Constant(I);
-        Constant expectedResult6 = new Constant(I.transform_to_string());
-        Constant actualResult6 = new toStrings(cs).eval();
+        Itypes expectedResult6 = I.transform_to_string();
+        Itypes actualResult6 = new toStrings(I).eval();
         assertEquals(expectedResult6, actualResult6);
 
-        Operations example = new SAdd(
+       Operations example = new SAdd(
                 new LOr(
-                        new Constant(new binary("1000")),
+                        new binary("1000"),
                         new toBinary(new Minus(
-                                new Constant(new integers(25)),
-                                new Constant(new binary("0101"))
+                                new integers(25),
+                                new binary("0101")
                         ))
                 ),
-                new Constant(new integers(7))
+                new integers(7)
         );
 
+        Itypes expectedExampleResult = new binary("011");
 
-        System.out.println(example.eval().getType());
+        assertEquals(example.eval(), expectedExampleResult);
 
-        Operations a2 = new SAdd( new Minus(new Constant(new Strings("hola")), new Constant(new Booleans(false))),new Constant(new Booleans(true)));
-        Constant res = a2.eval();
+
 
 
     }
@@ -148,35 +140,30 @@ class OperationsTest {
         floats F2 = new floats(second_double_random);
         binary bin1 = new binary(first_random_binary_value);
         binary bin2 = new binary(second_random_binary_value);
-        Operations c1 = new Constant(I);
-        Operations c2 = new Constant(I2);
-        Operations c3 = new Constant(F);
-        Operations c4 = new Constant(I);
 
-        Operations a1 = new SAdd(new SAdd(c1, c2), new SAdd(c3, c4));
-        Constant actualResult = a1.eval();
+        Operations a1 = new SAdd(new SAdd(I, I2), new SAdd(F, I));
+        Itypes actualResult = a1.eval();
         double expectedResultValue = (I.getInt_value() + I2.getInt_value()) + (F.getFloat_value() + I.getInt_value());
-        floats expectedResultFloats = new floats(expectedResultValue);
-        Constant expectedResult = new Constant(expectedResultFloats);
+        floats expectedResult = new floats(expectedResultValue);
         assertEquals(actualResult, expectedResult);
-        assertEquals(actualResult.getType(), expectedResultFloats);
+        assertEquals(actualResult, expectedResult);
 
-        SAdd a2 = new SAdd(c2, c2);
 
 
     }
     @RepeatedTest(100)
     void lor(){
-        Constant c1 = new Constant(b);
-        Constant c2 = new Constant(f);
 
-        Constant expectedResult = new Constant(b.or(f));
-        Constant actualResult = new LOr(c1, c2).eval();
+
+        Itypes expectedResult = b.or(f);
+        Itypes actualResult = new LOr(b, f).eval();
 
         assertEquals(actualResult, expectedResult);
+
     }
     @RepeatedTest(100)
     void minus(){
+
         int first_random = rng.nextInt();
         int second_random = rng.nextInt();
         double random_between_0_1 = new Random().nextDouble();
@@ -190,27 +177,22 @@ class OperationsTest {
         binary bin1 = new binary(first_random_binary_value);
         binary bin2 = new binary(second_random_binary_value);
 
-        Operations c1 = new Constant(I);
-        Operations c2 = new Constant(I2);
-        Operations c3 = new Constant(F);
-        Operations c4 = new Constant(I);
-        Operations a1 = new Minus(new Minus(c1, c2), new Minus(c3, c4));
-        Constant actualResult = a1.eval();
+        Operations a1 = new Minus(new Minus(I, I2), new Minus(F, I));
+        Itypes actualResult = a1.eval();
         double expectedResultValue = (I.getInt_value() - I2.getInt_value()) - (F.getFloat_value() - I.getInt_value());
-        floats expectedResultFloats = new floats(expectedResultValue);
-        Constant expectedResult = new Constant(expectedResultFloats);
-        assertEquals(actualResult, expectedResult);
-        assertEquals(actualResult.getType(), expectedResultFloats);
+        floats expectedResult = new floats(expectedResultValue);
 
+        assertEquals(actualResult, expectedResult);
 
 
     }
     @RepeatedTest(10)
     void constructorTest(){
+
         int first_random = rng.nextInt();
         int second_random = rng.nextInt();
-        Constant c1 = new Constant(new integers(first_random));
-        Constant c2 = new Constant(new integers(second_random));
+        integers c1 = new integers(first_random);
+        integers c2 = new integers(second_random);
         var expectedSAdd = new SAdd(c1, c2);
         var unexpectedSAdd = new SAdd(c1, c1);
         SAdd a = new SAdd(c1, c2);
@@ -223,12 +205,9 @@ class OperationsTest {
         assertEquals(a2, expectedMinus);
         assertNotEquals(a2, unexpectedMinus);
 
-        Constant cb = new Constant(b);
-        Constant cf = new Constant(f);
-
-        var expectedLOr = new LOr(cb, cf);
-        var unexpectedLOr = new LOr(c1, cb);
-        LOr a3 = new LOr(cb, cf);
+        var expectedLOr = new LOr(b, f);
+        var unexpectedLOr = new LOr(f, f);
+        LOr a3 = new LOr(b, f);
         assertEquals(a3, expectedLOr);
         assertNotEquals(a3, unexpectedLOr);
 

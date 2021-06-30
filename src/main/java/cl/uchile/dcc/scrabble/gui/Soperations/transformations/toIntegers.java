@@ -1,6 +1,7 @@
 package cl.uchile.dcc.scrabble.gui.Soperations.transformations;
 
-import cl.uchile.dcc.scrabble.gui.Soperations.Constant;
+import cl.uchile.dcc.scrabble.gui.Itypes;
+
 import cl.uchile.dcc.scrabble.gui.Soperations.Operations;
 
 public class toIntegers implements Operations{
@@ -12,4 +13,12 @@ public class toIntegers implements Operations{
     }
 
 
+    @Override
+    public Itypes eval() {
+        return getA().eval().transform_to_integers();
+    }
+
+    public Operations getA() {
+        return a;
+    }
 }

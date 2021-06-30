@@ -1,7 +1,7 @@
 package cl.uchile.dcc.scrabble.gui.Soperations.transformations;
 
 import cl.uchile.dcc.scrabble.gui.Itypes;
-import cl.uchile.dcc.scrabble.gui.Soperations.Constant;
+
 import cl.uchile.dcc.scrabble.gui.Soperations.Operations;
 
 public class toBinary implements Operations {
@@ -15,6 +15,10 @@ public class toBinary implements Operations {
 
     @Override
     public Itypes eval() {
-        return null;
+        return getA().eval().transform_to_binary();
+    }
+
+    public Operations getA() {
+        return a;
     }
 }
