@@ -27,12 +27,12 @@ public abstract class Type implements Itypes {
 
     @Override
     public Itypes bool_and(Booleans b) {
-        return null;
+        return new NullType();
     }
 
     @Override
     public Itypes binary_and(binary bin) {
-        return null;
+        return new NullType();
     }
 
     @Override

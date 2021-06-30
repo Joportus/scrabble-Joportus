@@ -2,13 +2,13 @@ package cl.uchile.dcc.scrabble.gui.Soperations.math;
 
 import cl.uchile.dcc.scrabble.gui.Itypes;
 
-import cl.uchile.dcc.scrabble.gui.Soperations.Operations;
+import cl.uchile.dcc.scrabble.gui.Soperations.treeNode;
 
-public class Minus implements Operations {
-    private final Operations m1;
-    private final Operations m2;
+public class Minus implements treeNode {
+    private final treeNode m1;
+    private final treeNode m2;
 
-    public Minus(Operations m1, Operations m2) {
+    public Minus(treeNode m1, treeNode m2) {
         this.m1 = m1;
         this.m2 = m2;
     }
@@ -28,11 +28,11 @@ public class Minus implements Operations {
         return false;
     }
 
-    public Operations getM1() {
+    public treeNode getM1() {
         return m1;
     }
 
-    public Operations getM2() {
+    public treeNode getM2() {
         return m2;
     }
 }

@@ -3,11 +3,11 @@ package cl.uchile.dcc.scrabble.gui.Soperations.math;
 import cl.uchile.dcc.scrabble.gui.Itypes;
 import cl.uchile.dcc.scrabble.gui.Soperations.treeNode;
 
-public class SAdd implements treeNode {
+public class Multiply implements treeNode{
     private final treeNode m1;
     private final treeNode m2;
 
-    public SAdd(treeNode m1, treeNode m2) {
+    public Multiply(treeNode m1, treeNode m2) {
         this.m1 = m1;
         this.m2 = m2;
     }
@@ -23,7 +23,7 @@ public class SAdd implements treeNode {
 
     @Override
     public Itypes eval() {
-        return this.getM1().eval().sum(this.getM2().eval());
+        return this.getM1().eval().multiply(this.getM2().eval());
     }
 
     @Override

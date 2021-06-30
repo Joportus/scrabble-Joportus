@@ -3,7 +3,9 @@ import cl.uchile.dcc.scrabble.gui.Soperations.*;
 import cl.uchile.dcc.scrabble.gui.Itypes;
 import cl.uchile.dcc.scrabble.gui.Scrabble_types.*;
 import cl.uchile.dcc.scrabble.gui.Soperations.logic.LOr;
+import cl.uchile.dcc.scrabble.gui.Soperations.math.Divide;
 import cl.uchile.dcc.scrabble.gui.Soperations.math.Minus;
+import cl.uchile.dcc.scrabble.gui.Soperations.math.Multiply;
 import cl.uchile.dcc.scrabble.gui.Soperations.math.SAdd;
 import cl.uchile.dcc.scrabble.gui.Soperations.transformations.*;
 import org.apache.commons.lang3.RandomStringUtils;
@@ -15,7 +17,7 @@ import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class OperationsTest {
+class treeNodeTest {
     private int i = 1005;
     private int i2 = 500;
     private int i3 = 106;
@@ -59,7 +61,7 @@ class OperationsTest {
     }
 
 
-    @RepeatedTest(1)
+    @RepeatedTest(100)
     void eval() {
         int first_random = rng.nextInt();
         int second_random = rng.nextInt();
@@ -81,12 +83,12 @@ class OperationsTest {
 
         integers I3 = new integers(i2);
         Itypes expectedResult2 = new binary("01111101000");
-        Operations actualResultT2 = new toBinary(new SAdd(I3, I3));
+        treeNode actualResultT2 = new toBinary(new SAdd(I3, I3));
         Itypes actualResult2 = actualResultT2.eval();
         assertEquals(actualResult2, expectedResult2);
 
         Itypes expectedResult3 = (I.substract(I2)).transform_to_binary();
-        Operations actualResultT3 = new toBinary(new Minus(I, I2));
+        treeNode actualResultT3 = new toBinary(new Minus(I, I2));
         Itypes actualResult3 = actualResultT3.eval();
         assertEquals(expectedResult3, actualResult3);
 
@@ -106,7 +108,7 @@ class OperationsTest {
         Itypes actualResult6 = new toStrings(I).eval();
         assertEquals(expectedResult6, actualResult6);
 
-       Operations example = new SAdd(
+       treeNode example = new SAdd(
                 new LOr(
                         new binary("1000"),
                         new toBinary(new Minus(
@@ -120,6 +122,12 @@ class OperationsTest {
         Itypes expectedExampleResult = new binary("011");
 
         assertEquals(example.eval(), expectedExampleResult);
+
+        Itypes expectedResult7 = (I.multiply(I2)).multiply(I2.divide(I));
+        Itypes actualResult7 = new Multiply(new Multiply(I, I2),new Divide(I2, I)).eval();
+
+        assertEquals(expectedResult7, actualResult7);
+
 
 
 
@@ -141,7 +149,7 @@ class OperationsTest {
         binary bin1 = new binary(first_random_binary_value);
         binary bin2 = new binary(second_random_binary_value);
 
-        Operations a1 = new SAdd(new SAdd(I, I2), new SAdd(F, I));
+        treeNode a1 = new SAdd(new SAdd(I, I2), new SAdd(F, I));
         Itypes actualResult = a1.eval();
         double expectedResultValue = (I.getInt_value() + I2.getInt_value()) + (F.getFloat_value() + I.getInt_value());
         floats expectedResult = new floats(expectedResultValue);
@@ -177,7 +185,7 @@ class OperationsTest {
         binary bin1 = new binary(first_random_binary_value);
         binary bin2 = new binary(second_random_binary_value);
 
-        Operations a1 = new Minus(new Minus(I, I2), new Minus(F, I));
+        treeNode a1 = new Minus(new Minus(I, I2), new Minus(F, I));
         Itypes actualResult = a1.eval();
         double expectedResultValue = (I.getInt_value() - I2.getInt_value()) - (F.getFloat_value() - I.getInt_value());
         floats expectedResult = new floats(expectedResultValue);

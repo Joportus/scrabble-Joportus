@@ -2,13 +2,13 @@ package cl.uchile.dcc.scrabble.gui.Soperations.transformations;
 
 import cl.uchile.dcc.scrabble.gui.Itypes;
 
-import cl.uchile.dcc.scrabble.gui.Soperations.Operations;
+import cl.uchile.dcc.scrabble.gui.Soperations.treeNode;
 
-public class toBooleans implements Operations{
+public class toBooleans implements treeNode {
 
-    private final Operations a;
+    private final treeNode a;
 
-    public toBooleans(Operations a) {
+    public toBooleans(treeNode a) {
         this.a = a;
     }
 
@@ -18,7 +18,7 @@ public class toBooleans implements Operations{
         return getA().eval().transform_to_boolean();
     }
 
-    public Operations getA() {
+    public treeNode getA() {
         return a;
     }
 }

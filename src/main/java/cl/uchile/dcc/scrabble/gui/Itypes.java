@@ -1,9 +1,9 @@
 package cl.uchile.dcc.scrabble.gui;
 
 import cl.uchile.dcc.scrabble.gui.Scrabble_types.*;
-import cl.uchile.dcc.scrabble.gui.Soperations.Operations;
+import cl.uchile.dcc.scrabble.gui.Soperations.treeNode;
 
-public interface Itypes extends Operations{
+public interface Itypes extends treeNode {
 
 
 
@@ -155,6 +155,7 @@ public interface Itypes extends Operations{
    * If it exists, returns the negation of this scrabble type.
    */
   Itypes negate();
+
 
   Itypes eval();
 

@@ -2,13 +2,13 @@ package cl.uchile.dcc.scrabble.gui.Soperations.transformations;
 
 import cl.uchile.dcc.scrabble.gui.Itypes;
 
-import cl.uchile.dcc.scrabble.gui.Soperations.Operations;
+import cl.uchile.dcc.scrabble.gui.Soperations.treeNode;
 
-public class toBinary implements Operations {
+public class toBinary implements treeNode {
 
-    private final Operations a;
+    private final treeNode a;
 
-    public toBinary(Operations a) {
+    public toBinary(treeNode a) {
         this.a = a;
     }
 
@@ -18,7 +18,7 @@ public class toBinary implements Operations {
         return getA().eval().transform_to_binary();
     }
 
-    public Operations getA() {
+    public treeNode getA() {
         return a;
     }
 }
