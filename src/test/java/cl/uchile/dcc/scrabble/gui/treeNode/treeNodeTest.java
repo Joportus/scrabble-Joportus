@@ -1,4 +1,4 @@
-package cl.uchile.dcc.scrabble.gui.operations;
+package cl.uchile.dcc.scrabble.gui.treeNode;
 import cl.uchile.dcc.scrabble.gui.Soperations.*;
 import cl.uchile.dcc.scrabble.gui.Itypes;
 import cl.uchile.dcc.scrabble.gui.Scrabble_types.*;
@@ -212,7 +212,7 @@ class treeNodeTest {
 
 
     }
-    @RepeatedTest(10)
+    @RepeatedTest(1)
     void constructorTest(){
 
         int first_random = rng.nextInt();
@@ -224,18 +224,42 @@ class treeNodeTest {
         SAdd a = new SAdd(c1, c2);
         assertEquals(a, expectedSAdd);
         assertNotEquals(a, unexpectedSAdd);
+        assertNotEquals(a, c1);
 
         var expectedMinus = new Minus(c1, c2);
         var unexpectedMinus = new Minus(c1, c1);
         Minus a2 = new Minus(c1, c2);
         assertEquals(a2, expectedMinus);
         assertNotEquals(a2, unexpectedMinus);
+        assertNotEquals(a2, c1);
 
         var expectedLOr = new LOr(b, f);
         var unexpectedLOr = new LOr(f, f);
         LOr a3 = new LOr(b, f);
         assertEquals(a3, expectedLOr);
         assertNotEquals(a3, unexpectedLOr);
+        assertNotEquals(a3, a);
+
+        var expectedLAnd = new LAnd(b, f);
+        var unexpectedLAnd = new LAnd(b, b);
+        LAnd a4 = new LAnd(b, f);
+        assertEquals(a4, expectedLAnd);
+        assertNotEquals(a4, unexpectedLAnd);
+        assertNotEquals(a4, a3);
+
+        var expectedDivide = new Divide(c1, c2);
+        var unexpectedDivide = new Divide(c1, c1);
+        Divide a5 = new Divide(c1, c2);
+        assertEquals(a5, expectedDivide);
+        assertNotEquals(a5, unexpectedDivide);
+        assertNotEquals(a5, a4);
+
+        var expectedMultiply = new Multiply(c1, c2);
+        var unexpectedMultiply = new Multiply(c1, c1);
+        Multiply a6 = new Multiply(c1, c2);
+        assertEquals(a6, expectedMultiply);
+        assertNotEquals(a6, unexpectedMultiply);
+        assertNotEquals(a6, a5);
 
     }
 

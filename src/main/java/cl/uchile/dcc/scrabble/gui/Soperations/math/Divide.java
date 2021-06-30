@@ -20,8 +20,8 @@ public class Divide implements treeNode{
 
     @Override
     public boolean equals(Object obj) {
-        if (obj instanceof Minus) {
-            var other = (Minus) obj;
+        if (obj instanceof Divide) {
+            var other = (Divide) obj;
             return other.eval().equals(this.eval());
         }
         return false;

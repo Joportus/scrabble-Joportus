@@ -28,8 +28,8 @@ public class Multiply implements treeNode{
 
     @Override
     public boolean equals(Object obj) {
-        if (obj instanceof SAdd) {
-            var other = (SAdd) obj;
+        if (obj instanceof Multiply) {
+            var other = (Multiply) obj;
             return other.eval().equals(this.eval());
         }
         return false;

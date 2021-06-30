@@ -1,5 +1,6 @@
 package cl.uchile.dcc.scrabble.gui.Scrabble_types;
 
+import cl.uchile.dcc.scrabble.gui.Soperations.math.Multiply;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -66,6 +67,12 @@ class NullTypeTest {
         floats F2 = new floats(second_double_random);
         binary bin1 = new binary(first_random_binary_value);
         binary bin2 = new binary(second_random_binary_value);
+
+        var expectedNullType = new  NullType();
+        var unexpectedType = new integers(first_random);
+        NullType n = new NullType();
+        assertEquals(n, expectedNullType);
+        assertNotEquals(n, unexpectedType);
 
 
     }

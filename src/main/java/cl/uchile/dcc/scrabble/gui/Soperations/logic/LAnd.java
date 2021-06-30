@@ -28,8 +28,8 @@ public class LAnd implements treeNode{
 
     @Override
     public boolean equals(Object obj) {
-        if (obj instanceof LOr) {
-            var other = (LOr) obj;
+        if (obj instanceof LAnd) {
+            var other = (LAnd) obj;
             return other.eval().equals(this.eval());
         }
         return false;
