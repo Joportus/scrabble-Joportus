@@ -37,9 +37,10 @@ public class floats extends Type {
     /**
      * Returns the transformation of this Scrabble's float number to a
      * Scrabble's float number. (Returns an identical copy of the object).
+     * @return
      */
     @Override
-    public floats transform_to_float() {
+    public Itypes transform_to_float() {
         return new floats(this.getFloat_value());
     }
     /**

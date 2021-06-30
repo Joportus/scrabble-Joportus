@@ -38,25 +38,26 @@ public interface Itypes extends treeNode {
   /**
    * Returns a Scrabble Strings representation of this object.
    */
-  Strings transform_to_string();
+  Itypes transform_to_string();
 
   /**
    * Returns a Scrabble integers representation of this object.
    */
-  integers transform_to_integers();
+  Itypes transform_to_integers();
   /**
    * Returns a Scrabble floats representation of this object.
+   * @return
    */
-  floats transform_to_float();
+  Itypes transform_to_float();
   /**
    * Returns a Scrabble binary representation of this object.
    */
-  binary transform_to_binary();
+  Itypes transform_to_binary();
 
   /**
    * Returns a Scrabble boolean representation of this object.
    */
-  Booleans transform_to_boolean();
+  Itypes transform_to_boolean();
   /**
    * Receives a Scrabble binary and returns the Binary_Int result of the
    * sum of this scrabble's integer plus this Binary_Int.

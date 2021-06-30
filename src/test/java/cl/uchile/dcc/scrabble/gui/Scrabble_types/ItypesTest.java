@@ -62,7 +62,7 @@ class ItypesTest {
     @Test
     void transform_to_float() {
         floats expectedResult = new floats(fl);
-        floats actualResult = I.transform_to_float();
+        floats actualResult = (floats) I.transform_to_float();
         assert expectedResult.getFloat_value() == actualResult.getFloat_value();
 
     }

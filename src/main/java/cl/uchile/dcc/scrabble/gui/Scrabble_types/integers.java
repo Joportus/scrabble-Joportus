@@ -40,9 +40,10 @@ public class integers extends Type {
     /**
      * Returns the transformation of this Scrabble's integers number to a
      * Scrabble's float number.
+     * @return
      */
     @Override
-    public floats transform_to_float() {
+    public Itypes transform_to_float() {
         return new floats(this.getInt_value());
     }
 
@@ -52,6 +53,7 @@ public class integers extends Type {
      *
      * This is because it transforms integers to integers, which gives
      * you an object containing the same information.
+     * @return
      */
     @Override
     public integers transform_to_integers() {

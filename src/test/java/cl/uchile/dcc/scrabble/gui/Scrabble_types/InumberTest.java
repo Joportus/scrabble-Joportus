@@ -111,14 +111,15 @@ class InumberTest {
 
 
         Itypes actualResult8 = bin2.substract(bin1);
-        assertEquals(actualResult7.transform_to_integers().getInt_value(), - actualResult8.transform_to_integers().getInt_value());
+        assertEquals(((integers)(actualResult7.transform_to_integers())).getInt_value(), - ((integers)actualResult8.transform_to_integers()).getInt_value());
 
         int expectedResult_value9 = I.getInt_value() - bin1.transform_to_integers().getInt_value();
         integers expectedResult9 = new integers(expectedResult_value9);
         integers actualResult9 = (integers) I.substract(bin1);
         assertEquals(expectedResult9, actualResult9);
 
-        double expectedResult_value10 = F.getFloat_value() - bin1.transform_to_float().getFloat_value();
+        Itypes Fn = bin1.transform_to_float();
+        double expectedResult_value10 = F.getFloat_value() - ((floats)bin1.transform_to_float()).getFloat_value();
         floats expectedResult10 = new floats(expectedResult_value10);
         floats actualResult10 = (floats) F.substract(bin1);
         assertEquals(expectedResult10, actualResult10);
@@ -191,7 +192,7 @@ class InumberTest {
         integers actualResult8 = (integers) I.multiply(bin1);
         assertEquals(expectedResult8, actualResult8);
 
-        double expectedResult_value9 = F.getFloat_value() * bin1.transform_to_float().getFloat_value();
+        double expectedResult_value9 = F.getFloat_value() * ((floats)bin1.transform_to_float()).getFloat_value();
         floats expectedResult9 = new floats(expectedResult_value9);
         floats actualResult9 = (floats) F.multiply(bin1);
         assertEquals(expectedResult9, actualResult9);
@@ -276,7 +277,7 @@ class InumberTest {
         integers actualResult8 = (integers) I.divide(bin1);
         assertEquals(expectedResult8, actualResult8);
 
-        double expectedResult_value9 = F.getFloat_value() / bin1.transform_to_float().getFloat_value();
+        double expectedResult_value9 = F.getFloat_value() / ((floats)bin1.transform_to_float()).getFloat_value();
         floats expectedResult9 = new floats(expectedResult_value9);
         floats actualResult9 = (floats) F.divide(bin1);
         assertEquals(expectedResult9, actualResult9);
@@ -346,7 +347,7 @@ class InumberTest {
         binary actualResult3 = (binary) bin1.sum(I);
         assertEquals(expectedResult3, actualResult3);
 
-        double expectedResult_value4 = F.getFloat_value() + bin1.transform_to_float().getFloat_value();
+        double expectedResult_value4 = F.getFloat_value() + ((floats)bin1.transform_to_float()).getFloat_value();
         floats expectedResult4 = new floats(expectedResult_value4);
         floats actualResult4 = (floats) F.sum(bin1);
         assertEquals(expectedResult4, actualResult4);

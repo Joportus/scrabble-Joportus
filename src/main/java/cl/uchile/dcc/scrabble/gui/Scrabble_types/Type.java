@@ -1,6 +1,5 @@
 package cl.uchile.dcc.scrabble.gui.Scrabble_types;
 import cl.uchile.dcc.scrabble.gui.Itypes;
-import cl.uchile.dcc.scrabble.gui.Scrabble_types.*;
 
 
 /**
@@ -37,126 +36,125 @@ public abstract class Type implements Itypes {
 
     @Override
     public Itypes bool_or(Booleans b) {
-        return null;
+        return new NullType();
     }
 
     @Override
     public Itypes binary_or(binary bin) {
-        return null;
+        return new NullType();
     }
 
     @Override
-    public integers transform_to_integers() {
-        return null;
+    public Itypes transform_to_integers() {
+        return new NullType();
+    }
+    @Override
+    public Itypes transform_to_binary() {
+        return new NullType();
     }
 
     @Override
-    public binary transform_to_binary() {
-        return null;
-    }
-
-    @Override
-    public Booleans transform_to_boolean() {
-        return null;
+    public Itypes transform_to_boolean() {
+        return new NullType();
     }
     @Override
     public Itypes sum_a_binary(binary B) {
-        return null;
+        return new NullType();
     }
 
     @Override
     public Itypes multiply_to_binary(binary B) {
-        return null;
+        return new NullType();
     }
 
     @Override
     public Itypes divide_a_binary(binary B) {
-        return null;
+        return new NullType();
     }
 
     @Override
     public Itypes substract_to_binary(binary B) {
-        return null;
+        return new NullType();
     }
 
     @Override
     public Itypes substract_to_Float(floats F) {
-        return null;
+        return new NullType();
     }
 
     @Override
     public Itypes substract_to_integer(integers I) {
-        return null;
+        return new NullType();
     }
 
     @Override
     public Itypes multiply_to_Float(floats F) {
-        return null;
+        return new NullType();
     }
 
     @Override
     public Itypes multiply_to_integer(integers I) {
-        return null;
+        return new NullType();
     }
 
     @Override
     public Itypes divide_a_Float(floats F) {
-        return null;
+        return new NullType();
     }
 
     @Override
     public Itypes divide_a_integer(integers I) {
-        return null;
+        return new NullType();
     }
 
     @Override
     public Itypes sum_to_int(integers I) {
-        return null;
+        return new NullType();
     }
 
     @Override
     public Itypes sum_to_float(floats F) {
-        return null;
+        return new NullType();
     }
 
     @Override
-    public floats transform_to_float() {
-        return null;
+    public Itypes transform_to_float() {
+        return new NullType();
     }
 
     @Override
     public Itypes and(Itypes L) {
-        return null;
+        return new NullType();
     }
 
     @Override
     public Itypes or(Itypes L) {
-        return null;
+        return new NullType();
     }
 
     @Override
     public Itypes multiply(Itypes inumber) {
-        return null;
+        return new NullType();
     }
 
     @Override
     public Itypes sum(Itypes inumber) {
-        return null;
+        return new NullType();
     }
 
     @Override
     public Itypes substract(Itypes inumber) {
-        return null;
+        return new NullType();
     }
 
     @Override
     public Itypes divide(Itypes inumber) {
-        return null;
+        return new NullType();
     }
 
     @Override
     public Itypes negate() {
-        return null;
+        return new NullType();
     }
 
     @Override

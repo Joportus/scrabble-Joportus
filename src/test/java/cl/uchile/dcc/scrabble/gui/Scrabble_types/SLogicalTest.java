@@ -38,6 +38,7 @@ class SLogicalTest {
     private binary bin5;
     private Random rng;
     private int seed;
+    private NullType nullType;
 
     @BeforeEach
     void setUp(){
@@ -54,6 +55,7 @@ class SLogicalTest {
         bin5 = new binary(b5);
         seed = new Random().nextInt();
         rng = new Random(seed);
+        nullType = new NullType();
     }
 
     @Test
@@ -175,11 +177,12 @@ class SLogicalTest {
         floats F = new floats(first_double_random);
         floats F2 = new floats(second_double_random);
         Itypes invalidResult2 = I.or(F);
+        assertEquals(invalidResult2, nullType);
         assertNull(invalidResult2);
         Itypes invalidResult3 = T.or(F);
-        assertNull(invalidResult3);
+        assertEquals(invalidResult3, nullType);
         Itypes invalidResult4 = bin1.or(F);
-        assertNull(invalidResult4);
+        assertEquals(invalidResult4, nullType);
 
 
 

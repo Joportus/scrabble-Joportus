@@ -41,15 +41,17 @@ public class binary extends Type {
     /**
      * Returns the transformation of this Scrabble's binary number to a
      * Scrabble's float number.
+     * @return
      */
     @Override
-    public floats transform_to_float() {
+    public Itypes transform_to_float() {
         return this.transform_to_integers().transform_to_float();
     }
 
     /**
      * Returns the transformation of this Scrabble binary number to a
      * Scrabble integer number.
+     * @return
      */
     @Override
     public integers transform_to_integers() {

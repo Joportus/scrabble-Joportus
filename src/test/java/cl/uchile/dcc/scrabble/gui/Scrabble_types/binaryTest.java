@@ -1,5 +1,6 @@
 package cl.uchile.dcc.scrabble.gui.Scrabble_types;
 
+import cl.uchile.dcc.scrabble.gui.Itypes;
 import cl.uchile.dcc.scrabble.gui.Scrabble_types.Strings;
 import cl.uchile.dcc.scrabble.gui.Scrabble_types.binary;
 import cl.uchile.dcc.scrabble.gui.Scrabble_types.floats;
@@ -143,13 +144,13 @@ class binaryTest {
     @Test
     void transform_to_float(){
         integers expectedResult_int = new integers(i3);
-        floats expectedResult = expectedResult_int.transform_to_float();
-        floats actualResult = bin11.transform_to_float();
+        Itypes expectedResult = expectedResult_int.transform_to_float();
+        Itypes actualResult = bin11.transform_to_float();
         assertEquals(expectedResult, actualResult);
 
         integers expectedResult2_int = new integers(0);
-        floats expectedResult2 = expectedResult2_int.transform_to_float();
-        floats actualResult2 = bin0.transform_to_float();
+        Itypes expectedResult2 = expectedResult2_int.transform_to_float();
+        Itypes actualResult2 = bin0.transform_to_float();
         assertEquals(expectedResult2, actualResult2);
 
         integers actualResult3 = bin_1.transform_to_integers();
