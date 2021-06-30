@@ -11,8 +11,5 @@ public class toFloats implements Operations{
         this.a = a;
     }
 
-    @Override
-    public Constant eval() {
-        return a.eval().toFloats();
-    }
+
 }

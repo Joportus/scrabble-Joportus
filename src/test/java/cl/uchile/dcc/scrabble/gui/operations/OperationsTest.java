@@ -81,7 +81,7 @@ class OperationsTest {
         Constant actualResult = c1.add(c2);
 
         assertEquals(expectedResult, actualResult);
-        assertEquals(c1.eval(),c1);
+        assertEquals(c1.eval(), c1);
 
         integers I3 = new integers(i2);
         Constant c3 = new Constant(I3);
@@ -115,18 +115,22 @@ class OperationsTest {
         assertEquals(expectedResult6, actualResult6);
 
         Operations example = new SAdd(
-             new LOr(
-                     new Constant(new binary("1000")),
-                     new toBinary(new Minus(
-                             new Constant(new integers(25)),
-                             new Constant(new binary("0101"))
-                     ))
-             ),
-             new Constant(new integers(7))
+                new LOr(
+                        new Constant(new binary("1000")),
+                        new toBinary(new Minus(
+                                new Constant(new integers(25)),
+                                new Constant(new binary("0101"))
+                        ))
+                ),
+                new Constant(new integers(7))
         );
 
 
         System.out.println(example.eval().getType());
+
+        Operations a2 = new SAdd( new Minus(new Constant(new Strings("hola")), new Constant(new Booleans(false))),new Constant(new Booleans(true)));
+        Constant res = a2.eval();
+
 
     }
 

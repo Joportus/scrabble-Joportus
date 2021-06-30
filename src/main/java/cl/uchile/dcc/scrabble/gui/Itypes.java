@@ -3,7 +3,7 @@ package cl.uchile.dcc.scrabble.gui;
 import cl.uchile.dcc.scrabble.gui.Scrabble_types.*;
 import cl.uchile.dcc.scrabble.gui.Soperations.Operations;
 
-public interface Itypes {
+public interface Itypes extends Operations{
 
 
 
@@ -155,5 +155,7 @@ public interface Itypes {
    * If it exists, returns the negation of this scrabble type.
    */
   Itypes negate();
+
+  Itypes eval();
 
 }

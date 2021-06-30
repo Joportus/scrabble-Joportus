@@ -1,5 +1,6 @@
 package cl.uchile.dcc.scrabble.gui.Soperations.math;
 
+import cl.uchile.dcc.scrabble.gui.Itypes;
 import cl.uchile.dcc.scrabble.gui.Soperations.Constant;
 import cl.uchile.dcc.scrabble.gui.Soperations.Operations;
 
@@ -13,8 +14,8 @@ public class Minus implements Operations {
     }
 
     @Override
-    public Constant eval() {
-        return this.getM1().eval().minus(this.getM2().eval());
+    public Itypes eval() {
+        return this.getM1().eval().substract(this.getM2().eval());
     }
 
 

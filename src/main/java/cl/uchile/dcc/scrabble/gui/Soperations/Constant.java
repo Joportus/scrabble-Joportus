@@ -8,10 +8,6 @@ public class Constant implements Operations {
         this.type = type;
     }
 
-    @Override
-    public Constant eval() {
-        return this;
-    }
 
 
     public Constant toBinary() {
