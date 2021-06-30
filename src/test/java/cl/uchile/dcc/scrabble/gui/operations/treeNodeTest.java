@@ -2,6 +2,8 @@ package cl.uchile.dcc.scrabble.gui.operations;
 import cl.uchile.dcc.scrabble.gui.Soperations.*;
 import cl.uchile.dcc.scrabble.gui.Itypes;
 import cl.uchile.dcc.scrabble.gui.Scrabble_types.*;
+import cl.uchile.dcc.scrabble.gui.Soperations.logic.LAnd;
+import cl.uchile.dcc.scrabble.gui.Soperations.logic.LNegate;
 import cl.uchile.dcc.scrabble.gui.Soperations.logic.LOr;
 import cl.uchile.dcc.scrabble.gui.Soperations.math.Divide;
 import cl.uchile.dcc.scrabble.gui.Soperations.math.Minus;
@@ -92,7 +94,7 @@ class treeNodeTest {
         Itypes actualResult3 = actualResultT3.eval();
         assertEquals(expectedResult3, actualResult3);
 
-        assertNull(new toBooleans(I3).eval());
+        assertEquals(new toBooleans(I3).eval(), new NullType());
 
         assertEquals(f.eval(), f);
 
@@ -128,8 +130,22 @@ class treeNodeTest {
 
         assertEquals(expectedResult7, actualResult7);
 
+        Itypes actualResult8 = new Minus(new LOr(new SAdd(F, b), I), f).eval();
+        NullType n = new NullType();
+        assertEquals(actualResult8, n);
 
+        Itypes expectedResult9 = b.and(f);
+        Itypes actualResult9 = new LAnd(b, f).eval();
+        assertEquals(expectedResult9, actualResult9);
 
+        Itypes expectedResult10 = (b.and(f)).or(b.and(b));
+        Itypes actualResult10 = new LOr(new LAnd(b, f), new LAnd(b, b)).eval();
+
+        assertEquals(actualResult10, expectedResult10);
+
+        Itypes expectedResult11 = ((b.and(f)).or(b.and(b))).negate();
+        Itypes actualResult11 = new LNegate(new LOr(new LAnd(b, f), new LAnd(b, b))).eval();
+        assertEquals(expectedResult11, actualResult11);
 
 
     }
@@ -155,6 +171,8 @@ class treeNodeTest {
         floats expectedResult = new floats(expectedResultValue);
         assertEquals(actualResult, expectedResult);
         assertEquals(actualResult, expectedResult);
+
+
 
 
 

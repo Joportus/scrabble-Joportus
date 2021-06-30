@@ -27,8 +27,7 @@ class floatsTest {
         I = new integers(number2);
         T = new Booleans(t);
         F = new Booleans(fa);
-        assertNull(F.transform_to_float());
-        assertNull(T.transform_to_float());
+
 
 
     }
@@ -55,6 +54,8 @@ class floatsTest {
     @Test
     void transform_to_float() {
         assertEquals(f, f.transform_to_float());
+        assertEquals(F.transform_to_float(), new NullType());
+        assertEquals(T.transform_to_float(), new NullType());
     }
 
 /**

@@ -131,16 +131,16 @@ class InumberTest {
         assertEquals(expectedResult11, actualResult11);
 
         Itypes invalidResult = bin1.substract(F);
-        assertNull(invalidResult);
+        assertEquals(invalidResult, new NullType());
         Strings s1 = new Strings(first_random_string);
         Strings s2 = new Strings(second_random_string);
         Itypes invalidResult2 = s1.substract(s2);
-        assertNull(invalidResult2);
+        assertEquals(invalidResult2, new NullType());
 
         Itypes invalidResult6 = I.substract(s2);
-        assertNull(invalidResult6);
+        assertEquals(invalidResult6, new NullType());
         Itypes invalidResult7 = F.substract(s2);
-        assertNull(invalidResult7);
+        assertEquals(invalidResult7, new NullType());
 
 
 
@@ -204,21 +204,21 @@ class InumberTest {
         assertEquals(expectedResult10, actualResult10);
 
         Itypes invalidResult = bin1.sum(F);
-        assertNull(invalidResult);
+        assertEquals(invalidResult, new NullType());
         Strings s1 = new Strings(first_random_string);
         Strings s2 = new Strings(second_random_string);
         Itypes invalidResult2 = s1.multiply(s2);
-        assertNull(invalidResult2);
+        assertEquals(invalidResult2, new NullType());
         Itypes invalidResult3 = I.multiply(s2);
-        assertNull(invalidResult3);
+        assertEquals(invalidResult3, new NullType());
         Itypes invalidResult4 = F.multiply(s2);
-        assertNull(invalidResult4);
+        assertEquals(invalidResult4, new NullType());
         Itypes invalidResult5 = bin1.multiply(s2);
-        assertNull(invalidResult5);
+        assertEquals(invalidResult5, new NullType());
         Itypes invalidResult6 = I.multiply(s2);
-        assertNull(invalidResult6);
+        assertEquals(invalidResult6, new NullType());
         Itypes invalidResult7 = F.multiply(s2);
-        assertNull(invalidResult7);
+        assertEquals(invalidResult7, new NullType());
 
 
 
@@ -291,28 +291,28 @@ class InumberTest {
         Strings s1 = new Strings(first_random_string);
         Strings s2 = new Strings(second_random_string);
         Itypes invalidResult2 = s1.divide(s2);
-        assertNull(invalidResult2);
+        assertEquals(invalidResult2, new NullType());
         Itypes invalidResult3 = I.divide(s2);
-        assertNull(invalidResult3);
+        assertEquals(invalidResult3, new NullType());
         Itypes invalidResult4 = F.divide(s2);
-        assertNull(invalidResult4);
+        assertEquals(invalidResult4, new NullType());
         Itypes invalidResult5 = bin1.divide(s2);
-        assertNull(invalidResult5);
+        assertEquals(invalidResult5, new NullType());
         Itypes invalidResult6 = I.divide(s2);
-        assertNull(invalidResult6);
+        assertEquals(invalidResult6, new NullType());
         Itypes invalidResult7 = F.divide(s2);
-        assertNull(invalidResult7);
+        assertEquals(invalidResult7, new NullType());
 
         /**
          * We test here that integers cannot be negated. If this test passes
          * it would also pass with floats, Strings, etc.
          */
-        assertNull(I.negate());
+        assertEquals(I.negate(), new NullType());
 
         /**
          * We do something similar with transform to boolean.
          */
-        assertNull(F.transform_to_boolean());
+        assertEquals(F.transform_to_boolean(), new NullType());
 
 
 
@@ -356,9 +356,9 @@ class InumberTest {
         Strings s1 = new Strings(first_random_string);
         Strings s2 = new Strings(second_random_string);
         Itypes invalidResult6 = I.sum(s2);
-        assertNull(invalidResult6);
+        assertEquals(invalidResult6, new NullType());
         Itypes invalidResult7 = F.sum(s2);
-        assertNull(invalidResult7);
+        assertEquals(invalidResult7, new NullType());
 
 
 

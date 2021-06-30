@@ -108,7 +108,7 @@ class binaryTest {
         bin1 = new binary(first_random_binary_value);
         assertEquals(bin1, bin1.transform_to_binary());
         Strings s = new Strings(first_random_binary_value);
-        assertNull(s.transform_to_binary());
+        assertEquals(s.transform_to_binary(), new NullType());
     }
 
     @Test

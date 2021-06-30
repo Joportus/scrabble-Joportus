@@ -104,7 +104,7 @@ class SLogicalTest {
         assertEquals(actualResult6_2, actualResult6);
 
         Itypes invalidResult = T.sum(F);
-        assertNull(invalidResult);
+        assertEquals(invalidResult, new NullType());
 
         int first_random = rng.nextInt();
         int second_random = rng.nextInt();
@@ -117,11 +117,11 @@ class SLogicalTest {
         floats F = new floats(first_double_random);
         floats F2 = new floats(second_double_random);
         Itypes invalidResult2 = I.and(F);
-        assertNull(invalidResult2);
+        assertEquals(invalidResult2, new NullType());
         Itypes invalidResult3 = T.and(F);
-        assertNull(invalidResult3);
+        assertEquals(invalidResult3, new NullType());
         Itypes invalidResult4 = bin1.and(F);
-        assertNull(invalidResult4);
+        assertEquals(invalidResult4, new NullType());
 
 
     }
@@ -178,7 +178,7 @@ class SLogicalTest {
         floats F2 = new floats(second_double_random);
         Itypes invalidResult2 = I.or(F);
         assertEquals(invalidResult2, nullType);
-        assertNull(invalidResult2);
+        assertEquals(invalidResult2, new NullType());
         Itypes invalidResult3 = T.or(F);
         assertEquals(invalidResult3, nullType);
         Itypes invalidResult4 = bin1.or(F);
