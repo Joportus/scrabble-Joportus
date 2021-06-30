@@ -1,2 +1,7 @@
-package cl.uchile.dcc.scrabble.gui.Soperations;public interface Nodes {
+package cl.uchile.dcc.scrabble.gui.Soperations;
+
+import cl.uchile.dcc.scrabble.gui.Soperations.Constant;
+
+public interface Nodes {
+    Constant eval();
 }

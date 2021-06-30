@@ -4,6 +4,7 @@ import cl.uchile.dcc.scrabble.gui.Soperations.Constant;
 import cl.uchile.dcc.scrabble.gui.Soperations.Operations;
 
 public class toStrings implements Operations{
+
     private final Operations a;
 
     public toStrings(Operations a) {

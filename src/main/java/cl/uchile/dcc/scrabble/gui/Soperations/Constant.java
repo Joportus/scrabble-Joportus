@@ -47,6 +47,11 @@ public class Constant implements Operations {
         return new Constant(result);
     }
 
+    public Constant lor(Constant c){
+        Itypes result = this.getType().or(c.getType());
+        return new Constant(result);
+    }
+
     public Itypes getType() {
         return type;
     }

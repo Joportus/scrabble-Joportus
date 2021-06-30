@@ -2,10 +2,10 @@ package cl.uchile.dcc.scrabble.gui.operations;
 import cl.uchile.dcc.scrabble.gui.Soperations.*;
 import cl.uchile.dcc.scrabble.gui.Itypes;
 import cl.uchile.dcc.scrabble.gui.Scrabble_types.*;
+import cl.uchile.dcc.scrabble.gui.Soperations.logic.LOr;
 import cl.uchile.dcc.scrabble.gui.Soperations.math.Minus;
 import cl.uchile.dcc.scrabble.gui.Soperations.math.SAdd;
-import cl.uchile.dcc.scrabble.gui.Soperations.transformations.toBinary;
-import cl.uchile.dcc.scrabble.gui.Soperations.transformations.toBooleans;
+import cl.uchile.dcc.scrabble.gui.Soperations.transformations.*;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.RepeatedTest;
@@ -59,7 +59,7 @@ class OperationsTest {
     }
 
 
-    @RepeatedTest(100)
+    @RepeatedTest(1)
     void eval() {
         int first_random = rng.nextInt();
         int second_random = rng.nextInt();
@@ -100,9 +100,33 @@ class OperationsTest {
 
         assertEquals(new toBooleans(c4).eval(), c4);
 
+        Constant expectedResult4 = new Constant(I.transform_to_float());
+        Constant actualResult4 = new toFloats(c1).eval();
+        assertEquals(expectedResult4, actualResult4);
+
+        Constant cb = new Constant(bin1);
+        Constant expectedResult5 = new Constant(bin1.transform_to_integers());
+        Constant actualResult5 = new toIntegers(cb).eval();
+        assertEquals(expectedResult5, actualResult5);
+
+        Constant cs = new Constant(I);
+        Constant expectedResult6 = new Constant(I.transform_to_string());
+        Constant actualResult6 = new toStrings(cs).eval();
+        assertEquals(expectedResult6, actualResult6);
+
+        Operations example = new SAdd(
+             new LOr(
+                     new Constant(new binary("1000")),
+                     new toBinary(new Minus(
+                             new Constant(new integers(25)),
+                             new Constant(new binary("0101"))
+                     ))
+             ),
+             new Constant(new integers(7))
+        );
 
 
-
+        System.out.println(example.eval().getType());
 
     }
 
@@ -136,6 +160,16 @@ class OperationsTest {
         SAdd a2 = new SAdd(c2, c2);
 
 
+    }
+    @RepeatedTest(100)
+    void lor(){
+        Constant c1 = new Constant(b);
+        Constant c2 = new Constant(f);
+
+        Constant expectedResult = new Constant(b.or(f));
+        Constant actualResult = new LOr(c1, c2).eval();
+
+        assertEquals(actualResult, expectedResult);
     }
     @RepeatedTest(100)
     void minus(){
@@ -184,6 +218,15 @@ class OperationsTest {
         Minus a2 = new Minus(c1, c2);
         assertEquals(a2, expectedMinus);
         assertNotEquals(a2, unexpectedMinus);
+
+        Constant cb = new Constant(b);
+        Constant cf = new Constant(f);
+
+        var expectedLOr = new LOr(cb, cf);
+        var unexpectedLOr = new LOr(c1, cb);
+        LOr a3 = new LOr(cb, cf);
+        assertEquals(a3, expectedLOr);
+        assertNotEquals(a3, unexpectedLOr);
 
     }
 
