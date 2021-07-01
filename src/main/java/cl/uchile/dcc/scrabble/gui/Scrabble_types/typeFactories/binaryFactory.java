@@ -7,20 +7,20 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class binaryFactory {
-    static Map<binary, binary> Binary = new HashMap<>();
+    static Map<String, binary> Binary = new HashMap<>();
 
 
     public static binary createBinary(String binary_value){
-        binary binary_key = new binary(binary_value);
-        binary result = Binary.get(binary_key);
+
+        binary result = Binary.get(binary_value);
         if (result == null){
             result = new binary(binary_value);
-            Binary.put(binary_key, result);
+            Binary.put(binary_value, result);
         }
         return result;
     }
 
-    public Map<binary, binary> get_map(){
+    public Map<String, binary> get_map(){
         return Binary;
     }
 }

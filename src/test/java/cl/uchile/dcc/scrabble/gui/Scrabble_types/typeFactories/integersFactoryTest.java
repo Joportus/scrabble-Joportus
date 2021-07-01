@@ -34,7 +34,7 @@ class integersFactoryTest {
 
         integersFactory F = new integersFactory();
 
-        Map<integers, integers> map1 = F.get_map();
+        Map<Integer, integers> map1 = F.get_map();
 
         assert map1.size() == 0;
 
