@@ -9,16 +9,20 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class booleansFactory {
-    static Booleans[] Booleans_array = new Booleans[]{new Booleans(true), new Booleans(false)};
+
+    static Map<Boolean, Booleans> Booleans = new HashMap<>();
 
     public static Booleans createBooleans(boolean Booleans_value){
-
-        if (!Booleans_value){
-            return Booleans_array[1];
+        Boolean Booleans_key = Booleans_value;
+        Booleans result = Booleans.get(Booleans_key);
+        if (result == null){
+            result = new Booleans(Booleans_value);
+            Booleans.put(Booleans_key, result);
         }
-        else {
-            return Booleans_array[0];
-        }
+        return result;
     }
-    
+
+    public Map<Boolean, Booleans> get_map(){
+        return Booleans;
+    }
 }
