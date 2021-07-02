@@ -2,23 +2,18 @@ package cl.uchile.dcc.scrabble.gui.Soperations.transformations;
 
 import cl.uchile.dcc.scrabble.gui.Itypes;
 
+import cl.uchile.dcc.scrabble.gui.Soperations.OneChildNodes;
 import cl.uchile.dcc.scrabble.gui.Soperations.treeNode;
 
-public class toIntegers implements treeNode {
+public class toIntegers extends OneChildNodes {
 
-    private final treeNode a;
-
-    public toIntegers(treeNode a) {
-        this.a = a;
+    public toIntegers(treeNode child) {
+        super(child);
     }
-
 
     @Override
     public Itypes eval() {
-        return getA().eval().transform_to_integers();
+        return getChild().eval().transform_to_integers();
     }
 
-    public treeNode getA() {
-        return a;
-    }
 }

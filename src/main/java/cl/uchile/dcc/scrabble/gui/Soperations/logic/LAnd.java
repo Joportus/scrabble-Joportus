@@ -1,29 +1,19 @@
 package cl.uchile.dcc.scrabble.gui.Soperations.logic;
 
 import cl.uchile.dcc.scrabble.gui.Itypes;
+import cl.uchile.dcc.scrabble.gui.Soperations.TwoChildNodes;
 import cl.uchile.dcc.scrabble.gui.Soperations.treeNode;
 
-public class LAnd implements treeNode{
-    private final treeNode m1;
-    private final treeNode m2;
-
-    public LAnd(treeNode m1, treeNode m2) {
-        this.m1 = m1;
-        this.m2 = m2;
-    }
+public class LAnd extends TwoChildNodes {
 
 
-    public treeNode getM1() {
-        return m1;
-    }
-
-    public treeNode getM2() {
-        return m2;
+    public LAnd(treeNode leftChild, treeNode rightChild) {
+        super(leftChild, rightChild);
     }
 
     @Override
     public Itypes eval() {
-        return this.getM1().eval().and(this.getM2().eval());
+        return this.getLeftChild().eval().and(this.getRightChild().eval());
     }
 
     @Override

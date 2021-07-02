@@ -1,22 +1,18 @@
 package cl.uchile.dcc.scrabble.gui.Soperations.logic;
 
 import cl.uchile.dcc.scrabble.gui.Itypes;
+import cl.uchile.dcc.scrabble.gui.Soperations.OneChildNodes;
 import cl.uchile.dcc.scrabble.gui.Soperations.treeNode;
 
-public class LNegate implements treeNode{
-    private final treeNode a;
+public class LNegate extends OneChildNodes {
 
-    public LNegate(treeNode a) {
-        this.a = a;
+    public LNegate(treeNode child) {
+        super(child);
     }
-
 
     @Override
     public Itypes eval() {
-        return getA().eval().negate();
+        return getChild().eval().negate();
     }
 
-    public treeNode getA() {
-        return a;
-    }
 }

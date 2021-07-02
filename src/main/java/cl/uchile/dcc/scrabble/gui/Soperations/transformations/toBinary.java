@@ -2,23 +2,18 @@ package cl.uchile.dcc.scrabble.gui.Soperations.transformations;
 
 import cl.uchile.dcc.scrabble.gui.Itypes;
 
+import cl.uchile.dcc.scrabble.gui.Soperations.OneChildNodes;
 import cl.uchile.dcc.scrabble.gui.Soperations.treeNode;
 
-public class toBinary implements treeNode {
+public class toBinary extends OneChildNodes {
 
-    private final treeNode a;
 
-    public toBinary(treeNode a) {
-        this.a = a;
+    public toBinary(treeNode child) {
+        super(child);
     }
-
 
     @Override
     public Itypes eval() {
-        return getA().eval().transform_to_binary();
-    }
-
-    public treeNode getA() {
-        return a;
+        return getChild().eval().transform_to_binary();
     }
 }
