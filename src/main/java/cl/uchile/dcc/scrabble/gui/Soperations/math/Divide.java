@@ -11,7 +11,7 @@ import cl.uchile.dcc.scrabble.gui.Soperations.treeNode;
  */
 public class Divide extends TwoChildNodes {
 
-    /**Creates a new Divide object.
+    /** Creates a new Divide object.
      * @param leftChild is a treeNode object, could be an operation
      *           or an Itype object(leaf node).
      *
