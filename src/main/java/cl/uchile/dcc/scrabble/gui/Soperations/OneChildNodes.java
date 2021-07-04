@@ -7,7 +7,7 @@ package cl.uchile.dcc.scrabble.gui.Soperations;
 public abstract class OneChildNodes implements treeNode{
     private final treeNode child;
 
-    /** Creates TwoChildNodes.
+    /** Creates a OneChildNodes object.
      * @param child is a treeNode object, could be an operation
      *           or an Itype object(leaf node).
      *

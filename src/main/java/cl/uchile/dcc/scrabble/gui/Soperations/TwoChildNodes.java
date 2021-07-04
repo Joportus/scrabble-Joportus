@@ -8,7 +8,7 @@ public abstract class TwoChildNodes implements treeNode{
     private final treeNode leftChild;
     private final treeNode rightChild;
 
-    /** Creates TwoChildNodes.
+    /** Creates a TwoChildNodes object.
      * @param leftChild is a treeNode object, could be an operation
      *           or an Itype object(leaf node).
      *
