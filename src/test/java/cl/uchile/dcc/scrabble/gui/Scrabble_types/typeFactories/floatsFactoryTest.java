@@ -3,6 +3,7 @@ package cl.uchile.dcc.scrabble.gui.Scrabble_types.typeFactories;
 import cl.uchile.dcc.scrabble.gui.Scrabble_types.floats;
 import cl.uchile.dcc.scrabble.gui.Scrabble_types.integers;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 
 import java.util.Map;
@@ -20,7 +21,7 @@ class floatsFactoryTest {
         rng = new Random(seed);
 
     }
-    @Test
+    @RepeatedTest(50)
     void createFloats() {
         int i1 = rng.nextInt();
         int i2 = rng.nextInt();
@@ -34,6 +35,7 @@ class floatsFactoryTest {
         double r3 = i3 * d3;
         double d4 = new Random().nextDouble();
         double r4 = i4 * d4;
+
 
         Map<Double , floats> map1 = floatsFactory.getfFactory().get_map();
 
@@ -75,6 +77,10 @@ class floatsFactoryTest {
         assertEquals(F, F2);
 
         assertEquals(F.hashCode(), F2.hashCode());
+
+        map1.clear();
+
+
 
     }
 }

@@ -13,20 +13,20 @@ class integersFactoryTest {
     private Random rng;
     private int seed;
 
-    @BeforeEach
-    void setUp(){
-        seed = new Random().nextInt();
-        rng = new Random(seed);
-    }
+
 
     @Test
     void createIntegers() {
-        int r1 = rng.nextInt();
-        int r2 = rng.nextInt();
-        int r3 = rng.nextInt();
-        int r4 = rng.nextInt();
+        int r1 = 23432;
+        int r2 = 2354235;
+        int r3 = -1234;
+        int r4 = 124;
 
 
+        System.out.println(r1);
+        System.out.println(r2);
+        System.out.println(r3);
+        System.out.println(r4);
 
         Map<Integer, integers> map1 = integersFactory.getiFactory().get_map();
 

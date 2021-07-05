@@ -15,19 +15,13 @@ import static org.junit.jupiter.api.Assertions.*;
 class stringsFactoryTest {
 
 
-    private Random rng;
-    private int seed;
-
-
     @Test
     void createStrings() {
-        seed = new Random().nextInt();
-        rng = new Random(seed);
-        int strSize = rng.nextInt(20);
-        String r1 = RandomStringUtils.random(strSize, 0, Character.MAX_CODE_POINT, true, false, null, rng);
-        String r2 = RandomStringUtils.random(strSize, 0, Character.MAX_CODE_POINT, true, false, null, rng);
-        String r3 = RandomStringUtils.random(strSize, 0, Character.MAX_CODE_POINT, true, false, null, rng);
-        String r4 = RandomStringUtils.random(strSize, 0, Character.MAX_CODE_POINT, true, false, null, rng);
+
+        String r1 = "jhshdhad";
+        String r2 = "holahola";
+        String r3 = "hsdjjj";
+        String r4 = "chaochao";
 
         Map<String, Strings> map1 = stringsFactory.getsFactory().get_map();
 
