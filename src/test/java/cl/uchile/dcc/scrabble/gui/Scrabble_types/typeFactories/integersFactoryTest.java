@@ -27,9 +27,8 @@ class integersFactoryTest {
         int r4 = rng.nextInt();
 
 
-
         Map<Integer, integers> map1 = integersFactory.getiFactory().get_map();
-
+        System.out.println(map1.size()+"hola");
         assert map1.size() == 0;
 
         integers I = integersFactory.createIntegers(r1);

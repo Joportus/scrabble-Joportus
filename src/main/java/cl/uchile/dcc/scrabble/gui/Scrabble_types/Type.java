@@ -1,5 +1,6 @@
 package cl.uchile.dcc.scrabble.gui.Scrabble_types;
 import cl.uchile.dcc.scrabble.gui.Itypes;
+import cl.uchile.dcc.scrabble.gui.Scrabble_types.typeFactories.nullTypeFactory;
 
 
 /**
@@ -28,58 +29,59 @@ public abstract class Type implements Itypes {
     /**
      * Always returns NullType. This happens when the operation is invalid
      */
+
     @Override
     public Itypes bool_and(Booleans b) {
-        return new NullType();
+        return nullTypeFactory.createNull();
     }
     /**
      * Always returns NullType. This happens when the operation is invalid
      */
     @Override
     public Itypes binary_and(binary bin) {
-        return new NullType();
+        return nullTypeFactory.createNull();
     }
     /**
      * Always returns NullType. This happens when the operation is invalid
      */
     @Override
     public Itypes bool_or(Booleans b) {
-        return new NullType();
+        return nullTypeFactory.createNull();
     }
     /**
      * Always returns NullType. This happens when the operation is invalid
      */
     @Override
     public Itypes binary_or(binary bin) {
-        return new NullType();
+        return nullTypeFactory.createNull();
     }
     /**
      * Always returns NullType. This happens when the operation is invalid
      */
     @Override
     public Itypes transform_to_integers() {
-        return new NullType();
+        return nullTypeFactory.createNull();
     }
     /**
      * Always returns NullType. This happens when the operation is invalid
      */
     @Override
     public Itypes transform_to_binary() {
-        return new NullType();
+        return nullTypeFactory.createNull();
     }
     /**
      * Always returns NullType. This happens when the operation is invalid
      */
     @Override
     public Itypes transform_to_boolean() {
-        return new NullType();
+        return nullTypeFactory.createNull();
     }
     /**
      * Always returns NullType. This happens when the operation is invalid
      */
     @Override
     public Itypes sum_a_binary(binary B) {
-        return new NullType();
+        return nullTypeFactory.createNull();
     }
 
     /**
@@ -87,7 +89,7 @@ public abstract class Type implements Itypes {
      */
     @Override
     public Itypes multiply_to_binary(binary B) {
-        return new NullType();
+        return nullTypeFactory.createNull();
     }
 
     /**
@@ -95,7 +97,7 @@ public abstract class Type implements Itypes {
      */
     @Override
     public Itypes divide_a_binary(binary B) {
-        return new NullType();
+        return nullTypeFactory.createNull();
     }
 
     /**
@@ -103,7 +105,7 @@ public abstract class Type implements Itypes {
      */
     @Override
     public Itypes substract_to_binary(binary B) {
-        return new NullType();
+        return nullTypeFactory.createNull();
     }
 
     /**
@@ -111,7 +113,7 @@ public abstract class Type implements Itypes {
      */
     @Override
     public Itypes substract_to_Float(floats F) {
-        return new NullType();
+        return nullTypeFactory.createNull();
     }
 
     /**
@@ -119,7 +121,7 @@ public abstract class Type implements Itypes {
      */
     @Override
     public Itypes substract_to_integer(integers I) {
-        return new NullType();
+        return nullTypeFactory.createNull();
     }
 
     /**
@@ -127,7 +129,7 @@ public abstract class Type implements Itypes {
      */
     @Override
     public Itypes multiply_to_Float(floats F) {
-        return new NullType();
+        return nullTypeFactory.createNull();
     }
 
     /**
@@ -135,7 +137,7 @@ public abstract class Type implements Itypes {
      */
     @Override
     public Itypes multiply_to_integer(integers I) {
-        return new NullType();
+        return nullTypeFactory.createNull();
     }
 
     /**
@@ -143,7 +145,7 @@ public abstract class Type implements Itypes {
      */
     @Override
     public Itypes divide_a_Float(floats F) {
-        return new NullType();
+        return nullTypeFactory.createNull();
     }
 
     /**
@@ -151,7 +153,7 @@ public abstract class Type implements Itypes {
      */
     @Override
     public Itypes divide_a_integer(integers I) {
-        return new NullType();
+        return nullTypeFactory.createNull();
     }
 
     /**
@@ -159,7 +161,7 @@ public abstract class Type implements Itypes {
      */
     @Override
     public Itypes sum_to_int(integers I) {
-        return new NullType();
+        return nullTypeFactory.createNull();
     }
 
     /**
@@ -167,7 +169,7 @@ public abstract class Type implements Itypes {
      */
     @Override
     public Itypes sum_to_float(floats F) {
-        return new NullType();
+        return nullTypeFactory.createNull();
     }
 
     /**
@@ -175,7 +177,7 @@ public abstract class Type implements Itypes {
      */
     @Override
     public Itypes transform_to_float() {
-        return new NullType();
+        return nullTypeFactory.createNull();
     }
 
     /**
@@ -183,7 +185,7 @@ public abstract class Type implements Itypes {
      */
     @Override
     public Itypes and(Itypes L) {
-        return new NullType();
+        return nullTypeFactory.createNull();
     }
 
     /**
@@ -191,7 +193,7 @@ public abstract class Type implements Itypes {
      */
     @Override
     public Itypes or(Itypes L) {
-        return new NullType();
+        return nullTypeFactory.createNull();
     }
 
     /**
@@ -199,7 +201,7 @@ public abstract class Type implements Itypes {
      */
     @Override
     public Itypes multiply(Itypes inumber) {
-        return new NullType();
+        return nullTypeFactory.createNull();
     }
 
     /**
@@ -207,7 +209,7 @@ public abstract class Type implements Itypes {
      */
     @Override
     public Itypes sum(Itypes inumber) {
-        return new NullType();
+        return nullTypeFactory.createNull();
     }
 
     /**
@@ -215,7 +217,7 @@ public abstract class Type implements Itypes {
      */
     @Override
     public Itypes substract(Itypes inumber) {
-        return new NullType();
+        return nullTypeFactory.createNull();
     }
 
     /**
@@ -223,7 +225,7 @@ public abstract class Type implements Itypes {
      */
     @Override
     public Itypes divide(Itypes inumber) {
-        return new NullType();
+        return nullTypeFactory.createNull();
     }
 
     /**
@@ -231,7 +233,7 @@ public abstract class Type implements Itypes {
      */
     @Override
     public Itypes negate() {
-        return new NullType();
+        return nullTypeFactory.createNull();
     }
 
     /**

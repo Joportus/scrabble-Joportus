@@ -1,6 +1,7 @@
 package cl.uchile.dcc.scrabble.gui.Scrabble_types;
 
 import cl.uchile.dcc.scrabble.gui.*;
+import cl.uchile.dcc.scrabble.gui.Scrabble_types.typeFactories.integersFactory;
 
 import java.util.Objects;
 
@@ -57,10 +58,10 @@ public class binary extends Type {
     public integers transform_to_integers() {
         String binary = this.getBinary_value();
         if (bitToInt(binary.charAt(0)) == 0) {
-            return new integers(positiveBinToInt(binary));
+            return integersFactory.createIntegers(positiveBinToInt(binary));
         }
         else{
-            return new integers(negativeBinaryToInt(binary));
+            return integersFactory.createIntegers(negativeBinaryToInt(binary));
         }
     }
 
