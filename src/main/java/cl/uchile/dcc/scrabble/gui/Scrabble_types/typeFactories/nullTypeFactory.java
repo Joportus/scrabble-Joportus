@@ -8,6 +8,10 @@ import cl.uchile.dcc.scrabble.gui.Scrabble_types.NullType;
  * It creates nullType objects.
  */
 public class nullTypeFactory {
+
+    private nullTypeFactory() {
+    }
+
     /**
      * NullType object for our factory
      **/
@@ -20,4 +24,6 @@ public class nullTypeFactory {
     public static NullType createNull(){
         return n;
     }
+
+
 }
