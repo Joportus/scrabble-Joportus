@@ -10,11 +10,20 @@ import java.util.Map;
  * This class represents a scrabble binary Factory.
  */
 public class binaryFactory {
+
+    private binaryFactory() {
+    }
+
     /**
      * This Hashmap stores binary objects, with their
      * String binary_value attribute as key.
      */
     static Map<String, binary> Binary = new HashMap<>();
+
+
+    private static final binaryFactory binFactory = new binaryFactory();
+
+
     /**
      * This method returns a scrabble binary object.
      * It receives a String as input, which represents
@@ -40,5 +49,12 @@ public class binaryFactory {
      */
     public Map<String, binary> get_map(){
         return Binary;
+    }
+
+    /**
+     * Always returns binFactory ensuring only one Factory is created.
+     */
+    public static binaryFactory getBinFactory() {
+        return binFactory;
     }
 }

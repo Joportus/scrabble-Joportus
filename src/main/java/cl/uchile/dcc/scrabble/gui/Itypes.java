@@ -157,7 +157,9 @@ public interface Itypes extends treeNode {
    */
   Itypes negate();
 
-
+  /**
+   * returns the Itypes evaluation of this object.
+   */
   Itypes eval();
 
 }

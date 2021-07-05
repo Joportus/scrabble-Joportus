@@ -8,7 +8,7 @@ import java.util.Objects;
  */
 public class Booleans extends Type {
 
-    private boolean bool_value;
+    private final boolean bool_value;
     /**
      * Creates a Booleans object.
      *

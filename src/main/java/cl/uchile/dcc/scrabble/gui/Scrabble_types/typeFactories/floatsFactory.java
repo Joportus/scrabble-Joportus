@@ -10,11 +10,17 @@ import java.util.Map;
  */
 public class floatsFactory {
 
+    private floatsFactory() {
+    }
+
     /**
      * This Hashmap stores floats objects, with their
      * Double float_value attribute as key.
      */
     static Map<Double, floats> Floats = new HashMap<>();
+
+    private static final floatsFactory fFactory = new floatsFactory();
+
 
     /**
      * This method returns a scrabble floats object.
@@ -27,12 +33,11 @@ public class floatsFactory {
      * If it already exists in the hashmap, it simply returns that object
      * instead of creating a new one.
      */
-    public static floats createFloats(double floats_value){
-        Double floats_key = floats_value;
-        floats result = Floats.get(floats_key);
+    public static floats createFloats(Double floats_value){
+        floats result = Floats.get(floats_value);
         if (result == null){
             result = new floats(floats_value);
-            Floats.put(floats_key, result);
+            Floats.put(floats_value, result);
         }
         return result;
     }
@@ -42,5 +47,12 @@ public class floatsFactory {
      */
     public Map<Double, floats> get_map(){
         return Floats;
+    }
+
+    /**
+     * Always returns fFactory ensuring only one Factory is created.
+     */
+    public static floatsFactory getfFactory(){
+        return fFactory;
     }
 }

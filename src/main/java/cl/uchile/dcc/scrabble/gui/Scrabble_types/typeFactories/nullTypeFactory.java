@@ -1,11 +1,7 @@
 package cl.uchile.dcc.scrabble.gui.Scrabble_types.typeFactories;
 
-import cl.uchile.dcc.scrabble.gui.Itypes;
-import cl.uchile.dcc.scrabble.gui.Scrabble_types.NullType;
-import cl.uchile.dcc.scrabble.gui.Scrabble_types.integers;
 
-import java.util.HashMap;
-import java.util.Map;
+import cl.uchile.dcc.scrabble.gui.Scrabble_types.NullType;
 
 /**
  * This class represents a nullType Factory.
@@ -15,7 +11,7 @@ public class nullTypeFactory {
     /**
      * NullType object for our factory
      **/
-    static NullType n = createNull();
+    private static final NullType n = new NullType();
 
     /**
      * Every time we create a NullType with creteNull it

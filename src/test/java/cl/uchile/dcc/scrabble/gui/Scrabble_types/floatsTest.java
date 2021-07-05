@@ -40,7 +40,6 @@ class floatsTest {
 
         var differentFloat = new floats(10.4);
         assertNotEquals(differentFloat, f, "Float values should be different");
-
         assertNotEquals(f, I);
 
     }
@@ -58,17 +57,4 @@ class floatsTest {
         assertEquals(T.transform_to_float(), new NullType());
     }
 
-/**
-    @Test
-    void getFloat_value() {
-    }
-
-    @Test
-    void testToString() {
-    }
-
-    @Test
-    void transform_to_float() {
-    }
-    **/
 }

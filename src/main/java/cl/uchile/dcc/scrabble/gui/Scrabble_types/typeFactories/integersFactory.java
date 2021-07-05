@@ -11,11 +11,17 @@ import java.util.Map;
  */
 public class integersFactory {
 
+
+    private integersFactory() {
+    }
     /**
      * This Hashmap stores integers objects, with their
      * Integer int_value attribute as key.
      */
     static Map<Integer, integers> Integers = new HashMap<>();
+
+    private static final integersFactory iFactory = new integersFactory();
+
 
     /**
      * This method returns a scrabble integers object.
@@ -28,12 +34,11 @@ public class integersFactory {
      * If it already exists in the hashmap, it simply returns that object
      * instead of creating a new one.
      */
-    public static integers createIntegers(int integers_value){
-        Integer integer_key = integers_value;
-        integers result = Integers.get(integer_key);
+    public static integers createIntegers(Integer integers_value){
+        integers result = Integers.get(integers_value);
         if (result == null){
             result = new integers(integers_value);
-            Integers.put(integer_key, result);
+            Integers.put(integers_value, result);
         }
         return result;
     }
@@ -44,4 +49,12 @@ public class integersFactory {
     public Map<Integer, integers> get_map(){
         return Integers;
     }
+    /**
+     * Always returns iFactory ensuring only one Factory is created.
+     */
+    public static integersFactory getiFactory(){
+        return iFactory;
+    }
+
+
 }

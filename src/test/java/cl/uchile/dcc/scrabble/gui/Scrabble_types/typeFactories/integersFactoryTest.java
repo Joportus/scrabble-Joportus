@@ -25,16 +25,10 @@ class integersFactoryTest {
         int r2 = rng.nextInt();
         int r3 = rng.nextInt();
         int r4 = rng.nextInt();
-        int r5 = rng.nextInt();
-        int r6 = rng.nextInt();
-        int r7 = rng.nextInt();
-        int r8 = rng.nextInt();
-        int r9 = rng.nextInt();
 
 
-        integersFactory F = new integersFactory();
 
-        Map<Integer, integers> map1 = F.get_map();
+        Map<Integer, integers> map1 = integersFactory.getiFactory().get_map();
 
         assert map1.size() == 0;
 
@@ -74,7 +68,6 @@ class integersFactoryTest {
         assertEquals(I, I2);
 
         assertEquals(I.hashCode(), I2.hashCode());
-
 
 
 

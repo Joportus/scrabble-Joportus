@@ -209,7 +209,7 @@ class treeNodeTest {
         floats expectedResult = new floats(expectedResultValue);
 
         assertEquals(actualResult, expectedResult);
-        
+
     }
     @RepeatedTest(1)
     void constructorTest(){
@@ -221,27 +221,33 @@ class treeNodeTest {
         var expectedSAdd = new SAdd(c1, c2);
         SAdd a = new SAdd(c1, c2);
         assertEquals(a, expectedSAdd);
+        assertNotEquals(a, "hola");
 
         var expectedMinus = new Minus(c1, c2);
         Minus a2 = new Minus(c1, c2);
         assertEquals(a2, expectedMinus);
+        assertNotEquals(a2, a);
 
         var expectedLOr = new LOr(b, f);
         LOr a3 = new LOr(b, f);
         assertEquals(a3, expectedLOr);
+        assertNotEquals(a3, a2);
 
         var expectedLAnd = new LAnd(b, f);
         LAnd a4 = new LAnd(b, f);
         assertEquals(a4, expectedLAnd);
+        assertNotEquals(a4, a3);
 
         var expectedDivide = new Divide(c1, c2);
         Divide a5 = new Divide(c1, c2);
         assertEquals(a5, expectedDivide);
+        assertNotEquals(a5, a4);
 
 
         var expectedMultiply = new Multiply(c1, c2);
         Multiply a6 = new Multiply(c1, c2);
         assertEquals(a6, expectedMultiply);
+        assertNotEquals(a6, a5);
 
 
     }

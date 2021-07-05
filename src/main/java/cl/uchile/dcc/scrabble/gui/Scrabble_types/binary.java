@@ -10,7 +10,7 @@ import java.util.Objects;
 public class binary extends Type {
 
 
-    private String binary_value;
+    private final String binary_value;
 
     /**
      * Creates a new binary object.

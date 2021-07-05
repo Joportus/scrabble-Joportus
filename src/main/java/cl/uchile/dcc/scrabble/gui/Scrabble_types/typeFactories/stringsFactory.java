@@ -11,11 +11,19 @@ import java.util.Map;
  * This class represents a scrabble Strings Factory.
  */
 public class stringsFactory {
+
+    private stringsFactory() {
+    }
     /**
      * This Hashmap stores Strings objects, with their
      * String Strings_value attribute as key.
      */
     static Map<String, Strings> Strings = new HashMap<>();
+
+
+    private static final stringsFactory sFactory = new stringsFactory();
+
+
     /**
      * This method returns a scrabble Strings object.
      * It receives a String as input, which represents
@@ -40,4 +48,12 @@ public class stringsFactory {
     public Map<String, Strings> get_map(){
         return Strings;
     }
+
+    /**
+     * Always returns sFactory ensuring only one Factory is created.
+     */
+    public static stringsFactory getsFactory() {
+        return sFactory;
+    }
+
 }

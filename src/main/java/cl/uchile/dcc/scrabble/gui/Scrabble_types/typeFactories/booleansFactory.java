@@ -12,11 +12,17 @@ import java.util.Map;
  * This class represents a scrabble Booleans Factory.
  */
 public class booleansFactory {
+
+    private booleansFactory() {
+    }
+
     /**
      * This Hashmap stores Booleans objects, with their
      * Boolean bool_value attribute as key.
      */
     static Map<Boolean, Booleans> Booleans = new HashMap<>();
+
+    private static final booleansFactory bFactory = new booleansFactory();
 
     /**
      * This method returns a scrabble Booleans object.
@@ -29,12 +35,13 @@ public class booleansFactory {
      * If it already exists in the hashmap, it simply returns that object
      * instead of creating a new one.
      */
-    public static Booleans createBooleans(boolean Booleans_value){
-        Boolean Booleans_key = Booleans_value;
-        Booleans result = Booleans.get(Booleans_key);
+    public static Booleans createBooleans(Boolean Booleans_value){
+
+        Booleans result = Booleans.get(Booleans_value);
+
         if (result == null){
             result = new Booleans(Booleans_value);
-            Booleans.put(Booleans_key, result);
+            Booleans.put(Booleans_value, result);
         }
         return result;
     }
@@ -44,4 +51,11 @@ public class booleansFactory {
     public Map<Boolean, Booleans> get_map(){
         return Booleans;
     }
+    /**
+     * Always returns bFactory ensuring only one Factory is created.
+     */
+    public static booleansFactory getbFactory(){
+        return bFactory;
+    }
+
 }

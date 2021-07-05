@@ -11,7 +11,7 @@ import static java.lang.Math.abs;
  */
 public class integers extends Type {
 
-    private int int_value;
+    private final int int_value;
     /**
      * Creates a new integers object.
      *

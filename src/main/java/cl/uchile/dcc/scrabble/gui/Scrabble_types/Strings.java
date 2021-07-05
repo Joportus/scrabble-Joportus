@@ -9,7 +9,7 @@ import java.util.Objects;
 public class Strings extends Type {
 
 
-    private String string_value;
+    private final String string_value;
 
     /**
      * Creates a Booleans object.
