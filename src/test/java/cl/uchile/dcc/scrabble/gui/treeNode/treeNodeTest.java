@@ -1,14 +1,11 @@
 package cl.uchile.dcc.scrabble.gui.treeNode;
 import cl.uchile.dcc.scrabble.gui.Soperations.*;
 import cl.uchile.dcc.scrabble.gui.Itypes;
+import cl.uchile.dcc.scrabble.gui.Soperations.math.SAdd;
 import cl.uchile.dcc.scrabble.gui.Scrabble_types.*;
-import cl.uchile.dcc.scrabble.gui.Soperations.logic.LAnd;
 import cl.uchile.dcc.scrabble.gui.Soperations.logic.LNegate;
 import cl.uchile.dcc.scrabble.gui.Soperations.logic.LOr;
-import cl.uchile.dcc.scrabble.gui.Soperations.math.Divide;
-import cl.uchile.dcc.scrabble.gui.Soperations.math.Minus;
 import cl.uchile.dcc.scrabble.gui.Soperations.math.Multiply;
-import cl.uchile.dcc.scrabble.gui.Soperations.math.SAdd;
 import cl.uchile.dcc.scrabble.gui.Soperations.transformations.*;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.BeforeEach;
