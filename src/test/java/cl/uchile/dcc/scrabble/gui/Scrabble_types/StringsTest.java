@@ -2,6 +2,7 @@ package cl.uchile.dcc.scrabble.gui.Scrabble_types;
 
 import cl.uchile.dcc.scrabble.gui.Itypes;
 import cl.uchile.dcc.scrabble.gui.Scrabble_types.*;
+import cl.uchile.dcc.scrabble.gui.Scrabble_types.typeFactories.nullTypeFactory;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.RepeatedTest;
@@ -102,6 +103,10 @@ public class StringsTest {
         Itypes actualResult6 = s1.transform_to_string();
         assertEquals(expectedResult6, actualResult6);
 
+        NullType n = nullTypeFactory.createNull();
+        Itypes actualResult7 = n.transform_to_string();
+        assertEquals(n, actualResult7);
+
 
 
     }
@@ -145,6 +150,10 @@ public class StringsTest {
         Strings expectedResult6 = new Strings(expectedResult_value6);
         Itypes actualResult6 = s1.sum(s2);
         assertEquals(expectedResult6, actualResult6);
+
+        NullType n = nullTypeFactory.createNull();
+        Itypes expectedResult7 = n.sum_to_string(s1);
+        assertEquals(n, expectedResult7);
 
 
     }
