@@ -36,8 +36,7 @@ To optimize memory, I created factory classes for each Itype. When a factory cre
 If it wasnt created, we create it. If its already in the hashmap, it returns it.
 I also made sure that only one factory can be created, because creating more than one factory would be a waste of memory.
 
-I thought about modifying operation methods from part one, so that every operation would return an object created by the respective factory.
-Ultimately, I decided not to, because that would mean changing a lot of the code I had already created for part 1. And it would also mean
-that if we remove the factories, our programme would no longer work properly.
+I did some minor changes on the operation methods for part 1 of the project. For operation methods, I returned the result as a new object. I modified this so the methods
+would return an object created by the respective factory, so I could further optimize memory use. 
 
 
