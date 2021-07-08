@@ -87,7 +87,7 @@ class ItypesTest {
         assertNotEquals(different_result, actual_result_3);
 
         Strings expectedResult4 =  new Strings("hello500");
-        Strings actualResult4 = S.sum(I3);
+        Itypes actualResult4 = S.sum(I3);
         assertEquals(expectedResult4, actualResult4);
 
     }

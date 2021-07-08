@@ -1,5 +1,6 @@
 package cl.uchile.dcc.scrabble.gui.Scrabble_types;
 
+import cl.uchile.dcc.scrabble.gui.Itypes;
 import cl.uchile.dcc.scrabble.gui.Scrabble_types.*;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.BeforeEach;
@@ -73,32 +74,32 @@ public class StringsTest {
 
         String expectedResult_value = I.toString();
         Strings expectedResult = new Strings(expectedResult_value);
-        Strings actualResult = I.transform_to_string();
+        Itypes actualResult = I.transform_to_string();
         assertEquals(expectedResult, actualResult);
 
         String expectedResult_value2 = F.toString();
         Strings expectedResult2 = new Strings(expectedResult_value2);
-        Strings actualResult2 = F.transform_to_string();
+        Itypes actualResult2 = F.transform_to_string();
         assertEquals(expectedResult2, actualResult2);
 
         String expectedResult_value3 = bin1.toString();
         Strings expectedResult3 = new Strings(expectedResult_value3);
-        Strings actualResult3 = bin1.transform_to_string();
+        Itypes actualResult3 = bin1.transform_to_string();
         assertEquals(expectedResult3, actualResult3);
 
         String expectedResult_value4 = b.toString();
         Strings expectedResult4 = new Strings(expectedResult_value4);
-        Strings actualResult4 = b.transform_to_string();
+        Itypes actualResult4 = b.transform_to_string();
         assertEquals(expectedResult4, actualResult4);
 
         String expectedResult_value5 = f.toString();
         Strings expectedResult5 = new Strings(expectedResult_value5);
-        Strings actualResult5 = f.transform_to_string();
+        Itypes actualResult5 = f.transform_to_string();
         assertEquals(expectedResult5, actualResult5);
 
         String expectedResult_value6 = s1.getString_value();
         Strings expectedResult6 = new Strings(expectedResult_value6);
-        Strings actualResult6 = s1.transform_to_string();
+        Itypes actualResult6 = s1.transform_to_string();
         assertEquals(expectedResult6, actualResult6);
 
 
@@ -117,32 +118,32 @@ public class StringsTest {
 
         String expectedResult_value = s1.getString_value() + I.toString();
         Strings expectedResult = new Strings(expectedResult_value);
-        Strings actualResult = s1.sum(I);
+        Itypes actualResult = s1.sum(I);
         assertEquals(expectedResult, actualResult);
 
         String expectedResult_value2 = s1.getString_value() + F.toString();
         Strings expectedResult2 = new Strings(expectedResult_value2);
-        Strings actualResult2 = s1.sum(F);
+        Itypes actualResult2 = s1.sum(F);
         assertEquals(expectedResult2, actualResult2);
 
         String expectedResult_value3 = s1.getString_value() + bin1.toString();
         Strings expectedResult3 = new Strings(expectedResult_value3);
-        Strings actualResult3 = s1.sum(bin1);
+        Itypes actualResult3 = s1.sum(bin1);
         assertEquals(expectedResult3, actualResult3);
 
         String expectedResult_value4 = s1.getString_value() + b.toString();
         Strings expectedResult4 = new Strings(expectedResult_value4);
-        Strings actualResult4 = s1.sum(b);
+        Itypes actualResult4 = s1.sum(b);
         assertEquals(expectedResult4, actualResult4);
 
         String expectedResult_value5 = s1.getString_value() + f.toString();
         Strings expectedResult5 = new Strings(expectedResult_value5);
-        Strings actualResult5 = s1.sum(f);
+        Itypes actualResult5 = s1.sum(f);
         assertEquals(expectedResult5, actualResult5);
 
         String expectedResult_value6 = s1.getString_value() + s2.getString_value();
         Strings expectedResult6 = new Strings(expectedResult_value6);
-        Strings actualResult6 = s1.sum(s2);
+        Itypes actualResult6 = s1.sum(s2);
         assertEquals(expectedResult6, actualResult6);
 
 

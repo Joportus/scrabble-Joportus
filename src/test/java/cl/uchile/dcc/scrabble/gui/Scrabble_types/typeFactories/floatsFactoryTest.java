@@ -37,6 +37,8 @@ class floatsFactoryTest {
 
         Map<Double , floats> map1 = floatsFactory.getfFactory().get_map();
 
+        map1.clear();
+
         assert map1.size() == 0;
 
         floats F = floatsFactory.createFloats(r1);

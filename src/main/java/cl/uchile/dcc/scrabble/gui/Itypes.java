@@ -10,8 +10,9 @@ public interface Itypes extends treeNode {
   /**
    * Returns a Scrabble Strings object resulting from the input's String value
    * concatenated to this objects toString() representation.
+   * @return
    */
-  Strings sum_to_string(Strings S);
+  Itypes sum_to_string(Strings S);
 
   /**
    * Receives a Scrabble's Booleans as input and returns an SLogical representing
