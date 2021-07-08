@@ -10,17 +10,17 @@ import java.util.Random;
 import static org.junit.jupiter.api.Assertions.*;
 
 class integersFactoryTest {
-    private Random rng;
-    private int seed;
 
 
 
     @Test
     void createIntegers() {
+
         int r1 = 23432;
         int r2 = 2354235;
         int r3 = -1234;
         int r4 = 124;
+
 
 
         System.out.println(r1);
@@ -29,6 +29,8 @@ class integersFactoryTest {
         System.out.println(r4);
 
         Map<Integer, integers> map1 = integersFactory.getiFactory().get_map();
+
+        map1.clear();
 
         assert map1.size() == 0;
 
@@ -63,7 +65,6 @@ class integersFactoryTest {
         integersFactory.createIntegers(r2);
 
         assert map1.size() == 4;
-
 
         assertEquals(I, I2);
 

@@ -23,6 +23,8 @@ class binaryFactoryTest {
 
         Map<String, binary> map1 = binaryFactory.getBinFactory().get_map();
 
+        map1.clear();
+
         assert map1.size() == 0;
 
         binary bin1 = binaryFactory.createBinary(r1);

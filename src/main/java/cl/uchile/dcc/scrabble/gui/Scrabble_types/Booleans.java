@@ -1,6 +1,8 @@
 package cl.uchile.dcc.scrabble.gui.Scrabble_types;
 
 import cl.uchile.dcc.scrabble.gui.Itypes;
+import cl.uchile.dcc.scrabble.gui.Scrabble_types.typeFactories.binaryFactory;
+import cl.uchile.dcc.scrabble.gui.Scrabble_types.typeFactories.booleansFactory;
 
 import java.util.Objects;
 /**
@@ -29,7 +31,7 @@ public class Booleans extends Type {
      * Returns an identical copy of this Scrabble's Booleans object.
      */
     public Booleans transform_to_boolean() {
-        return new Booleans(this.isBool_value());
+        return booleansFactory.createBooleans(this.isBool_value());
     }
     /**
      * Receives an object as an input, if its equal to this Booleans object, it returns
@@ -64,7 +66,7 @@ public class Booleans extends Type {
     @Override
     public Itypes bool_and(Booleans B) {
         boolean result_value = B.isBool_value() && this.isBool_value();
-        return new Booleans(result_value);
+        return booleansFactory.createBooleans(result_value);
     }
     /**
      * Receives a Scrabble's binary as input and returns a Scrabble binary representing
@@ -79,12 +81,12 @@ public class Booleans extends Type {
         String str = Bin.getBinary_value();
         StringBuilder result = new StringBuilder();
         if(this.isBool_value()){
-            return new binary(str);
+            return binaryFactory.createBinary(str);
         }
         else{
             result.append("0".repeat(l));
             String strResult = result.toString();
-            return new binary(strResult);
+            return binaryFactory.createBinary(strResult);
         }
 
     }
@@ -106,7 +108,7 @@ public class Booleans extends Type {
     @Override
     public Itypes bool_or(Booleans B) {
         boolean result_value = B.isBool_value() || this.isBool_value();
-        return new Booleans(result_value);
+        return booleansFactory.createBooleans(result_value);
     }
     /**
      * Receives a Scrabble's binary as input and returns a Scrabble binary representing
@@ -121,12 +123,12 @@ public class Booleans extends Type {
         String str = Bin.getBinary_value();
         StringBuilder result = new StringBuilder();
         if(!this.isBool_value()){
-            return new binary(str);
+            return binaryFactory.createBinary(str);
         }
         else{
             result.append("1".repeat(l));
             String strResult = result.toString();
-            return new binary(strResult);
+            return binaryFactory.createBinary(strResult);
         }
     }
     /**
@@ -146,7 +148,7 @@ public class Booleans extends Type {
      */
     public Booleans negate(){
         boolean result_value = !this.isBool_value();
-        return new Booleans(result_value);
+        return booleansFactory.createBooleans(result_value);
     }
 
 }

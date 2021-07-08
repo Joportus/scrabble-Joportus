@@ -1,6 +1,9 @@
 package cl.uchile.dcc.scrabble.gui.Scrabble_types;
 
 import cl.uchile.dcc.scrabble.gui.*;
+import cl.uchile.dcc.scrabble.gui.Scrabble_types.typeFactories.binaryFactory;
+import cl.uchile.dcc.scrabble.gui.Scrabble_types.typeFactories.floatsFactory;
+import cl.uchile.dcc.scrabble.gui.Scrabble_types.typeFactories.integersFactory;
 
 import java.util.Objects;
 
@@ -57,10 +60,10 @@ public class binary extends Type {
     public integers transform_to_integers() {
         String binary = this.getBinary_value();
         if (bitToInt(binary.charAt(0)) == 0) {
-            return new integers(positiveBinToInt(binary));
+            return integersFactory.createIntegers(positiveBinToInt(binary));
         }
         else{
-            return new integers(negativeBinaryToInt(binary));
+            return integersFactory.createIntegers(negativeBinaryToInt(binary));
         }
     }
 
@@ -91,7 +94,7 @@ public class binary extends Type {
      */
     @Override
     public binary transform_to_binary() {
-        return new binary(this.getBinary_value());
+        return binaryFactory.createBinary(this.getBinary_value());
     }
 
     /**
@@ -101,7 +104,7 @@ public class binary extends Type {
     @Override
     public Itypes sum_to_int(integers I) {
         int result_value = I.getInt_value() + this.transform_to_integers().getInt_value();
-        return new integers(result_value);
+        return integersFactory.createIntegers(result_value);
     }
 
     /**
@@ -111,7 +114,7 @@ public class binary extends Type {
     @Override
     public Itypes sum_to_float(floats F) {
         double result_value = F.getFloat_value() + this.transform_to_integers().getInt_value();
-        return new floats(result_value);
+        return floatsFactory.createFloats(result_value);
 
     }
 
@@ -122,7 +125,7 @@ public class binary extends Type {
     @Override
     public Itypes sum_a_binary(binary B) {
         int result_value = B.transform_to_integers().getInt_value() + this.transform_to_integers().getInt_value();
-        integers result = new integers(result_value);
+        integers result = integersFactory.createIntegers(result_value);
         return result.transform_to_binary();
     }
 
@@ -197,7 +200,7 @@ public class binary extends Type {
     @Override
     public Itypes divide_a_Float(floats F) {
         double result_value = F.getFloat_value() / this.transform_to_integers().getInt_value();
-        return new floats(result_value);
+        return floatsFactory.createFloats(result_value);
     }
     /**
      * Receives a Scrabble's binary as input and returns the binary result
@@ -206,7 +209,7 @@ public class binary extends Type {
     @Override
     public binary divide_a_binary(binary B) {
         int result_value = B.transform_to_integers().getInt_value() / this.transform_to_integers().getInt_value();
-        integers result = new integers(result_value);
+        integers result = integersFactory.createIntegers(result_value);
         return result.transform_to_binary();
     }
     /**
@@ -216,7 +219,7 @@ public class binary extends Type {
     @Override
     public Itypes divide_a_integer(integers I) {
         int result_value = I.getInt_value() / this.transform_to_integers().getInt_value();
-        return new integers(result_value);
+        return integersFactory.createIntegers(result_value);
     }
 
     /**
@@ -238,7 +241,7 @@ public class binary extends Type {
     @Override
     public floats substract_to_Float(floats F) {
         double result_value = F.getFloat_value() - this.transform_to_integers().getInt_value();
-        return new floats(result_value);
+        return floatsFactory.createFloats(result_value);
     }
     /**
      * Receives a Scrabble's binary as input and returns the binary result
@@ -247,7 +250,7 @@ public class binary extends Type {
     @Override
     public binary substract_to_binary(binary B) {
         int result_value = B.transform_to_integers().getInt_value() - this.transform_to_integers().getInt_value();
-        integers result = new integers(result_value);
+        integers result = integersFactory.createIntegers(result_value);
         return result.transform_to_binary();
     }
     /**
@@ -257,7 +260,7 @@ public class binary extends Type {
     @Override
     public Itypes substract_to_integer(integers I) {
         int result_value = I.getInt_value() - this.transform_to_integers().getInt_value();
-        return new integers(result_value);
+        return integersFactory.createIntegers(result_value);
     }
 
     /**
@@ -277,7 +280,7 @@ public class binary extends Type {
     @Override
     public Itypes multiply_to_Float(floats F) {
         double result_value = F.getFloat_value() * this.transform_to_integers().getInt_value();
-        return new floats(result_value);
+        return floatsFactory.createFloats(result_value);
     }
     /**
      * Receives a Scrabble's binary as input and returns the binary result
@@ -286,7 +289,7 @@ public class binary extends Type {
     @Override
     public Itypes multiply_to_binary(binary B) {
         int result_value = B.transform_to_integers().getInt_value() * this.transform_to_integers().getInt_value();
-        integers result = new integers(result_value);
+        integers result = integersFactory.createIntegers(result_value);
         return result.transform_to_binary();
     }
     /**
@@ -296,7 +299,7 @@ public class binary extends Type {
     @Override
     public Itypes multiply_to_integer(integers I) {
         int result_value = I.getInt_value() * this.transform_to_integers().getInt_value();
-        return new integers(result_value);
+        return integersFactory.createIntegers(result_value);
     }
 
     /**
@@ -319,12 +322,12 @@ public class binary extends Type {
         String str = this.getBinary_value();
         StringBuilder result = new StringBuilder();
         if(B.isBool_value()){
-            return new binary(str);
+            return binaryFactory.createBinary(str);
         }
         else{
             result.append("0".repeat(l));
             String strResult = result.toString();
-            return new binary(strResult);
+            return binaryFactory.createBinary(strResult);
         }
     }
     /**
@@ -387,7 +390,7 @@ public class binary extends Type {
             }
         }
         String resultStr = result.toString();
-        return new binary(resultStr);
+        return binaryFactory.createBinary(resultStr);
     }
     /**
      * Receives an SLogical object and calls it's binary_and method. It uses
@@ -414,12 +417,12 @@ public class binary extends Type {
         String str = this.getBinary_value();
         StringBuilder result = new StringBuilder();
         if(!B.isBool_value()){
-            return new binary(str);
+            return binaryFactory.createBinary(str);
         }
         else{
             result.append("1".repeat(l));
             String strResult = result.toString();
-            return new binary(strResult);
+            return binaryFactory.createBinary(strResult);
         }
     }
     /**
@@ -480,7 +483,7 @@ public class binary extends Type {
             }
         }
         String resultStr = result.toString();
-        return new binary(resultStr);
+        return binaryFactory.createBinary(resultStr);
     }
     /**
      * Receives an SLogical object and calls it's binary_or method. It uses
@@ -511,6 +514,6 @@ public class binary extends Type {
             }
         }
         String result_value = result.toString();
-        return new binary(result_value);
+        return binaryFactory.createBinary(result_value);
     }
 }

@@ -15,6 +15,8 @@ class booleansFactoryTest {
 
         Map<Boolean, Booleans> map1 = booleansFactory.getbFactory().get_map();
 
+        map1.clear();
+
         assert map1.size() == 0;
 
         Booleans T = booleansFactory.createBooleans(true);

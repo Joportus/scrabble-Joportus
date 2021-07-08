@@ -1,6 +1,7 @@
 package cl.uchile.dcc.scrabble.gui.Scrabble_types;
 
 import cl.uchile.dcc.scrabble.gui.Itypes;
+import cl.uchile.dcc.scrabble.gui.Scrabble_types.typeFactories.floatsFactory;
 
 import java.util.Objects;
 
@@ -41,7 +42,7 @@ public class floats extends Type {
      */
     @Override
     public Itypes transform_to_float() {
-        return new floats(this.getFloat_value());
+        return floatsFactory.createFloats(this.getFloat_value());
     }
     /**
      * Receives a Scrabble integer and returns the floats result of the
@@ -50,7 +51,7 @@ public class floats extends Type {
     @Override
     public Itypes sum_to_int(integers I) {
         double result_value = this.getFloat_value() + I.getInt_value();
-        return new floats(result_value);
+        return floatsFactory.createFloats(result_value);
     }
     /**
      * Receives a Scrabble float and returns the floats result of the
@@ -59,7 +60,7 @@ public class floats extends Type {
     @Override
     public Itypes sum_to_float(floats F) {
         double result_value = this.getFloat_value() + F.getFloat_value();
-        return new floats(result_value);
+        return floatsFactory.createFloats(result_value);
     }
     /**
      * Receives an Inumber object and calls it's sum_to_float method. It uses
@@ -99,7 +100,7 @@ public class floats extends Type {
     @Override
     public Itypes substract_to_Float(floats F) {
         double result_value = F.getFloat_value() - this.getFloat_value();
-        return new floats(result_value);
+        return floatsFactory.createFloats(result_value);
     }
     /**
      * Receives a Scrabble's integer as input and returns the floats result of the
@@ -108,7 +109,7 @@ public class floats extends Type {
     @Override
     public Itypes substract_to_integer(integers I) {
         double result_value = I.getInt_value() - this.getFloat_value();
-        return new floats(result_value);
+        return floatsFactory.createFloats(result_value);
     }
     /**
      * Receives an Inumber object and calls it's substract_to_float method. It uses
@@ -129,7 +130,7 @@ public class floats extends Type {
     @Override
     public Itypes multiply_to_Float(floats F) {
         double result_value = F.getFloat_value() * this.getFloat_value();
-        return new floats(result_value);
+        return floatsFactory.createFloats(result_value);
     }
     /**
      * Receives a Scrabble integer and returns the floats result of the
@@ -138,7 +139,7 @@ public class floats extends Type {
     @Override
     public Itypes multiply_to_integer(integers I) {
         double result_value = I.getInt_value() * this.getFloat_value();
-        return new floats(result_value);
+        return floatsFactory.createFloats(result_value);
     }
     /**
      * Receives an Inumber object and calls it's multiply_to_float method. It uses
@@ -158,7 +159,7 @@ public class floats extends Type {
     @Override
     public Itypes divide_a_Float(floats F) {
         double result_value = F.getFloat_value() / this.getFloat_value();
-        return new floats(result_value);
+        return floatsFactory.createFloats(result_value);
     }
     /**
      * Receives a Scrabble integer as input and returns the floats result of the
@@ -167,7 +168,7 @@ public class floats extends Type {
     @Override
     public Itypes divide_a_integer(integers I) {
         double result_value = I.getInt_value() / this.getFloat_value();
-        return new floats(result_value);
+        return floatsFactory.createFloats(result_value);
     }
     /**
      * Receives an Inumber object and calls it's divide_a_Float method. It uses

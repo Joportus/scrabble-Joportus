@@ -15,15 +15,20 @@ import static org.junit.jupiter.api.Assertions.*;
 class stringsFactoryTest {
 
 
+
+
     @Test
     void createStrings() {
 
-        String r1 = "jhshdhad";
-        String r2 = "holahola";
-        String r3 = "hsdjjj";
-        String r4 = "chaochao";
+        String r1 = "hola";
+        String r2 = "chao";
+        String r3 = "jcjajsj";
+        String r4 = "jkadsjjhdajwu";
+      
 
         Map<String, Strings> map1 = stringsFactory.getsFactory().get_map();
+
+        map1.clear();
 
         assert map1.size() == 0;
 

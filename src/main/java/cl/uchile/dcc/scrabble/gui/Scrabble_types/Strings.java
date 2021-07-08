@@ -62,7 +62,7 @@ public class Strings extends Type {
      * concatenated to this objects toString() representation.
      */
     @Override
-    public Strings sum(Itypes t) {
+    public Itypes sum(Itypes t) {
         return t.sum_to_string(this);
     }
 }
