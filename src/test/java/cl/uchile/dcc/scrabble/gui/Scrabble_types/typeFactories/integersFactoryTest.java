@@ -15,12 +15,18 @@ class integersFactoryTest {
 
     @Test
     void createIntegers() {
-        int r1 = 2723233;
-        int r2 = 13232;
-        int r3 = -123423;
-        int r4 = 0;
+
+        int r1 = 23432;
+        int r2 = 2354235;
+        int r3 = -1234;
+        int r4 = 124;
 
 
+
+        System.out.println(r1);
+        System.out.println(r2);
+        System.out.println(r3);
+        System.out.println(r4);
 
         Map<Integer, integers> map1 = integersFactory.getiFactory().get_map();
 

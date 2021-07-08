@@ -24,6 +24,7 @@ class stringsFactoryTest {
         String r2 = "chao";
         String r3 = "jcjajsj";
         String r4 = "jkadsjjhdajwu";
+      
 
         Map<String, Strings> map1 = stringsFactory.getsFactory().get_map();
 
