@@ -1,9 +1,9 @@
-package cl.uchile.dcc.scrabble.gui.Soperations.transformations;
+package cl.uchile.dcc.scrabble.gui.Controller.transformations;
 
 import cl.uchile.dcc.scrabble.gui.Itypes;
 
-import cl.uchile.dcc.scrabble.gui.Soperations.OneChildNodes;
-import cl.uchile.dcc.scrabble.gui.Soperations.treeNode;
+import cl.uchile.dcc.scrabble.gui.Controller.OneChildNodes;
+import cl.uchile.dcc.scrabble.gui.Controller.treeNode;
 
 /**
  * This class represents a toBinary transformation node in our AST.

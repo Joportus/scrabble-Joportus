@@ -1,6 +1,5 @@
 package cl.uchile.dcc.scrabble.gui.Scrabble_types;
 
-import cl.uchile.dcc.scrabble.gui.Soperations.math.Multiply;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

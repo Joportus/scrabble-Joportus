@@ -1,8 +1,8 @@
-package cl.uchile.dcc.scrabble.gui.Soperations.math;
+package cl.uchile.dcc.scrabble.gui.Controller.math;
 
 import cl.uchile.dcc.scrabble.gui.Itypes;
-import cl.uchile.dcc.scrabble.gui.Soperations.TwoChildNodes;
-import cl.uchile.dcc.scrabble.gui.Soperations.treeNode;
+import cl.uchile.dcc.scrabble.gui.Controller.TwoChildNodes;
+import cl.uchile.dcc.scrabble.gui.Controller.treeNode;
 
 /**
  * This class represents a Division node in our AST.

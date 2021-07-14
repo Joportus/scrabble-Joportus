@@ -1,8 +1,8 @@
-package cl.uchile.dcc.scrabble.gui.Soperations.logic;
+package cl.uchile.dcc.scrabble.gui.Controller.logic;
 
 import cl.uchile.dcc.scrabble.gui.Itypes;
-import cl.uchile.dcc.scrabble.gui.Soperations.OneChildNodes;
-import cl.uchile.dcc.scrabble.gui.Soperations.treeNode;
+import cl.uchile.dcc.scrabble.gui.Controller.OneChildNodes;
+import cl.uchile.dcc.scrabble.gui.Controller.treeNode;
 
 /**
  * This class represents a LNegate transformation node in our AST.
