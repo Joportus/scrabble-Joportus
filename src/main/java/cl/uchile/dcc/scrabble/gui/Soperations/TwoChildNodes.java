@@ -1,5 +1,8 @@
 package cl.uchile.dcc.scrabble.gui.Soperations;
 
+import cl.uchile.dcc.scrabble.gui.FlowControl.FlowControlVisitor;
+import cl.uchile.dcc.scrabble.gui.Itypes;
+
 /**
  * This abstract class holds the common behaviour
  * of all treeNode objects that have two children.
@@ -34,5 +37,9 @@ public abstract class TwoChildNodes implements treeNode{
      */
     public treeNode getRightChild() {
         return rightChild;
+    }
+
+    public Itypes acceptIf(FlowControlVisitor visitor){
+        return visitor.visitTreeNode(this);
     }
 }

@@ -1,4 +1,5 @@
 package cl.uchile.dcc.scrabble.gui.Scrabble_types;
+import cl.uchile.dcc.scrabble.gui.FlowControl.FlowControlVisitor;
 import cl.uchile.dcc.scrabble.gui.Itypes;
 import cl.uchile.dcc.scrabble.gui.Scrabble_types.typeFactories.nullTypeFactory;
 import cl.uchile.dcc.scrabble.gui.Scrabble_types.typeFactories.stringsFactory;
@@ -242,5 +243,9 @@ public abstract class Type implements Itypes {
     @Override
     public Itypes eval() {
         return this;
+    }
+
+    public Itypes acceptIf(FlowControlVisitor visitor){
+        return visitor.visitTreeNode(this);
     }
 }
