@@ -1,12 +1,13 @@
 package cl.uchile.dcc.scrabble.gui.Scrabble_types;
 import cl.uchile.dcc.scrabble.gui.Itypes;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
 
 /**
  * This class represents a Strings scrabble data type.
  */
-public class Strings extends Type {
+public class Strings extends Type implements Comparable<Strings>{
 
 
     private final String string_value;
@@ -64,5 +65,10 @@ public class Strings extends Type {
     @Override
     public Itypes sum(Itypes t) {
         return t.sum_to_string(this);
+    }
+
+    @Override
+    public int compareTo(@NotNull Strings o) {
+        return this.getString_value().compareTo(o.getString_value());
     }
 }

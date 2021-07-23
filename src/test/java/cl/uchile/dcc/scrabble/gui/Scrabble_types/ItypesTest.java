@@ -5,6 +5,8 @@ import cl.uchile.dcc.scrabble.gui.Scrabble_types.Strings;
 import cl.uchile.dcc.scrabble.gui.Scrabble_types.binary;
 import cl.uchile.dcc.scrabble.gui.Scrabble_types.floats;
 import cl.uchile.dcc.scrabble.gui.Scrabble_types.integers;
+import cl.uchile.dcc.scrabble.gui.Scrabble_types.typeFactories.binaryFactory;
+import cl.uchile.dcc.scrabble.gui.Scrabble_types.typeFactories.integersFactory;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -125,6 +127,21 @@ class ItypesTest {
         assertEquals(eq1, eq2);
         assertEquals(eq1.transform_to_integers(), eq2.transform_to_integers());
 
+
+    }
+    @Test
+    void compareTo(){
+        integers i1 = integersFactory.createIntegers(100);
+        integers i2 = integersFactory.createIntegers(150);
+        int actualResult1 = i1.compareTo(i2);
+        int expectedResult1 = -1;
+        assertEquals(expectedResult1, actualResult1);
+
+        binary b1 = binaryFactory.createBinary("01111");
+        integers i3 = integersFactory.createIntegers(-10);
+        int actualResult2 = b1.compareTo(i3);
+        int expectedResult2 = 1;
+        assertEquals(actualResult2, expectedResult2);
 
     }
 

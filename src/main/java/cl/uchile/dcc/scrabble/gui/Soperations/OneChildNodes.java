@@ -1,6 +1,7 @@
 package cl.uchile.dcc.scrabble.gui.Soperations;
 
 import cl.uchile.dcc.scrabble.gui.FlowControl.FlowControlVisitor;
+import cl.uchile.dcc.scrabble.gui.FlowControl.IfVisitor;
 import cl.uchile.dcc.scrabble.gui.Itypes;
 
 /**
@@ -27,7 +28,7 @@ public abstract class OneChildNodes implements treeNode{
         return child;
     }
 
-    public Itypes acceptIf(FlowControlVisitor visitor){
+    public Itypes acceptIf(IfVisitor visitor){
         return visitor.visitTreeNode(this);
     }
 }

@@ -4,6 +4,7 @@ import cl.uchile.dcc.scrabble.gui.Itypes;
 import cl.uchile.dcc.scrabble.gui.Scrabble_types.typeFactories.binaryFactory;
 import cl.uchile.dcc.scrabble.gui.Scrabble_types.typeFactories.floatsFactory;
 import cl.uchile.dcc.scrabble.gui.Scrabble_types.typeFactories.integersFactory;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
 
@@ -12,7 +13,7 @@ import static java.lang.Math.abs;
 /**
  * This class represents an integers scrabble data type.
  */
-public class integers extends Type {
+public class integers extends Type implements SNumber, Comparable <SNumber>{
 
     private final int int_value;
     /**
@@ -307,5 +308,25 @@ public class integers extends Type {
     @Override
     public Itypes divide(Itypes inumber) {
         return inumber.divide_a_integer(this);
+    }
+
+    @Override
+    public int compareToInt(integers i) {
+        return Double.compare(i.getInt_value(), this.getInt_value());
+    }
+
+    @Override
+    public int compareToFloat(floats f) {
+        return Double.compare(f.getFloat_value(), this.getInt_value());
+    }
+
+    @Override
+    public int compareToBinary(binary b) {
+        return Double.compare(b.transform_to_integers().getInt_value(), this.getInt_value());
+    }
+
+    @Override
+    public int compareTo(@NotNull SNumber o) {
+        return o.compareToInt(this);
     }
 }

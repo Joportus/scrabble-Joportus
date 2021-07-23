@@ -1,5 +1,6 @@
 package cl.uchile.dcc.scrabble.gui.Scrabble_types;
 import cl.uchile.dcc.scrabble.gui.FlowControl.FlowControlVisitor;
+import cl.uchile.dcc.scrabble.gui.FlowControl.IfVisitor;
 import cl.uchile.dcc.scrabble.gui.Itypes;
 import cl.uchile.dcc.scrabble.gui.Scrabble_types.typeFactories.nullTypeFactory;
 import cl.uchile.dcc.scrabble.gui.Scrabble_types.typeFactories.stringsFactory;
@@ -10,7 +11,6 @@ import cl.uchile.dcc.scrabble.gui.Scrabble_types.typeFactories.stringsFactory;
  * Scrabble data types.
  */
 public abstract class Type implements Itypes {
-
 
     /**
      * Returns the Scrabble String representation of this object.
@@ -245,7 +245,10 @@ public abstract class Type implements Itypes {
         return this;
     }
 
-    public Itypes acceptIf(FlowControlVisitor visitor){
+    @Override
+    public Itypes acceptIf(IfVisitor visitor) {
         return visitor.visitTreeNode(this);
     }
+
+
 }

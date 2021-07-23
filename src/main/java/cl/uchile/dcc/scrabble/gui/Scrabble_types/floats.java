@@ -2,13 +2,14 @@ package cl.uchile.dcc.scrabble.gui.Scrabble_types;
 
 import cl.uchile.dcc.scrabble.gui.Itypes;
 import cl.uchile.dcc.scrabble.gui.Scrabble_types.typeFactories.floatsFactory;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
 
 /**
  * This class represents a floats scrabble data type.
  */
-public class floats extends Type {
+public class floats extends Type implements SNumber, Comparable<SNumber> {
 
     private final double float_value;
     /**
@@ -180,6 +181,25 @@ public class floats extends Type {
     @Override
     public Itypes divide(Itypes itype) {
         return itype.divide_a_Float(this);
+    }
+
+
+    @Override
+    public int compareTo(@NotNull SNumber o) {
+        return o.compareToFloat(this);
+    }
+    @Override
+    public int compareToInt(integers i){
+        return Double.compare(i.getInt_value(), this.getFloat_value());
+    }
+    @Override
+    public int compareToFloat(floats f){
+        return Double.compare(f.getFloat_value(), this.getFloat_value());
+    }
+
+    @Override
+    public int compareToBinary(binary b) {
+        return Double.compare(b.transform_to_integers().getInt_value(), this.getFloat_value());
     }
 
 

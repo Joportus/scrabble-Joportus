@@ -6,7 +6,7 @@ import cl.uchile.dcc.scrabble.gui.Scrabble_types.typeFactories.nullTypeFactory;
 import cl.uchile.dcc.scrabble.gui.Soperations.treeNode;
 
 
-public class IfVisitor implements FlowControlVisitor{
+public class  IfVisitor implements FlowControlVisitor{
 
     @Override
     public Itypes visitTreeNode(treeNode node) {

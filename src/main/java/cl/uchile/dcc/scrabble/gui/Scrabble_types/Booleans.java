@@ -3,12 +3,13 @@ package cl.uchile.dcc.scrabble.gui.Scrabble_types;
 import cl.uchile.dcc.scrabble.gui.Itypes;
 import cl.uchile.dcc.scrabble.gui.Scrabble_types.typeFactories.binaryFactory;
 import cl.uchile.dcc.scrabble.gui.Scrabble_types.typeFactories.booleansFactory;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
 /**
  * This class represents a Booleans scrabble data type.
  */
-public class Booleans extends Type {
+public class Booleans extends Type implements Comparable<Booleans>{
 
     private final boolean bool_value;
     /**
@@ -151,4 +152,8 @@ public class Booleans extends Type {
         return booleansFactory.createBooleans(result_value);
     }
 
+    @Override
+    public int compareTo(@NotNull Booleans o) {
+        return Boolean.compare(this.isBool_value(), o.isBool_value());
+    }
 }
