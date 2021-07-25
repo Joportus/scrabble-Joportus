@@ -3,10 +3,11 @@ package cl.uchile.dcc.scrabble.gui.Soperations;
 
 /**
  * This abstract class holds the common behaviour
- * of all treeNode objects that have two children.
+ * of all treeNode objects that have three children.
  */
-public abstract class TwoChildNodes implements treeNode{
+public abstract class ThreeChildNodes implements treeNode{
     private final treeNode leftChild;
+    private final treeNode middleChild;
     private final treeNode rightChild;
 
     /** Creates TwoChildNodes.
@@ -18,8 +19,9 @@ public abstract class TwoChildNodes implements treeNode{
      *
      * This constructor can never be used because it is protected.
      */
-    protected TwoChildNodes(treeNode leftChild, treeNode rightChild) {
+    protected ThreeChildNodes(treeNode leftChild, treeNode middleChild, treeNode rightChild) {
         this.leftChild = leftChild;
+        this.middleChild = middleChild;
         this.rightChild = rightChild;
     }
 
@@ -37,4 +39,7 @@ public abstract class TwoChildNodes implements treeNode{
         return rightChild;
     }
 
+    public treeNode getMiddleChild() {
+        return middleChild;
+    }
 }
