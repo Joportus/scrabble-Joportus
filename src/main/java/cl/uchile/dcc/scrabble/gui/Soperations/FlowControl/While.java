@@ -1,14 +1,9 @@
 package cl.uchile.dcc.scrabble.gui.Soperations.FlowControl;
 
 import cl.uchile.dcc.scrabble.gui.Itypes;
-import cl.uchile.dcc.scrabble.gui.Scrabble_types.Booleans;
-import cl.uchile.dcc.scrabble.gui.Scrabble_types.typeFactories.booleansFactory;
-import cl.uchile.dcc.scrabble.gui.Scrabble_types.typeFactories.nullTypeFactory;
 import cl.uchile.dcc.scrabble.gui.Soperations.Comparisons.Comparisons;
-import cl.uchile.dcc.scrabble.gui.Soperations.TwoChildNodes;
 import cl.uchile.dcc.scrabble.gui.Soperations.treeNode;
 import cl.uchile.dcc.scrabble.gui.Soperations.variables.varModifier;
-import cl.uchile.dcc.scrabble.gui.Soperations.variables.variable;
 import cl.uchile.dcc.scrabble.gui.Visitors.Visitor;
 import cl.uchile.dcc.scrabble.gui.Visitors.whileVisitor;
 
@@ -29,7 +24,7 @@ public class While implements treeNode{
     @Override
     public Itypes eval() {
         Visitor whileVisitor = new whileVisitor();
-        return accept(whileVisitor);
+        return this.accept(whileVisitor);
     }
 
     public Comparisons getLeftChild() {
