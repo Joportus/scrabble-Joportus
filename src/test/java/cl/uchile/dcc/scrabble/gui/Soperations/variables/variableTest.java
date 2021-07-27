@@ -2,6 +2,7 @@ package cl.uchile.dcc.scrabble.gui.Soperations.variables;
 
 import cl.uchile.dcc.scrabble.gui.Itypes;
 import cl.uchile.dcc.scrabble.gui.Scrabble_types.Booleans;
+import cl.uchile.dcc.scrabble.gui.Scrabble_types.floats;
 import cl.uchile.dcc.scrabble.gui.Scrabble_types.integers;
 import cl.uchile.dcc.scrabble.gui.Scrabble_types.typeFactories.booleansFactory;
 import cl.uchile.dcc.scrabble.gui.Scrabble_types.typeFactories.integersFactory;
@@ -26,15 +27,29 @@ class variableTest {
         var("a", I1);
         var("b", I2);
 
+        System.out.println(var("c", new floats(3)));
+
+        System.out.println(gVar("c"));
+
+        var("c", new integers(5));
+
+        System.out.println(gVar("c"));
+
+        variable a = new variable("a", I1);
+
+
 
         treeNode cond = new greaterThan("a", "b");
 
         //While w1 = new While(new greaterThan("b", "a"),  new variable("a", new SAdd(gVar("a"), count).eval()));
 
-        While w1 = new While(new greaterThan("b", "a"),  new variable("a", gVar("a").sum(count)));
+        While w1 = new While(new greaterThan("b", "a"),  new varModifier("a",count));
 
         w1.eval();
 
+        System.out.println(getVariables());
+
+        System.out.println(gVar("a"));
 
 
 

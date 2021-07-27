@@ -8,6 +8,7 @@ import cl.uchile.dcc.scrabble.gui.Soperations.Comparisons.greaterThan;
 import cl.uchile.dcc.scrabble.gui.Soperations.FlowControl.While;
 import cl.uchile.dcc.scrabble.gui.Soperations.math.SAdd;
 import cl.uchile.dcc.scrabble.gui.Soperations.treeNode;
+import cl.uchile.dcc.scrabble.gui.Soperations.variables.varModifier;
 import cl.uchile.dcc.scrabble.gui.Soperations.variables.variable;
 
 import static cl.uchile.dcc.scrabble.gui.Soperations.variables.variable.gVar;
@@ -50,20 +51,40 @@ public class whileVisitor implements Visitor{
     }
 */
 
+
+
+    @Override
+    public Itypes visitWhile(While w) {
+        Itypes STrue = new Booleans(true);
+
+        while(w.getLeftChild().eval().equals(STrue)){
+            System.out.println(getVariables());
+
+            w.getRightChild().calculate().eval();
+
+        }
+        return null;
+    }
+    /*
     @Override
     public Itypes visitWhile(While w) {
         Comparisons cond = w.getLeftChild();
-        variable task = w.getRightChild();
+        String task = w.getRightChild().getVariable();
 
-        String taskName = task.getVariableName();
-        Itypes taskValue = task.getVariableValue();
+        //String taskName = task.getVariableName();
+        // Itypes taskValue = task.getVariableValue();
 
         String var1Name = cond.getVar1();
         String var2Name = cond.getVar2();
 
-        while(cond.eval().equals(new Booleans(true))){
+        integers n = w.getRightChild().getNumber();
+
+        for(int i = 0; i < 10; i++){
             System.out.println(getVariables());
-            w.getRightChild().eval();
+
+            w.getRightChild().calculate().eval();
+
+
 
             w.getLeftChild().setVar1(var1Name);
 
@@ -71,16 +92,20 @@ public class whileVisitor implements Visitor{
 
             w.setLeftChild(cond);
 
-            w.getRightChild().setVariableName(taskName);
+            w.setRightChild(new varModifier(task, n));
+
+            //w.getRightChild().setVariableName(taskName);
 
 
-            w.setRightChild(new variable(taskName, gVar(taskName).sum(gVar(taskName))));
+            //w.setRightChild(new variable(taskName, gVar(taskName).sum(gVar(taskName))));
 
 
         }
         return null;
     }
-
-
+    */
 
 }
+
+
+

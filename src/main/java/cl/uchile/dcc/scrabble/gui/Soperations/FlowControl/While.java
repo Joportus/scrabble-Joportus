@@ -7,6 +7,7 @@ import cl.uchile.dcc.scrabble.gui.Scrabble_types.typeFactories.nullTypeFactory;
 import cl.uchile.dcc.scrabble.gui.Soperations.Comparisons.Comparisons;
 import cl.uchile.dcc.scrabble.gui.Soperations.TwoChildNodes;
 import cl.uchile.dcc.scrabble.gui.Soperations.treeNode;
+import cl.uchile.dcc.scrabble.gui.Soperations.variables.varModifier;
 import cl.uchile.dcc.scrabble.gui.Soperations.variables.variable;
 import cl.uchile.dcc.scrabble.gui.Visitors.Visitor;
 import cl.uchile.dcc.scrabble.gui.Visitors.whileVisitor;
@@ -14,9 +15,9 @@ import cl.uchile.dcc.scrabble.gui.Visitors.whileVisitor;
 public class While implements treeNode{
 
     private Comparisons leftChild;
-    private variable rightChild;
+    private varModifier rightChild;
 
-    public While(Comparisons leftChild, variable rightChild) {
+    public While(Comparisons leftChild, varModifier rightChild) {
         this.leftChild = leftChild;
         this.rightChild = rightChild;
     }
@@ -35,7 +36,7 @@ public class While implements treeNode{
         return leftChild;
     }
 
-    public variable getRightChild() {
+    public varModifier getRightChild() {
         return rightChild;
     }
 
@@ -43,7 +44,7 @@ public class While implements treeNode{
         this.leftChild = leftChild;
     }
 
-    public void setRightChild(variable rightChild) {
+    public void setRightChild(varModifier rightChild) {
         this.rightChild = rightChild;
     }
 }
