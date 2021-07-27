@@ -21,7 +21,7 @@ class variableTest {
     void eval() {
         integers I1 = integersFactory.createIntegers(5);
         integers I2 = integersFactory.createIntegers(30);
-        integers count = integersFactory.createIntegers(5);
+        integers count = integersFactory.createIntegers(1);
 
         var("a", I1);
         var("b", I2);
@@ -29,11 +29,12 @@ class variableTest {
 
         treeNode cond = new greaterThan("a", "b");
 
-
+        //While w1 = new While(new greaterThan("b", "a"),  new variable("a", new SAdd(gVar("a"), count).eval()));
 
         While w1 = new While(new greaterThan("b", "a"),  new variable("a", gVar("a").sum(count)));
 
         w1.eval();
+
 
 
 
