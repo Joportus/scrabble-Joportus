@@ -10,6 +10,10 @@ import cl.uchile.dcc.scrabble.gui.Scrabble_types.typeFactories.stringsFactory;
  */
 public abstract class Type implements Itypes {
 
+    public Type() {
+        super();
+    }
+
     /**
      * Returns the Scrabble String representation of this object.
      */
@@ -243,6 +247,30 @@ public abstract class Type implements Itypes {
         return this;
     }
 
+    @Override
+    public int compareToInt(integers i) {
+        return -2;
+    }
+
+    @Override
+    public int compareToFloat(floats f) {
+        return -2;
+    }
+
+    @Override
+    public int compareToBinary(binary b) {
+        return -2;
+    }
+
+    @Override
+    public int compareToString(Strings s) {
+        return -2;
+    }
+
+    @Override
+    public int compareToBoolean(Booleans b) {
+        return -2;
+    }
 
 
 }

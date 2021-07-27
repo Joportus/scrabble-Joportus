@@ -9,7 +9,7 @@ import java.util.Objects;
 /**
  * This class represents a Booleans scrabble data type.
  */
-public class Booleans extends Type implements Comparable<Booleans>{
+public class Booleans extends Type implements Comparable<Itypes>{
 
     private final boolean bool_value;
     /**
@@ -153,7 +153,12 @@ public class Booleans extends Type implements Comparable<Booleans>{
     }
 
     @Override
-    public int compareTo(@NotNull Booleans o) {
-        return Boolean.compare(this.isBool_value(), o.isBool_value());
+    public int compareToBoolean(Booleans b) {
+        return Boolean.compare(b.isBool_value(), this.isBool_value());
+    }
+
+    @Override
+    public int compareTo(@NotNull Itypes o) {
+        return o.compareToBoolean(this);
     }
 }

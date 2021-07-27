@@ -7,7 +7,7 @@ import java.util.Objects;
 /**
  * This class represents a Strings scrabble data type.
  */
-public class Strings extends Type implements Comparable<Strings>{
+public class Strings extends Type implements Comparable<Itypes>{
 
 
     private final String string_value;
@@ -68,7 +68,12 @@ public class Strings extends Type implements Comparable<Strings>{
     }
 
     @Override
-    public int compareTo(@NotNull Strings o) {
-        return this.getString_value().compareTo(o.getString_value());
+    public int compareToString(Strings s) {
+        return s.getString_value().compareTo(this.getString_value());
+    }
+
+    @Override
+    public int compareTo(@NotNull Itypes o) {
+        return o.compareToString(this);
     }
 }

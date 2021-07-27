@@ -13,7 +13,7 @@ import static java.lang.Math.abs;
 /**
  * This class represents an integers scrabble data type.
  */
-public class integers extends Type implements SNumber, Comparable <SNumber>{
+public class integers extends Type implements SNumber, Comparable <Itypes>{
 
     private final int int_value;
     /**
@@ -326,7 +326,7 @@ public class integers extends Type implements SNumber, Comparable <SNumber>{
     }
 
     @Override
-    public int compareTo(@NotNull SNumber o) {
+    public int compareTo(@NotNull Itypes o) {
         return o.compareToInt(this);
     }
 }

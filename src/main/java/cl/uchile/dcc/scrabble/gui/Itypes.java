@@ -163,6 +163,18 @@ public interface Itypes extends treeNode {
    */
   Itypes eval();
 
+  int compareToInt(integers i);
+
+  int compareToFloat(floats f);
+
+  int compareToBinary(binary b);
+
+  int compareToString(Strings s);
+
+  int compareToBoolean(Booleans b);
+
+  int compareTo(Itypes itypes);
+
 
 
 }

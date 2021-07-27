@@ -11,7 +11,7 @@ import java.util.Objects;
 /**
  * This class represents a binary scrabble data type.
  */
-public class binary extends Type implements SNumber, Comparable<SNumber>{
+public class binary extends Type implements SNumber, Comparable<Itypes>{
 
 
     private final String binary_value;
@@ -534,7 +534,7 @@ public class binary extends Type implements SNumber, Comparable<SNumber>{
     }
 
     @Override
-    public int compareTo(@NotNull SNumber o) {
+    public int compareTo(@NotNull Itypes o) {
         return o.compareToBinary(this);
     }
 

@@ -9,7 +9,7 @@ import java.util.Objects;
 /**
  * This class represents a floats scrabble data type.
  */
-public class floats extends Type implements SNumber, Comparable<SNumber> {
+public class floats extends Type implements SNumber, Comparable<Itypes> {
 
     private final double float_value;
     /**
@@ -185,7 +185,7 @@ public class floats extends Type implements SNumber, Comparable<SNumber> {
 
 
     @Override
-    public int compareTo(@NotNull SNumber o) {
+    public int compareTo(@NotNull Itypes o) {
         return o.compareToFloat(this);
     }
     @Override
