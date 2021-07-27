@@ -20,24 +20,20 @@ class variableTest {
     @Test
     void eval() {
         integers I1 = integersFactory.createIntegers(5);
-        integers I2 = integersFactory.createIntegers(10);
-        integers count = integersFactory.createIntegers(100);
+        integers I2 = integersFactory.createIntegers(30);
+        integers count = integersFactory.createIntegers(5);
 
         var("a", I1);
         var("b", I2);
 
 
-        treeNode cond = new greaterThan(gVar("a"), gVar("b"));
-        treeNode temp = cond;
+        treeNode cond = new greaterThan("a", "b");
 
-        While w2 = new While(cond, new integers(1));
-        System.out.println(w2.getLeftChild().eval());
-        var("a", gVar("a").sum(count));
-        cond = temp;
-        System.out.println(w2.getLeftChild().eval());
-        System.out.println(cond.eval());
 
-        While w1 = new While(new greaterThan(gVar("a"), gVar("b")),  var("a", gVar("a").sum(count)));
+
+        While w1 = new While(new greaterThan("b", "a"),  new variable("a", gVar("a").sum(count)));
+
+        w1.eval();
 
 
 
