@@ -41,7 +41,11 @@ class variableTest {
 
         While w2 = new While(new greaterThan("b", "c"), new subToVar("b", new floats(1)));
 
+        System.out.println(getVariables());
+
         w1.eval();
+
+        System.out.println(getVariables());
 
         getVariables().clear();
 

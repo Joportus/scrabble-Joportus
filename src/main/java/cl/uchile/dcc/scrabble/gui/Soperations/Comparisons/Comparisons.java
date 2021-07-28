@@ -10,7 +10,4 @@ public interface Comparisons {
 
     String getVar2();
 
-    void setVar1(String var1);
-
-    void setVar2(String var2);
 }

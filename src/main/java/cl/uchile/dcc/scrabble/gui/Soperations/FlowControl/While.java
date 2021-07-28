@@ -2,19 +2,25 @@ package cl.uchile.dcc.scrabble.gui.Soperations.FlowControl;
 
 import cl.uchile.dcc.scrabble.gui.Itypes;
 import cl.uchile.dcc.scrabble.gui.Soperations.Comparisons.Comparisons;
+import cl.uchile.dcc.scrabble.gui.Soperations.TwoChildNodes;
 import cl.uchile.dcc.scrabble.gui.Soperations.treeNode;
 import cl.uchile.dcc.scrabble.gui.Soperations.variables.addToVar;
 import cl.uchile.dcc.scrabble.gui.Visitors.Visitor;
 import cl.uchile.dcc.scrabble.gui.Visitors.whileVisitor;
 
-public class While implements treeNode{
+public class While extends TwoChildNodes {
 
-    private final treeNode leftChild;
-    private final treeNode rightChild;
 
+    /**
+     * Creates TwoChildNodes.
+     *
+     * @param leftChild  is a treeNode object, could be an operation
+     *                   or an Itype object(leaf node).
+     * @param rightChild another treeNode object, could be an operation
+     *                   or an Itype object(leaf node).
+     */
     public While(treeNode leftChild, treeNode rightChild) {
-        this.leftChild = leftChild;
-        this.rightChild = rightChild;
+        super(leftChild, rightChild);
     }
 
     public Itypes accept(Visitor visitor){
@@ -23,16 +29,9 @@ public class While implements treeNode{
 
     @Override
     public Itypes eval() {
-        Visitor whileVisitor = new whileVisitor();
-        return this.accept(whileVisitor);
+        whileVisitor wVisitor = new whileVisitor();
+        return this.accept(wVisitor);
     }
 
-    public treeNode getLeftChild() {
-        return leftChild;
-    }
-
-    public treeNode getRightChild() {
-        return rightChild;
-    }
 
 }

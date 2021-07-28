@@ -48,7 +48,7 @@ public class variable implements treeNode{
     @Override
     public Itypes eval() {
         Itypes result = getVariables().get(this.getVariableName());
-        Itypes value = getVariableValue().eval();
+        Itypes value = this.getVariableValue().eval();
         if(result == null){
             getVariables().put(variableName, value);
         }
@@ -70,12 +70,5 @@ public class variable implements treeNode{
     public Itypes getVariableValue() {
         return variableValue;
     }
-
-    public void setVariableName(String variableName) {
-        this.variableName = variableName;
-    }
-
-    public void setVariableValue(Itypes variableValue) {
-        this.variableValue = variableValue;
-    }
+    
 }
