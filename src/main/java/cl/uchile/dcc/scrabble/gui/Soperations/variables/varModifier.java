@@ -1,32 +1,24 @@
 package cl.uchile.dcc.scrabble.gui.Soperations.variables;
 
-import cl.uchile.dcc.scrabble.gui.Itypes;
 import cl.uchile.dcc.scrabble.gui.Scrabble_types.SNumber;
-import cl.uchile.dcc.scrabble.gui.Scrabble_types.integers;
 import cl.uchile.dcc.scrabble.gui.Soperations.treeNode;
 
-import static cl.uchile.dcc.scrabble.gui.Soperations.variables.variable.gVar;
+public abstract class varModifier implements treeNode {
 
-public class varModifier {
+    private final String variable;
 
-    private String variable;
+    private final SNumber number;
 
-    private integers number;
-
-    public varModifier(String v, integers number) {
-        this.variable = v;
+    protected varModifier(String variable, SNumber number) {
+        this.variable = variable;
         this.number = number;
-    }
-
-    public variable calculate() {
-        return new variable(this.getVariable(), gVar(this.getVariable()).sum(this.getNumber()));
     }
 
     public String getVariable() {
         return variable;
     }
 
-    public integers getNumber() {
+    public SNumber getNumber() {
         return number;
     }
 }

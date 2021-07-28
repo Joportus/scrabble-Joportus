@@ -1,20 +1,14 @@
 package cl.uchile.dcc.scrabble.gui.Soperations.variables;
 
-import cl.uchile.dcc.scrabble.gui.Itypes;
-import cl.uchile.dcc.scrabble.gui.Scrabble_types.Booleans;
 import cl.uchile.dcc.scrabble.gui.Scrabble_types.floats;
 import cl.uchile.dcc.scrabble.gui.Scrabble_types.integers;
-import cl.uchile.dcc.scrabble.gui.Scrabble_types.typeFactories.booleansFactory;
 import cl.uchile.dcc.scrabble.gui.Scrabble_types.typeFactories.integersFactory;
 import cl.uchile.dcc.scrabble.gui.Soperations.Comparisons.greaterThan;
 import cl.uchile.dcc.scrabble.gui.Soperations.FlowControl.While;
-import cl.uchile.dcc.scrabble.gui.Soperations.math.SAdd;
 import cl.uchile.dcc.scrabble.gui.Soperations.treeNode;
 import org.junit.jupiter.api.Test;
 
-import static cl.uchile.dcc.scrabble.gui.Soperations.variables.intVariables.getIntVariables;
 import static cl.uchile.dcc.scrabble.gui.Soperations.variables.variable.*;
-import static org.junit.jupiter.api.Assertions.*;
 
 class variableTest {
 
@@ -43,9 +37,20 @@ class variableTest {
 
         //While w1 = new While(new greaterThan("b", "a"),  new variable("a", new SAdd(gVar("a"), count).eval()));
 
-        While w1 = new While(new greaterThan("b", "a"),  new varModifier("a",count));
+        While w1 = new While(new greaterThan("b", "a"),  new addToVar("a",count));
+
+        While w2 = new While(new greaterThan("b", "c"), new subToVar("b", new floats(1)));
 
         w1.eval();
+
+        getVariables().clear();
+
+        var("a", I1);
+        var("b", I2);
+
+        System.out.println(var("c", new floats(3)));
+
+        w2.eval();
 
         System.out.println(getVariables());
 

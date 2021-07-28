@@ -1,6 +1,8 @@
 package cl.uchile.dcc.scrabble.gui.Scrabble_types;
 
-public interface SNumber {
+import cl.uchile.dcc.scrabble.gui.Itypes;
+
+public interface SNumber extends Itypes {
 
     int compareToInt(integers i);
 
