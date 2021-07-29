@@ -8,7 +8,7 @@ import static cl.uchile.dcc.scrabble.gui.Soperations.variables.variable.gVar;
 
 public class subToVar extends varModifier {
 
-    public subToVar(String variable, SNumber number) {
+    public subToVar(String variable, Itypes number) {
         super(variable, number);
     }
 

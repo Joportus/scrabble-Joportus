@@ -1,16 +1,25 @@
-package cl.uchile.dcc.scrabble.gui.Soperations.variables;
+package cl.uchile.dcc.scrabble.gui.Soperations.FlowControl;
 
+import cl.uchile.dcc.scrabble.gui.Scrabble_types.NullType;
 import cl.uchile.dcc.scrabble.gui.Scrabble_types.floats;
 import cl.uchile.dcc.scrabble.gui.Scrabble_types.integers;
 import cl.uchile.dcc.scrabble.gui.Scrabble_types.typeFactories.integersFactory;
+import cl.uchile.dcc.scrabble.gui.Scrabble_types.typeFactories.nullTypeFactory;
 import cl.uchile.dcc.scrabble.gui.Soperations.Comparisons.greaterThan;
-import cl.uchile.dcc.scrabble.gui.Soperations.FlowControl.While;
 import cl.uchile.dcc.scrabble.gui.Soperations.treeNode;
+import cl.uchile.dcc.scrabble.gui.Soperations.variables.addToVar;
+import cl.uchile.dcc.scrabble.gui.Soperations.variables.subToVar;
+import cl.uchile.dcc.scrabble.gui.Soperations.variables.variable;
+import cl.uchile.dcc.scrabble.gui.Visitors.Visitor;
+import cl.uchile.dcc.scrabble.gui.Visitors.ifVisitor;
+import cl.uchile.dcc.scrabble.gui.Visitors.whileVisitor;
 import org.junit.jupiter.api.Test;
 
-import static cl.uchile.dcc.scrabble.gui.Soperations.variables.variable.*;
+import static cl.uchile.dcc.scrabble.gui.Soperations.variables.variable.gVar;
+import static cl.uchile.dcc.scrabble.gui.Soperations.variables.variable.getVariables;
+import static org.junit.jupiter.api.Assertions.*;
 
-class variableTest {
+class WhileTest {
 
     @Test
     void eval() {
@@ -18,14 +27,14 @@ class variableTest {
         integers I2 = integersFactory.createIntegers(30);
         integers count = integersFactory.createIntegers(1);
 
-        var("a", I1);
-        var("b", I2);
+        new variable("a", I1).eval();
+        new variable("b", I2).eval();
 
-        System.out.println(var("c", new floats(3)));
+        System.out.println(new variable("c", new floats(3)).eval());
 
         System.out.println(gVar("c"));
 
-        var("c", new integers(5));
+        new variable("c", new integers(5)).eval();
 
         System.out.println(gVar("c"));
 
@@ -49,16 +58,22 @@ class variableTest {
 
         getVariables().clear();
 
-        var("a", I1);
-        var("b", I2);
+        new variable("a", I1).eval();
+        new variable("b", I2).eval();
 
-        System.out.println(var("c", new floats(3)));
+        System.out.println(new variable("c", new floats(3)).eval());
 
         w2.eval();
 
         System.out.println(getVariables());
 
         System.out.println(gVar("a"));
+
+        NullType nullType = nullTypeFactory.createNull();
+
+        Visitor iv = new ifVisitor();
+
+        assertEquals(nullType, iv.visitWhile(w1));
 
 
 
@@ -94,6 +109,5 @@ class variableTest {
         new intVariables("a", (integers) getIntVariables().get("a").sum(count)).eval();
         System.out.println(getIntVariables().get("a").compareTo(getIntVariables().get("b")));
 */
-
     }
 }

@@ -8,7 +8,7 @@ import static cl.uchile.dcc.scrabble.gui.Soperations.variables.variable.gVar;
 
 public class equalsTo extends Comparison{
 
-    protected equalsTo(String var1, String var2) {
+    public equalsTo(String var1, String var2) {
         super(var1, var2);
     }
 

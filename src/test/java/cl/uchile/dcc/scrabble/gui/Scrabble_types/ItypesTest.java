@@ -5,8 +5,7 @@ import cl.uchile.dcc.scrabble.gui.Scrabble_types.Strings;
 import cl.uchile.dcc.scrabble.gui.Scrabble_types.binary;
 import cl.uchile.dcc.scrabble.gui.Scrabble_types.floats;
 import cl.uchile.dcc.scrabble.gui.Scrabble_types.integers;
-import cl.uchile.dcc.scrabble.gui.Scrabble_types.typeFactories.binaryFactory;
-import cl.uchile.dcc.scrabble.gui.Scrabble_types.typeFactories.integersFactory;
+import cl.uchile.dcc.scrabble.gui.Scrabble_types.typeFactories.*;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -42,6 +41,8 @@ class ItypesTest {
     private int strSize;
     private String first_random_string;
     private char[] ZeroOne = {'0','1'};
+    private Booleans b = booleansFactory.createBooleans(true);
+    private Booleans f = booleansFactory.createBooleans(false);
 
     @BeforeEach
     void setUp(){
@@ -138,10 +139,89 @@ class ItypesTest {
         assertEquals(expectedResult1, actualResult1);
 
         binary b1 = binaryFactory.createBinary("01111");
-        integers i3 = integersFactory.createIntegers(-10);
+        integers i3 = integersFactory.createIntegers(14);
         int actualResult2 = b1.compareTo(i3);
         int expectedResult2 = 1;
         assertEquals(actualResult2, expectedResult2);
+
+        int actualResult3 = i3.compareTo(b1);
+        int expectedResult3 = -1;
+        assertEquals(actualResult3, expectedResult3);
+
+        floats f1 = floatsFactory.createFloats(14.9);
+        int actualResult4 = f1.compareTo(b1);
+        int expectedResult4 = -1;
+        assertEquals(actualResult4, expectedResult4);
+
+        floats f2 = floatsFactory.createFloats(15.1);
+        int actualResult5 = f2.compareTo(b1);
+        int expectedResult5 = 1;
+        assertEquals(actualResult5, expectedResult5);
+
+        floats f3 = floatsFactory.createFloats(14.9);
+
+        assertEquals(f1.compareTo(f3), 0);
+
+        binary b2 = binaryFactory.createBinary("011111");
+        binary b3 = binaryFactory.createBinary("011111");
+        assertEquals(b2.compareTo(b1), 1);
+        assertEquals(b1.compareTo(b2), -1);
+        assertEquals(b2.compareTo(b3), 0);
+
+        assertEquals(b.compareTo(f), 1);
+        assertEquals(f.compareTo(b), -1);
+
+        Booleans b_1 = booleansFactory.createBooleans(true);
+        assertEquals(b.compareTo(b_1), 0);
+
+        //Invalid comparisons
+        Strings s1 = stringsFactory.createStrings("hello");
+        Strings s2 = stringsFactory.createStrings("dally");
+        Strings s4 = stringsFactory.createStrings("yellow");
+        Strings s5 = stringsFactory.createStrings("hello");
+
+        NullType nullType = nullTypeFactory.createNull();
+        assertEquals(b.compareTo(f1), -2);
+
+        assertEquals(s1.compareTo(b), -2);
+
+        assertEquals(I.compareTo(f), -2);
+
+        assertEquals(b1.compareTo(s1), -2);
+
+        assertEquals(f1.compareTo(b), -2);
+
+        assertEquals(nullType.compareTo(b), -2);
+
+
+
+
+        assertEquals(f2.compareTo(b1), 1);
+
+        assertEquals(b1.compareTo(f2), -1);
+
+        floats f4 = floatsFactory.createFloats(100.0);
+
+        assertEquals(f4.compareTo(i1), 0);
+
+        assertEquals(i1.compareTo(f4), 0);
+
+        assertEquals(i1.compareTo(f3), 1);
+
+        assertEquals(f3.compareTo(i1), -1);
+
+        assertEquals(s1.compareTo(s5), 0);
+
+        assertEquals(s1.compareTo(s2), 4);
+
+        assertEquals(s1.compareTo(s4), -17);
+
+
+
+
+
+
+
 
     }
 

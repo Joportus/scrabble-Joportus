@@ -23,7 +23,7 @@ public class variable implements treeNode{
     public static Map<String, Itypes> getVariables() {
         return variables;
     }
-
+/*
     public static Itypes var(String variableName, Itypes variableValue){
         Itypes result = getVariables().get(variableName);
         Itypes value = variableValue.eval();
@@ -39,7 +39,7 @@ public class variable implements treeNode{
         return value;
 
     }
-
+*/
     public static Itypes gVar(String variableName){
         return getVariables().get(variableName);
     }
@@ -70,5 +70,5 @@ public class variable implements treeNode{
     public Itypes getVariableValue() {
         return variableValue;
     }
-    
+
 }

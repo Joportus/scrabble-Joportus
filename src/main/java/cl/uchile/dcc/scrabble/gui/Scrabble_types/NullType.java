@@ -28,8 +28,9 @@ public class NullType extends Type {
 
     @Override
     public int compareTo(Itypes itypes) {
-        return 0;
+        return -2;
     }
+
 
     /**
      * Returns the Strings sum between this Itypes object and Strings S.

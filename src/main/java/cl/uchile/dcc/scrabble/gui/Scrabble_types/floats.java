@@ -188,6 +188,7 @@ public class floats extends Type implements SNumber, Comparable<Itypes> {
     public int compareTo(@NotNull Itypes o) {
         return o.compareToFloat(this);
     }
+
     @Override
     public int compareToInt(integers i){
         return Double.compare(i.getInt_value(), this.getFloat_value());

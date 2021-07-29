@@ -8,7 +8,7 @@ import static cl.uchile.dcc.scrabble.gui.Soperations.variables.variable.gVar;
 
 public class lesserThan extends Comparison{
 
-    protected lesserThan(String var1, String var2) {
+    public lesserThan(String var1, String var2) {
         super(var1, var2);
     }
 

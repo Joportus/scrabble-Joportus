@@ -11,12 +11,12 @@ public class ifVisitor implements Visitor{
 
     public Itypes visitIf(If i){
         Booleans STrue = booleansFactory.createBooleans(true);
-        Booleans SFalse = booleansFactory.createBooleans(true);
+        Booleans SFalse = booleansFactory.createBooleans(false);
 
-        if(i.getLeftChild().equals(STrue)){
+        if(i.getLeftChild().eval().equals(STrue)){
             return i.getMiddleChild().eval();
         }
-        else if(i.getLeftChild().equals(SFalse)){
+        else if(i.getLeftChild().eval().equals(SFalse)){
             return i.getRightChild().eval();
         }
         else{
