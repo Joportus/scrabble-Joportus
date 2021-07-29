@@ -2,6 +2,7 @@ package cl.uchile.dcc.scrabble.gui.Soperations.variables;
 
 import cl.uchile.dcc.scrabble.gui.Itypes;
 import cl.uchile.dcc.scrabble.gui.Scrabble_types.Strings;
+import cl.uchile.dcc.scrabble.gui.Scrabble_types.typeFactories.nullTypeFactory;
 import cl.uchile.dcc.scrabble.gui.Soperations.treeNode;
 
 import java.util.HashMap;

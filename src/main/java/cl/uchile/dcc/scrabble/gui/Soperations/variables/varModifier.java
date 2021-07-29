@@ -8,9 +8,9 @@ public abstract class varModifier implements treeNode {
 
     private final String variable;
 
-    private final Itypes number;
+    private final String number;
 
-    protected varModifier(String variable, Itypes number) {
+    protected varModifier(String variable, String number) {
         this.variable = variable;
         this.number = number;
     }
@@ -19,7 +19,7 @@ public abstract class varModifier implements treeNode {
         return variable;
     }
 
-    public Itypes getNumber() {
+    public String getNumber() {
         return number;
     }
 }

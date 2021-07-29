@@ -1,10 +1,6 @@
 package cl.uchile.dcc.scrabble.gui.Scrabble_types;
 
 import cl.uchile.dcc.scrabble.gui.Itypes;
-import cl.uchile.dcc.scrabble.gui.Scrabble_types.Strings;
-import cl.uchile.dcc.scrabble.gui.Scrabble_types.binary;
-import cl.uchile.dcc.scrabble.gui.Scrabble_types.floats;
-import cl.uchile.dcc.scrabble.gui.Scrabble_types.integers;
 import cl.uchile.dcc.scrabble.gui.Scrabble_types.typeFactories.*;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.BeforeEach;

@@ -6,6 +6,8 @@ import cl.uchile.dcc.scrabble.gui.Scrabble_types.typeFactories.nullTypeFactory;
 import cl.uchile.dcc.scrabble.gui.Soperations.FlowControl.If;
 import cl.uchile.dcc.scrabble.gui.Soperations.FlowControl.While;
 
+import static cl.uchile.dcc.scrabble.gui.Soperations.variables.variable.getVariables;
+
 
 public class whileVisitor implements Visitor{
 
@@ -22,10 +24,15 @@ public class whileVisitor implements Visitor{
         while(w.getLeftChild().eval().equals(STrue)){
 
             w.getRightChild().eval();
+            System.out.println(getVariables());
+
 
         }
         return null;
     }
+
+
+
 
 }
 

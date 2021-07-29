@@ -1,11 +1,13 @@
 package cl.uchile.dcc.scrabble.gui.Soperations.FlowControl;
 
+import cl.uchile.dcc.scrabble.gui.Itypes;
 import cl.uchile.dcc.scrabble.gui.Scrabble_types.NullType;
 import cl.uchile.dcc.scrabble.gui.Scrabble_types.floats;
 import cl.uchile.dcc.scrabble.gui.Scrabble_types.integers;
 import cl.uchile.dcc.scrabble.gui.Scrabble_types.typeFactories.integersFactory;
 import cl.uchile.dcc.scrabble.gui.Scrabble_types.typeFactories.nullTypeFactory;
 import cl.uchile.dcc.scrabble.gui.Soperations.Comparisons.greaterThan;
+import cl.uchile.dcc.scrabble.gui.Soperations.Comparisons.notEqual;
 import cl.uchile.dcc.scrabble.gui.Soperations.treeNode;
 import cl.uchile.dcc.scrabble.gui.Soperations.variables.addToVar;
 import cl.uchile.dcc.scrabble.gui.Soperations.variables.subToVar;
@@ -23,51 +25,62 @@ class WhileTest {
 
     @Test
     void eval() {
+
         integers I1 = integersFactory.createIntegers(5);
         integers I2 = integersFactory.createIntegers(30);
         integers count = integersFactory.createIntegers(1);
 
+        variable n1 = new variable("n1", new floats(1));
+        variable c = new variable("count", new integers(1));
+
+        n1.eval();
+        c.eval();
+
         new variable("a", I1).eval();
+
         new variable("b", I2).eval();
 
-        System.out.println(new variable("c", new floats(3)).eval());
-
-        System.out.println(gVar("c"));
+        new variable("c", new floats(3)).eval();
 
         new variable("c", new integers(5)).eval();
 
-        System.out.println(gVar("c"));
 
-        variable a = new variable("a", I1);
-
+        assertEquals(gVar("a"), new integers(5));
 
 
-        treeNode cond = new greaterThan("a", "b");
+        While w1 = new While(new greaterThan("b", "a"),  new addToVar("a", "count"));
 
-        //While w1 = new While(new greaterThan("b", "a"),  new variable("a", new SAdd(gVar("a"), count).eval()));
 
-        While w1 = new While(new greaterThan("b", "a"),  new addToVar("a",count));
 
-        While w2 = new While(new greaterThan("b", "c"), new subToVar("b", new floats(1)));
 
-        System.out.println(getVariables());
+        While w2 = new While(new greaterThan("b", "c"), new subToVar("b", "n1"));
+
+
 
         w1.eval();
 
-        System.out.println(getVariables());
+
+
+        assertEquals(gVar("a"), new integers(30));
+
 
         getVariables().clear();
 
         new variable("a", I1).eval();
+
         new variable("b", I2).eval();
 
-        System.out.println(new variable("c", new floats(3)).eval());
+        new variable("c", new floats(3)).eval();
+
+        assertEquals(gVar("b"), new integers(30));
+
+        n1.eval();
 
         w2.eval();
 
-        System.out.println(getVariables());
 
-        System.out.println(gVar("a"));
+
+        assertEquals(gVar("b"), new floats(3));
 
         NullType nullType = nullTypeFactory.createNull();
 
@@ -75,39 +88,82 @@ class WhileTest {
 
         assertEquals(nullType, iv.visitWhile(w1));
 
+        getVariables().clear();
+
+
+        variable a = new variable("a", new integers(270));
+        variable b = new variable("b", new integers(192));
+
+        variable zero = new variable("z", new integers(0));
+        zero.eval();
+
+
+        a.eval();
+        b.eval();
+
+        //GCD algorithm
+        While euclid = new While(new notEqual("b", "z"),
+                         new If(new greaterThan("a", "b"),
+                            new subToVar("a", "b"),
+                            new subToVar("b", "a")));
+
+
+        euclid.eval();
+
+        Itypes MCD = gVar("a");
+
+        new variable("a", new integers(24)).eval();
+
+        new variable("b", new integers(18)).eval();
+
+        System.out.println(getVariables());
+
+        euclid.eval();
+
+        MCD = gVar("a");
+
+        assertEquals(MCD, new integers(6));
+
+
+        new variable("a", new integers(4)).eval();
+
+        new variable("b", new integers(4)).eval();
+
+        euclid.eval();
+
+        MCD = gVar("a");
+
+
+
+        assertEquals(MCD, new integers(4));
+
+        new variable("a", new integers(12356)).eval();
+
+        new variable("b", new integers(7864)).eval();
+
+        euclid.eval();
+
+        MCD = gVar("a");
+
+
+        assertEquals(MCD, new integers(4));
+
+
+        new variable("a", new integers(678)).eval();
+
+        new variable("b", new integers(260352)).eval();
+
+        euclid.eval();
+
+        MCD = gVar("a");
+
+
+        assertEquals(MCD, new integers(678));
 
 
 
 
-        /*
-        String v1Name = "a";
-        String v2Name = "b";
-
-        intVariables v1 = new intVariables(v1Name, I1);
-        intVariables v2 = new intVariables(v2Name, I2);
-        v1.eval();
-        v2.eval();
-        v1.eval();
-        While w1 = new While(new Booleans(getIntVariables().get("a").compareTo(getIntVariables().get("b")) < 0), new intVariables("a", (integers) getIntVariables().get("a").sum(count)));
 
 
-        While w2 = new While(new greaterThan(getIntVariables().get("a"), getIntVariables().get("b")), new integers(1));
-        System.out.println(w2.getLeftChild().eval());
-        new intVariables("a", (integers) getIntVariables().get("a").sum(count)).eval();
-        System.out.println(new Booleans(getIntVariables().get("a").compareTo(getIntVariables().get("b")) < 0));
-        System.out.println(w2.getLeftChild().eval());
-        */
-        /*
-        System.out.println(getIntVariables());
-        new intVariables("a", (integers) getIntVariables().get("a").sum(count)).eval();
-        System.out.println(getIntVariables());
-        new intVariables("a", (integers) getIntVariables().get("a").sum(count)).eval();
-        new intVariables("a", (integers) getIntVariables().get("a").sum(count)).eval();
-        new intVariables("a", (integers) getIntVariables().get("a").sum(count)).eval();
-        System.out.println(getIntVariables());
-        System.out.println(getIntVariables().get("a").compareTo(getIntVariables().get("b")));
-        new intVariables("a", (integers) getIntVariables().get("a").sum(count)).eval();
-        System.out.println(getIntVariables().get("a").compareTo(getIntVariables().get("b")));
-*/
     }
 }

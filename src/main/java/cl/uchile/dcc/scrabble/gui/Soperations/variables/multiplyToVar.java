@@ -7,12 +7,12 @@ import static cl.uchile.dcc.scrabble.gui.Soperations.variables.variable.gVar;
 
 public class multiplyToVar extends varModifier{
 
-    public multiplyToVar(String variable, Itypes number) {
+    public multiplyToVar(String variable, String number) {
         super(variable, number);
     }
 
     @Override
     public Itypes eval() {
-        return new variable(this.getVariable(), gVar(this.getVariable()).multiply(this.getNumber())).eval();
+        return new variable(this.getVariable(), gVar(this.getVariable()).multiply(gVar(this.getNumber()))).eval();
     }
 }

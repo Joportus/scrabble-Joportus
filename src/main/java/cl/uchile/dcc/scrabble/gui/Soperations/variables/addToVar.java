@@ -9,13 +9,13 @@ import static cl.uchile.dcc.scrabble.gui.Soperations.variables.variable.gVar;
 public class addToVar extends varModifier{
 
 
-    public addToVar(String variable, SNumber number) {
+    public addToVar(String variable, String number) {
         super(variable, number);
     }
 
     @Override
     public Itypes eval() {
-        return new variable(this.getVariable(), gVar(this.getVariable()).sum(this.getNumber())).eval();
+        return new variable(this.getVariable(), gVar(this.getVariable()).sum(gVar(this.getNumber()))).eval();
     }
 
 
