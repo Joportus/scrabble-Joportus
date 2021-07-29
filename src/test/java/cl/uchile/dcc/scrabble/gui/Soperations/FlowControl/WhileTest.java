@@ -53,6 +53,7 @@ class WhileTest {
 
 
 
+
         While w2 = new While(new greaterThan("b", "c"), new subToVar("b", "n1"));
 
 
@@ -116,7 +117,6 @@ class WhileTest {
 
         new variable("b", new integers(18)).eval();
 
-        System.out.println(getVariables());
 
         euclid.eval();
 

@@ -20,15 +20,15 @@ public class whileVisitor implements Visitor{
     public Itypes visitWhile(While w) {
 
         Itypes STrue = new Booleans(true);
+        Itypes result = nullTypeFactory.createNull();
 
         while(w.getLeftChild().eval().equals(STrue)){
 
-            w.getRightChild().eval();
-            System.out.println(getVariables());
+            result = w.getRightChild().eval();
 
 
         }
-        return null;
+        return result;
     }
 
 
