@@ -177,27 +177,45 @@ public class floats extends Type implements SNumber, Comparable<Itypes> {
      *
      * Ultimately, it calculates the result of this floats object divided by the the Inumber input.
      */
-
     @Override
     public Itypes divide(Itypes itype) {
         return itype.divide_a_Float(this);
     }
 
-
+    /**
+     * Receives an Itypes object and calls it's compareToFloat method. It uses
+     * this floats object as an input for compareToFloat method.
+     *
+     * Ultimately, it calculates the result of the comparison of this floats object and the Itypes input.
+     */
     @Override
     public int compareTo(@NotNull Itypes o) {
         return o.compareToFloat(this);
     }
 
+    /**
+     * Receives an integers i as input. If i's value is greater than this objects value, it returns 1. If it is lesser
+     * it returns -1 and if it's equal it returns 0. It uses the java Double.compare method.
+     */
     @Override
     public int compareToInt(integers i){
         return Double.compare(i.getInt_value(), this.getFloat_value());
     }
+
+    /**
+     * Receives a floats f as input. If f's value is greater than this objects value, it returns 1. If it is lesser
+     * it returns -1 and if it's equal it returns 0. It uses the java Double.compare method.
+     */
     @Override
     public int compareToFloat(floats f){
         return Double.compare(f.getFloat_value(), this.getFloat_value());
     }
 
+
+    /**
+     * Receives a binary b as input. If b's value when transformed to an integers is greater than this objects value, it returns 1. If it is lesser
+     * it returns -1 and if it's equal it returns 0. It uses the java Double.compare method.
+     */
     @Override
     public int compareToBinary(binary b) {
         return Double.compare(b.transform_to_integers().getInt_value(), this.getFloat_value());

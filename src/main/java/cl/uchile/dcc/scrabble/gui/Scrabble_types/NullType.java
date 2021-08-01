@@ -26,6 +26,11 @@ public class NullType extends Type {
         return this;
     }
 
+    /**
+     * Receives an Itypes input and always returns -2.
+     * This is because I chose -2 to be the default return value when
+     * a comparison between two objects doesn't make sense.
+     */
     @Override
     public int compareTo(Itypes itypes) {
         return -2;

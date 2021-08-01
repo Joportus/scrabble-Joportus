@@ -10,10 +10,6 @@ import cl.uchile.dcc.scrabble.gui.Scrabble_types.typeFactories.stringsFactory;
  */
 public abstract class Type implements Itypes {
 
-    public Type() {
-        super();
-    }
-
     /**
      * Returns the Scrabble String representation of this object.
      */
@@ -247,26 +243,51 @@ public abstract class Type implements Itypes {
         return this;
     }
 
+    /**
+     * Receives an Itypes input and always returns -2.
+     * This is because I chose -2 to be the default return value when
+     * a comparison between two objects doesn't make sense.
+     */
     @Override
     public int compareToInt(integers i) {
         return -2;
     }
 
+    /**
+     * Receives a floats input and always returns -2.
+     * This is because I chose -2 to be the default return value when
+     * a comparison between two objects doesn't make sense.
+     */
     @Override
     public int compareToFloat(floats f) {
         return -2;
     }
 
+    /**
+     * Receives a binary input and always returns -2.
+     * This is because I chose -2 to be the default return value when
+     * a comparison between two objects doesn't make sense.
+     */
     @Override
     public int compareToBinary(binary b) {
         return -2;
     }
 
+    /**
+     * Receives a Strings input and always returns -2.
+     * This is because I chose -2 to be the default return value when
+     * a comparison between two objects doesn't make sense.
+     */
     @Override
     public int compareToString(Strings s) {
         return -2;
     }
 
+    /**
+     * Receives a Booleans input and always returns -2.
+     * This is because I chose -2 to be the default return value when
+     * a comparison between two objects doesn't make sense.
+     */
     @Override
     public int compareToBoolean(Booleans b) {
         return -2;

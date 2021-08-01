@@ -67,11 +67,23 @@ public class Strings extends Type implements Comparable<Itypes>{
         return t.sum_to_string(this);
     }
 
+    /**
+     * Receives a Strings s object as input and it compares that Strings value with this objects
+     * Strings value lexicographically. If both Strings objects are equal it returns 0. The result is
+     * positive is s is lexicographically greater than this object and the result is negative otherwise.
+     * It uses the java compareTo() method.
+     */
     @Override
     public int compareToString(Strings s) {
         return s.getString_value().compareTo(this.getString_value());
     }
 
+    /**
+     * Receives an Itypes object and calls it's compareToString method. It uses
+     * this Strings object as an input for compareToString method.
+     *
+     * Ultimately, it calculates the result of the comparison of this Strings object and the Itypes input.
+     */
     @Override
     public int compareTo(@NotNull Itypes o) {
         return o.compareToString(this);

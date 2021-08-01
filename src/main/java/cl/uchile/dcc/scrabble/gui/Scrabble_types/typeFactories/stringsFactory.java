@@ -45,6 +45,10 @@ public class stringsFactory {
         return result;
     }
 
+
+    /**
+     * Returns the Strings factory hashmap
+     */
     public Map<String, Strings> get_map(){
         return Strings;
     }

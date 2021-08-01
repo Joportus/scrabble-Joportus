@@ -108,7 +108,6 @@ class WhileTest {
                             new subToVar("a", "b"),
                             new subToVar("b", "a")));
 
-
         euclid.eval();
 
         Itypes MCD = gVar("a");
