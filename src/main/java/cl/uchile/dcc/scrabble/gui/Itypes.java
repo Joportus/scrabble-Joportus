@@ -5,8 +5,6 @@ import cl.uchile.dcc.scrabble.gui.Soperations.treeNode;
 
 public interface Itypes extends treeNode {
 
-
-
   /**
    * Returns a Scrabble Strings object resulting from the input's String value
    * concatenated to this objects toString() representation.
@@ -162,5 +160,43 @@ public interface Itypes extends treeNode {
    * returns the Itypes evaluation of this object.
    */
   Itypes eval();
+
+  /**
+   * Receives an integers object as input and returns an compares that object
+   * to this object. It then returns an int as a result of the comparison.
+   */
+  int compareToInt(integers i);
+
+  /**
+   * Receives a floats object as input and returns an compares that object
+   * to this object. It then returns an int as a result of the comparison.
+   */
+  int compareToFloat(floats f);
+
+  /**
+   * Receives a binary object as input and returns an compares that object
+   * to this object. It then returns an int as a result of the comparison.
+   */
+  int compareToBinary(binary b);
+
+  /**
+   * Receives a Strings object as input and returns an compares that object
+   * to this object. It then returns an int as a result of the comparison.
+   */
+  int compareToString(Strings s);
+
+  /**
+   * Receives a Booleans object as input and returns an compares that object
+   * to this object. It then returns an int as a result of the comparison.
+   */
+  int compareToBoolean(Booleans b);
+
+  /**
+   * Receives an Itypes object as input and returns an compares that object
+   * to this object. It then returns an int as a result of the comparison.
+   */
+  int compareTo(Itypes itypes);
+
+
 
 }

@@ -4,13 +4,14 @@ import cl.uchile.dcc.scrabble.gui.*;
 import cl.uchile.dcc.scrabble.gui.Scrabble_types.typeFactories.binaryFactory;
 import cl.uchile.dcc.scrabble.gui.Scrabble_types.typeFactories.floatsFactory;
 import cl.uchile.dcc.scrabble.gui.Scrabble_types.typeFactories.integersFactory;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
 
 /**
  * This class represents a binary scrabble data type.
  */
-public class binary extends Type {
+public class binary extends Type implements SNumber, Comparable<Itypes>{
 
 
     private final String binary_value;
@@ -516,4 +517,44 @@ public class binary extends Type {
         String result_value = result.toString();
         return binaryFactory.createBinary(result_value);
     }
+
+    /**
+     * Receives an integers i as input. If i's value is greater than this objects value, it returns 1. If it is lesser
+     * it returns -1 and if it's equal it returns 0. It uses the java Double.compare method.
+     */
+    @Override
+    public int compareToInt(integers i) {
+        return Double.compare(i.getInt_value(), this.transform_to_integers().getInt_value());
+    }
+
+
+    /**
+     * Receives a floats f as input. If f's value is greater than this objects value, it returns 1. If it is lesser
+     * it returns -1 and if it's equal it returns 0. It uses the java Double.compare method.
+     */
+    @Override
+    public int compareToFloat(floats f) {
+        return Double.compare(f.getFloat_value(), this.transform_to_integers().getInt_value());
+    }
+
+    /**
+     * Receives a binary b as input. If b's value when transformed to an integers is greater than this objects value, it returns 1. If it is lesser
+     * it returns -1 and if it's equal it returns 0. It uses the java Double.compare method.
+     */
+    @Override
+    public int compareToBinary(binary b) {
+        return Double.compare(b.transform_to_integers().getInt_value(), this.transform_to_integers().getInt_value());
+    }
+
+    /**
+     * Receives an Itypes object and calls it's compareToInt method. It uses
+     * this integers object as an input for compareToInt method.
+     *
+     * Ultimately, it calculates the result of the comparison of this integers object and the Itypes input.
+     */
+    @Override
+    public int compareTo(@NotNull Itypes o) {
+        return o.compareToBinary(this);
+    }
+
 }

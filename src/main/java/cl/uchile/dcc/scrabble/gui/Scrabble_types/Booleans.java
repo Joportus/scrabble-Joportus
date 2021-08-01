@@ -3,12 +3,13 @@ package cl.uchile.dcc.scrabble.gui.Scrabble_types;
 import cl.uchile.dcc.scrabble.gui.Itypes;
 import cl.uchile.dcc.scrabble.gui.Scrabble_types.typeFactories.binaryFactory;
 import cl.uchile.dcc.scrabble.gui.Scrabble_types.typeFactories.booleansFactory;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
 /**
  * This class represents a Booleans scrabble data type.
  */
-public class Booleans extends Type {
+public class Booleans extends Type implements Comparable<Itypes>{
 
     private final boolean bool_value;
     /**
@@ -151,4 +152,24 @@ public class Booleans extends Type {
         return booleansFactory.createBooleans(result_value);
     }
 
+    /**
+     * Receives a Booleans b as input. If b's value is equal to this objects value it returns 0.
+     * If b's value is true and this objects value is false, it returns 1. Otherwise it returns -1.
+     * It uses the java Boolean.compare() method.
+     */
+    @Override
+    public int compareToBoolean(Booleans b) {
+        return Boolean.compare(b.isBool_value(), this.isBool_value());
+    }
+
+    /**
+     * Receives an Itypes object and calls it's compareToBoolean method. It uses
+     * this Booleans object as an input for the compareToBooleans method.
+     *
+     * Ultimately, it calculates the result of the comparison of this Booleans object and the Itypes input.
+     */
+    @Override
+    public int compareTo(@NotNull Itypes o) {
+        return o.compareToBoolean(this);
+    }
 }
